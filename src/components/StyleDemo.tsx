@@ -3333,7 +3333,7 @@ const AntiPolishDemo = ({ }: StyleDemoProps) => (
   <div className="min-h-screen pt-16" style={{ background: '#FAFAF8' }}>
     <style>{`
       .sketch-border { border: 2px solid #1A1A1A; border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; }
-      .hand-drawn { font-family: 'Comic Sans MS', cursive, sans-serif; }
+      .hand-drawn { font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif; }
     `}</style>
     <header className="max-w-4xl mx-auto px-8 py-8">
       <h1 className="text-4xl hand-drawn" style={{ transform: 'rotate(-1deg)' }}>alex's portfolio ✏️</h1>
