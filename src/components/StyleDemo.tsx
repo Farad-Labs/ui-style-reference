@@ -4088,10 +4088,10 @@ const ConversionOptimizedDemo = ({ }: StyleDemoProps) => (
         </p>
         
         {/* Main CTA Form */}
-        <form className="max-w-md mx-auto flex gap-3 mb-6">
+        <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-3 mb-6">
           <input type="email" placeholder="Enter your email" 
             className="flex-1 px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
-          <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap">
+          <button className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap">
             Start Free →
           </button>
         </form>
@@ -4275,13 +4275,13 @@ const MinimalDirectDemo = ({ }: StyleDemoProps) => (
         
         {/* Main Input */}
         <form className="mb-8">
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <input 
               type="url" 
               placeholder="Paste your long URL" 
               className="flex-1 px-6 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-black focus:outline-none"
             />
-            <button className="px-8 py-4 bg-black text-white text-lg font-semibold rounded-xl hover:bg-gray-800 transition-colors">
+            <button className="w-full sm:w-auto px-8 py-4 bg-black text-white text-lg font-semibold rounded-xl hover:bg-gray-800 transition-colors">
               Shorten
             </button>
           </div>
@@ -5062,19 +5062,19 @@ const DrillDownAnalyticsDemo = ({ }: StyleDemoProps) => (
 
     <main className="p-6">
       {/* Filters */}
-      <div className="bg-white rounded-lg p-4 mb-6 flex gap-4 items-center">
+      <div className="bg-white rounded-lg p-4 mb-6 flex flex-wrap gap-3 sm:gap-4 items-center">
         <span className="text-gray-500 text-sm">Filters:</span>
-        <select className="px-3 py-1.5 border border-gray-300 rounded text-sm">
+        <select className="px-3 py-1.5 border border-gray-300 rounded text-sm flex-1 sm:flex-none min-w-[120px]">
           <option>All Segments</option>
           <option>Enterprise</option>
           <option>SMB</option>
         </select>
-        <select className="px-3 py-1.5 border border-gray-300 rounded text-sm">
+        <select className="px-3 py-1.5 border border-gray-300 rounded text-sm flex-1 sm:flex-none min-w-[120px]">
           <option>Last 30 days</option>
           <option>Last 90 days</option>
           <option>This Year</option>
         </select>
-        <button className="ml-auto text-blue-600 text-sm hover:underline">Reset Filters</button>
+        <button className="w-full sm:w-auto sm:ml-auto text-blue-600 text-sm hover:underline">Reset Filters</button>
       </div>
 
       {/* Summary Cards */}
@@ -5401,7 +5401,8 @@ const FinancialDashboardDemo = ({ }: StyleDemoProps) => (
         <div className="px-6 py-4 border-b border-gray-200 bg-gray-50">
           <h3 className="font-semibold">Profit & Loss Statement</h3>
         </div>
-        <table className="w-full">
+        <div className="overflow-x-auto">
+        <table className="w-full min-w-[600px]">
           <thead className="text-sm text-gray-500">
             <tr className="border-b border-gray-100">
               <th className="px-6 py-3 text-left">Account</th>
@@ -5443,6 +5444,7 @@ const FinancialDashboardDemo = ({ }: StyleDemoProps) => (
             </tr>
           </tbody>
         </table>
+        </div>
       </div>
 
       {/* Charts */}
