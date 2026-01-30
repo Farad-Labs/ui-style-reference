@@ -27,33 +27,38 @@ export const StylePage = () => {
     <div className="min-h-screen">
       {/* Navigation Bar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-gray-900 hover:text-blue-600 transition-colors">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            <span className="font-medium">All Styles</span>
-          </Link>
-          <div className="absolute left-1/2 transform -translate-x-1/2">
-            <span className="text-lg font-semibold text-gray-900">{style.name}</span>
-          </div>
-          <div className="flex items-center gap-4">
-            {prevStyle && (
-              <Link
-                to={`/style/${prevStyle.slug}`}
-                className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                ← {prevStyle.name}
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          {/* Mobile: stacked layout */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            {/* Top row on mobile: back + title */}
+            <div className="flex items-center justify-between sm:justify-start gap-4">
+              <Link to="/" className="flex items-center gap-2 text-gray-900 hover:text-blue-600 transition-colors shrink-0">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                <span className="font-medium hidden sm:inline">All Styles</span>
               </Link>
-            )}
-            {nextStyle && (
-              <Link
-                to={`/style/${nextStyle.slug}`}
-                className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                {nextStyle.name} →
-              </Link>
-            )}
+              <span className="text-base sm:text-lg font-semibold text-gray-900 truncate sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">{style.name}</span>
+            </div>
+            {/* Bottom row on mobile: prev/next */}
+            <div className="flex items-center justify-between sm:justify-end gap-4 text-sm">
+              {prevStyle ? (
+                <Link
+                  to={`/style/${prevStyle.slug}`}
+                  className="text-gray-600 hover:text-blue-600 transition-colors truncate max-w-[40%] sm:max-w-none"
+                >
+                  ← <span className="hidden sm:inline">{prevStyle.name}</span><span className="sm:hidden">Prev</span>
+                </Link>
+              ) : <span />}
+              {nextStyle ? (
+                <Link
+                  to={`/style/${nextStyle.slug}`}
+                  className="text-gray-600 hover:text-blue-600 transition-colors truncate max-w-[40%] sm:max-w-none"
+                >
+                  <span className="hidden sm:inline">{nextStyle.name}</span><span className="sm:hidden">Next</span> →
+                </Link>
+              ) : <span />}
+            </div>
           </div>
         </div>
       </nav>

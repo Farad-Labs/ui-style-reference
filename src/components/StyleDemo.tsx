@@ -216,15 +216,15 @@ const GlassmorphismDemo = ({ }: StyleDemoProps) => (
     style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)' }}>
     {/* Background Shapes */}
     <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute top-20 left-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl opacity-50" />
-      <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-blue-500 rounded-full blur-3xl opacity-50" />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-pink-400 rounded-full blur-3xl opacity-40" />
+      <div className="absolute top-20 left-20 w-48 sm:w-96 h-48 sm:h-96 bg-purple-500 rounded-full blur-3xl opacity-50" />
+      <div className="absolute bottom-20 right-20 w-64 sm:w-[500px] h-64 sm:h-[500px] bg-blue-500 rounded-full blur-3xl opacity-50" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 sm:w-72 h-48 sm:h-72 bg-pink-400 rounded-full blur-3xl opacity-40" />
     </div>
 
     {/* Content */}
-    <div className="relative z-10 max-w-6xl mx-auto px-8 py-12">
+    <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
       {/* Header */}
-      <header className="flex items-center justify-between mb-12">
+      <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 sm:mb-12">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl flex items-center justify-center"
             style={{
@@ -233,9 +233,9 @@ const GlassmorphismDemo = ({ }: StyleDemoProps) => (
             }}>
             <span className="text-white text-xl">◈</span>
           </div>
-          <span className="text-white text-xl font-semibold">Prism Finance</span>
+          <span className="text-white text-lg sm:text-xl font-semibold">Prism Finance</span>
         </div>
-        <nav className="flex gap-6">
+        <nav className="flex flex-wrap gap-3 sm:gap-6 text-sm sm:text-base">
           {['Dashboard', 'Portfolio', 'Analytics', 'Settings'].map((item) => (
             <a key={item} href="#" className="text-white/80 hover:text-white transition-colors">{item}</a>
           ))}
@@ -243,39 +243,39 @@ const GlassmorphismDemo = ({ }: StyleDemoProps) => (
       </header>
 
       {/* Main Grid */}
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-12 gap-4 sm:gap-6">
         {/* Balance Card */}
-        <div className="col-span-12 md:col-span-8 p-8 rounded-3xl"
+        <div className="col-span-12 md:col-span-8 p-4 sm:p-8 rounded-3xl"
           style={{
             background: 'rgba(255, 255, 255, 0.15)',
             backdropFilter: 'blur(20px)',
             border: '1px solid rgba(255, 255, 255, 0.2)',
           }}>
-          <p className="text-white/70 mb-2">Total Balance</p>
-          <h2 className="text-5xl font-bold text-white mb-6">$847,293.42</h2>
-          <div className="flex gap-8">
+          <p className="text-white/70 mb-2 text-sm sm:text-base">Total Balance</p>
+          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4 sm:mb-6 break-words">$847,293.42</h2>
+          <div className="flex flex-wrap gap-4 sm:gap-8">
             <div>
-              <p className="text-white/60 text-sm">24h Change</p>
-              <p className="text-green-300 text-xl font-semibold">+$12,847.32</p>
+              <p className="text-white/60 text-xs sm:text-sm">24h Change</p>
+              <p className="text-green-300 text-base sm:text-xl font-semibold">+$12,847.32</p>
             </div>
             <div>
-              <p className="text-white/60 text-sm">Percentage</p>
-              <p className="text-green-300 text-xl font-semibold">+1.54%</p>
+              <p className="text-white/60 text-xs sm:text-sm">Percentage</p>
+              <p className="text-green-300 text-base sm:text-xl font-semibold">+1.54%</p>
             </div>
           </div>
         </div>
 
         {/* Quick Actions */}
-        <div className="col-span-12 md:col-span-4 p-6 rounded-3xl"
+        <div className="col-span-12 md:col-span-4 p-4 sm:p-6 rounded-3xl"
           style={{
             background: 'rgba(255, 255, 255, 0.1)',
             backdropFilter: 'blur(20px)',
             border: '1px solid rgba(255, 255, 255, 0.15)',
           }}>
           <h3 className="text-white font-semibold mb-4">Quick Actions</h3>
-          <div className="space-y-3">
+          <div className="grid grid-cols-2 md:grid-cols-1 gap-2 sm:gap-3">
             {['Send Money', 'Receive', 'Swap', 'Stake'].map((action) => (
-              <button key={action} className="w-full py-3 rounded-xl text-white font-medium transition-all hover:scale-105"
+              <button key={action} className="w-full py-2 sm:py-3 rounded-xl text-white text-sm sm:text-base font-medium transition-all hover:scale-105"
                 style={{
                   background: 'rgba(255, 255, 255, 0.1)',
                   backdropFilter: 'blur(10px)',
@@ -288,57 +288,57 @@ const GlassmorphismDemo = ({ }: StyleDemoProps) => (
         </div>
 
         {/* Portfolio */}
-        <div className="col-span-12 md:col-span-6 p-6 rounded-3xl"
+        <div className="col-span-12 md:col-span-6 p-4 sm:p-6 rounded-3xl"
           style={{
             background: 'rgba(255, 255, 255, 0.1)',
             backdropFilter: 'blur(20px)',
             border: '1px solid rgba(255, 255, 255, 0.15)',
           }}>
-          <h3 className="text-white font-semibold mb-6">Portfolio</h3>
+          <h3 className="text-white font-semibold mb-4 sm:mb-6">Portfolio</h3>
           {[
             { name: 'Bitcoin', symbol: 'BTC', value: '$423,291', change: '+2.4%', icon: '₿' },
             { name: 'Ethereum', symbol: 'ETH', value: '$287,103', change: '+1.8%', icon: 'Ξ' },
             { name: 'Solana', symbol: 'SOL', value: '$136,899', change: '+5.2%', icon: '◎' },
           ].map((asset, i) => (
-            <div key={i} className="flex items-center justify-between py-4 border-b border-white/10 last:border-0">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center"
+            <div key={i} className="flex items-center justify-between py-3 sm:py-4 border-b border-white/10 last:border-0">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0"
                   style={{ background: 'rgba(255,255,255,0.2)' }}>
-                  <span className="text-white">{asset.icon}</span>
+                  <span className="text-white text-sm sm:text-base">{asset.icon}</span>
                 </div>
                 <div>
-                  <p className="text-white font-medium">{asset.name}</p>
-                  <p className="text-white/60 text-sm">{asset.symbol}</p>
+                  <p className="text-white font-medium text-sm sm:text-base">{asset.name}</p>
+                  <p className="text-white/60 text-xs sm:text-sm">{asset.symbol}</p>
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-white font-medium">{asset.value}</p>
-                <p className="text-green-300 text-sm">{asset.change}</p>
+                <p className="text-white font-medium text-sm sm:text-base">{asset.value}</p>
+                <p className="text-green-300 text-xs sm:text-sm">{asset.change}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Activity */}
-        <div className="col-span-12 md:col-span-6 p-6 rounded-3xl"
+        <div className="col-span-12 md:col-span-6 p-4 sm:p-6 rounded-3xl"
           style={{
             background: 'rgba(255, 255, 255, 0.1)',
             backdropFilter: 'blur(20px)',
             border: '1px solid rgba(255, 255, 255, 0.15)',
           }}>
-          <h3 className="text-white font-semibold mb-6">Recent Activity</h3>
+          <h3 className="text-white font-semibold mb-4 sm:mb-6">Recent Activity</h3>
           {[
             { type: 'Received', amount: '+0.5 ETH', time: '2 min ago' },
             { type: 'Swapped', amount: 'BTC → USDC', time: '1 hour ago' },
             { type: 'Staked', amount: '100 SOL', time: '3 hours ago' },
             { type: 'Sent', amount: '-0.1 BTC', time: 'Yesterday' },
           ].map((tx, i) => (
-            <div key={i} className="flex items-center justify-between py-3 border-b border-white/10 last:border-0">
+            <div key={i} className="flex items-center justify-between py-2 sm:py-3 border-b border-white/10 last:border-0">
               <div>
-                <p className="text-white font-medium">{tx.type}</p>
-                <p className="text-white/60 text-sm">{tx.time}</p>
+                <p className="text-white font-medium text-sm sm:text-base">{tx.type}</p>
+                <p className="text-white/60 text-xs sm:text-sm">{tx.time}</p>
               </div>
-              <p className="text-white">{tx.amount}</p>
+              <p className="text-white text-sm sm:text-base">{tx.amount}</p>
             </div>
           ))}
         </div>
