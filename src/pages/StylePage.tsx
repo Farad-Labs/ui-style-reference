@@ -3,17 +3,79 @@ import { useEffect, useState, useRef } from 'react';
 import { getStyleBySlug, getStylesByCategory, categories, styles } from '../data/styles';
 import { StyleDemo } from '../components/StyleDemo';
 
+// Google Analytics tracking utilities
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+const trackEvent = (eventName: string, params: Record<string, unknown>) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', eventName, params);
+  }
+};
+
 export const StylePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const style = getStyleBySlug(slug || '');
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [cssCopied, setCssCopied] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleCopyCSS = async () => {
+    if (!style) return;
+    try {
+      await navigator.clipboard.writeText(style.cssKeywords);
+      setCssCopied(true);
+      setTimeout(() => setCssCopied(false), 2000);
+      
+      trackEvent('copy_css', {
+        style_name: style.name,
+        style_slug: style.slug,
+        style_category: style.category,
+      });
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
 
   // Scroll to top instantly on navigation
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  // Track style page view and time on page
+  useEffect(() => {
+    if (!style) return;
+    
+    const startTime = Date.now();
+    
+    // Track detailed page view
+    trackEvent('view_style_detail', {
+      style_name: style.name,
+      style_slug: style.slug,
+      style_category: style.category,
+      style_era: style.era,
+    });
+
+    // Track time on page when leaving
+    const handleBeforeUnload = () => {
+      const timeSpent = Math.round((Date.now() - startTime) / 1000);
+      trackEvent('style_engagement', {
+        style_name: style.name,
+        style_slug: style.slug,
+        time_seconds: timeSpent,
+      });
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      handleBeforeUnload(); // Also track when navigating within app
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [style]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -202,7 +264,29 @@ export const StylePage = () => {
 
           {/* CSS Keywords */}
           <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">CSS Implementation</h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold text-gray-900">CSS Implementation</h2>
+              <button
+                onClick={handleCopyCSS}
+                className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              >
+                {cssCopied ? (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    Copy CSS
+                  </>
+                )}
+              </button>
+            </div>
             <div className="bg-gray-900 rounded-xl p-6 overflow-x-auto">
               <pre className="text-sm text-green-400 font-mono whitespace-pre-wrap">
                 {style.cssKeywords}

@@ -1,20 +1,3 @@
-export interface UIStyle {
-  id: number;
-  name: string;
-  slug: string;
-  category: string;
-  keywords: string[];
-  primaryColors: string[];
-  secondaryColors: string[];
-  effects: string;
-  bestFor: string[];
-  doNotUse: string[];
-  description: string;
-  cssKeywords: string;
-  era: string;
-  industries?: string[];
-}
-
 // Industry tags for filtering styles by use case
 export const industries = [
   { id: 'saas', name: 'SaaS', icon: '💻' },
@@ -38,6 +21,23 @@ export const industries = [
 ] as const;
 
 export type IndustryId = typeof industries[number]['id'];
+
+export interface UIStyle {
+  id: number;
+  name: string;
+  slug: string;
+  category: string;
+  keywords: string[];
+  primaryColors: string[];
+  secondaryColors: string[];
+  effects: string;
+  bestFor: string[];
+  doNotUse: string[];
+  description: string;
+  cssKeywords: string;
+  era: string;
+  industries?: IndustryId[];
+}
 
 export const categories = [
   { id: 'modern-saas', name: 'Modern SaaS', description: 'Clean, professional styles for software products' },

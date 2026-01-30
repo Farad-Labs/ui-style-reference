@@ -1,6 +1,19 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { categories, industries, styles, type UIStyle, type IndustryId } from '../data/styles';
+
+// Google Analytics tracking utilities
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+const trackEvent = (eventName: string, params: Record<string, unknown>) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', eventName, params);
+  }
+};
 
 // Brand Logo Component
 const Logo = ({ className = '', size = 'default' }: { className?: string; size?: 'default' | 'large' }) => (
@@ -18,11 +31,21 @@ const Logo = ({ className = '', size = 'default' }: { className?: string; size?:
   </div>
 );
 
-const StyleCard = ({ style }: { style: UIStyle }) => {
+const StyleCard = ({ style, activeFilter }: { style: UIStyle; activeFilter?: IndustryId | null }) => {
+  const handleClick = () => {
+    trackEvent('view_style', {
+      style_name: style.name,
+      style_slug: style.slug,
+      style_category: style.category,
+      industry_filter: activeFilter || 'none',
+    });
+  };
+
   return (
     <Link
       to={`/style/${style.slug}`}
-      className="group block bg-white rounded-2xl border-3 border-black overflow-hidden shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-200"
+      onClick={handleClick}
+      className="group block bg-white rounded-2xl border-3 border-black overflow-hidden shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F472B6] focus-visible:ring-offset-2"
     >
       <div className="aspect-[16/10] relative overflow-hidden bg-[#FACC15] border-b-3 border-black">
         <img 
@@ -63,7 +86,7 @@ const StyleCard = ({ style }: { style: UIStyle }) => {
   );
 };
 
-const CategorySection = ({ categoryId, categoryName, description, filteredStyles }: { categoryId: string; categoryName: string; description: string; filteredStyles: UIStyle[] }) => {
+const CategorySection = ({ categoryId, categoryName, description, filteredStyles, activeFilter }: { categoryId: string; categoryName: string; description: string; filteredStyles: UIStyle[]; activeFilter?: IndustryId | null }) => {
   const categoryStyles = filteredStyles.filter(s => s.category === categoryId);
   
   if (categoryStyles.length === 0) return null;
@@ -76,7 +99,7 @@ const CategorySection = ({ categoryId, categoryName, description, filteredStyles
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {categoryStyles.map((style) => (
-          <StyleCard key={style.id} style={style} />
+          <StyleCard key={style.id} style={style} activeFilter={activeFilter} />
         ))}
       </div>
     </section>
@@ -84,34 +107,63 @@ const CategorySection = ({ categoryId, categoryName, description, filteredStyles
 };
 
 // Industry Filter Bar Component
-const IndustryFilter = ({ selectedIndustry, onSelect }: { selectedIndustry: IndustryId | null; onSelect: (id: IndustryId | null) => void }) => {
+const IndustryFilter = ({ selectedIndustry, onSelect, resultsCount }: { selectedIndustry: IndustryId | null; onSelect: (id: IndustryId | null) => void; resultsCount: number }) => {
+  const handleIndustryClick = (industryId: IndustryId) => {
+    const isDeselecting = selectedIndustry === industryId;
+    const newSelection = isDeselecting ? null : industryId;
+    
+    if (!isDeselecting) {
+      const industry = industries.find(i => i.id === industryId);
+      trackEvent('filter_industry', {
+        industry: industryId,
+        industry_name: industry?.name,
+        results_count: resultsCount,
+      });
+    }
+    
+    onSelect(newSelection);
+  };
+
+  const handleClear = () => {
+    trackEvent('clear_industry_filter', {
+      previous_industry: selectedIndustry,
+    });
+    onSelect(null);
+  };
+
   return (
-    <div className="bg-white border-3 border-black rounded-2xl p-4 shadow-[4px_4px_0_#000] mb-8">
+    <div className="bg-white border-3 border-black rounded-2xl p-4 shadow-[4px_4px_0_#000] mb-8" role="region" aria-label="Industry filter">
       <div className="flex items-center gap-3 mb-3">
-        <span className="text-lg font-black text-black">🏢 Filter by Industry:</span>
+        <span className="text-lg font-black text-black" id="industry-filter-label">🏢 Filter by Industry:</span>
         {selectedIndustry && (
           <button
-            onClick={() => onSelect(null)}
-            className="text-sm font-bold text-black bg-[#F472B6] hover:bg-[#FACC15] px-3 py-1 rounded-lg border-2 border-black transition-colors"
+            onClick={handleClear}
+            aria-label="Clear industry filter"
+            className="text-sm font-bold text-black bg-[#F472B6] hover:bg-[#FACC15] px-3 py-1 rounded-lg border-2 border-black transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#22D3EE] focus-visible:ring-offset-2"
           >
             Clear ✕
           </button>
         )}
       </div>
-      <div className="flex flex-wrap gap-2">
-        {industries.map((industry) => (
-          <button
-            key={industry.id}
-            onClick={() => onSelect(selectedIndustry === industry.id ? null : industry.id)}
-            className={`px-3 py-1.5 rounded-lg border-2 border-black font-bold text-sm transition-all ${
-              selectedIndustry === industry.id
-                ? 'bg-[#22D3EE] shadow-[2px_2px_0_#000] -translate-x-0.5 -translate-y-0.5'
-                : 'bg-white hover:bg-[#FACC15] hover:shadow-[2px_2px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5'
-            }`}
-          >
-            {industry.icon} {industry.name}
-          </button>
-        ))}
+      <div className="flex flex-wrap gap-2" role="group" aria-labelledby="industry-filter-label">
+        {industries.map((industry) => {
+          const isSelected = selectedIndustry === industry.id;
+          return (
+            <button
+              key={industry.id}
+              onClick={() => handleIndustryClick(industry.id)}
+              aria-label={`Filter by ${industry.name}`}
+              aria-pressed={isSelected}
+              className={`px-3 py-1.5 rounded-lg border-2 border-black font-bold text-sm transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#22D3EE] focus-visible:ring-offset-2 ${
+                isSelected
+                  ? 'bg-[#22D3EE] shadow-[2px_2px_0_#000] -translate-x-0.5 -translate-y-0.5'
+                  : 'bg-white hover:bg-[#FACC15] hover:shadow-[2px_2px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5'
+              }`}
+            >
+              {industry.icon} {industry.name}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
@@ -119,12 +171,44 @@ const IndustryFilter = ({ selectedIndustry, onSelect }: { selectedIndustry: Indu
 
 export const HomePage = () => {
   const [selectedIndustry, setSelectedIndustry] = useState<IndustryId | null>(null);
+  const scrollMilestonesRef = useRef<Set<number>>(new Set());
   
   // Filter styles based on selected industry
   const filteredStyles = useMemo(() => {
     if (!selectedIndustry) return styles;
     return styles.filter(style => style.industries?.includes(selectedIndustry));
   }, [selectedIndustry]);
+
+  // Track scroll depth milestones (25%, 50%, 75%, 100%)
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+      
+      const milestones = [25, 50, 75, 100];
+      for (const milestone of milestones) {
+        if (scrollPercent >= milestone && !scrollMilestonesRef.current.has(milestone)) {
+          scrollMilestonesRef.current.add(milestone);
+          trackEvent('scroll_depth', {
+            percent: milestone,
+            page: 'home',
+          });
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Track outbound link clicks
+  const handleOutboundClick = useCallback((url: string, linkName: string) => {
+    trackEvent('outbound_click', {
+      url,
+      link_name: linkName,
+    });
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#FEF9C3]">
@@ -140,6 +224,7 @@ export const HomePage = () => {
               href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => handleOutboundClick('https://github.com/nextlevelbuilder/ui-ux-pro-max-skill', 'get_skill_nav')}
               className="text-sm font-bold text-black bg-[#F472B6] hover:bg-[#FACC15] px-3 py-1.5 rounded-lg border-2 border-black shadow-[2px_2px_0_#000] hover:shadow-[3px_3px_0_#000] transition-all flex items-center gap-1"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -261,20 +346,24 @@ export const HomePage = () => {
         {/* Industry Filter */}
         <IndustryFilter 
           selectedIndustry={selectedIndustry} 
-          onSelect={setSelectedIndustry} 
+          onSelect={setSelectedIndustry}
+          resultsCount={filteredStyles.length}
         />
         
         {/* Show filter results count when filtering */}
-        {selectedIndustry && (
-          <div className="mb-8 p-4 bg-[#84CC16] border-3 border-black rounded-xl shadow-[3px_3px_0_#000]">
-            <p className="font-black text-black">
-              🎯 Showing {filteredStyles.length} style{filteredStyles.length !== 1 ? 's' : ''} for{' '}
-              <span className="bg-white px-2 py-0.5 rounded border-2 border-black">
-                {industries.find(i => i.id === selectedIndustry)?.icon} {industries.find(i => i.id === selectedIndustry)?.name}
-              </span>
-            </p>
-          </div>
-        )}
+        {selectedIndustry && (() => {
+          const activeIndustry = industries.find(i => i.id === selectedIndustry);
+          return (
+            <div className="mb-8 p-4 bg-[#84CC16] border-3 border-black rounded-xl shadow-[3px_3px_0_#000]">
+              <p className="font-black text-black">
+                🎯 Showing {filteredStyles.length} style{filteredStyles.length !== 1 ? 's' : ''} for{' '}
+                <span className="bg-white px-2 py-0.5 rounded border-2 border-black">
+                  {activeIndustry?.icon} {activeIndustry?.name}
+                </span>
+              </p>
+            </div>
+          );
+        })()}
 
         {filteredStyles.length === 0 ? (
           <div className="text-center py-16">
@@ -289,6 +378,7 @@ export const HomePage = () => {
               categoryName={category.name}
               description={category.description}
               filteredStyles={filteredStyles}
+              activeFilter={selectedIndustry}
             />
           ))
         )}
