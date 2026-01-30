@@ -201,12 +201,12 @@ export const HomePage = () => {
               <div className="text-sm text-gray-500 mt-1">Categories</div>
             </div>
             <div>
-              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">200+</div>
-              <div className="text-sm text-gray-500 mt-1">Use Cases</div>
+              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">100%</div>
+              <div className="text-sm text-gray-500 mt-1">Free</div>
             </div>
             <div>
-              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">100%</div>
-              <div className="text-sm text-gray-500 mt-1">Interactive</div>
+              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Open</div>
+              <div className="text-sm text-gray-500 mt-1">Source</div>
             </div>
           </div>
         </div>
