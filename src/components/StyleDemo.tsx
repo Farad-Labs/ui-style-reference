@@ -4005,6 +4005,1601 @@ const VintageAnalogDemo = ({ }: StyleDemoProps) => (
   </div>
 );
 
+// ============================================================================
+// 50. HERO-CENTRIC DESIGN - "APEX" Premium Headphones
+// ============================================================================
+const HeroCentricDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#0A0A0A' }}>
+    {/* Full-screen Hero */}
+    <section className="min-h-screen relative flex items-center justify-center overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-orange-600/20 via-transparent to-transparent" />
+      
+      {/* Product showcase */}
+      <div className="relative z-10 text-center px-8">
+        <p className="text-orange-500 uppercase tracking-widest text-sm mb-4">Introducing</p>
+        <h1 className="text-6xl md:text-8xl font-bold text-white mb-6">APEX PRO</h1>
+        <p className="text-xl text-gray-400 max-w-xl mx-auto mb-8">
+          Immersive sound. Uncompromising design. Experience audio like never before.
+        </p>
+        
+        {/* Product Image Placeholder */}
+        <div className="w-80 h-80 mx-auto mb-12 rounded-full bg-gradient-to-br from-orange-500/20 to-transparent flex items-center justify-center">
+          <span className="text-[150px]">🎧</span>
+        </div>
+        
+        <div className="flex gap-4 justify-center">
+          <button className="px-8 py-4 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors">
+            Pre-Order — $399
+          </button>
+          <button className="px-8 py-4 border border-gray-700 text-white font-semibold rounded-lg hover:border-gray-500 transition-colors">
+            Watch Film
+          </button>
+        </div>
+      </div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center pt-2">
+          <div className="w-1 h-3 bg-gray-600 rounded-full animate-bounce" />
+        </div>
+      </div>
+    </section>
+
+    {/* Features Section */}
+    <section className="max-w-6xl mx-auto px-8 py-24">
+      <div className="grid md:grid-cols-3 gap-12">
+        {[
+          { icon: '🔊', title: '50mm Drivers', desc: 'Custom-tuned for studio-quality sound' },
+          { icon: '🔋', title: '60h Battery', desc: 'Three days of continuous listening' },
+          { icon: '🎤', title: 'Crystal Mic', desc: 'AI-powered noise cancellation' },
+        ].map((feature, i) => (
+          <div key={i} className="text-center">
+            <span className="text-5xl mb-4 block">{feature.icon}</span>
+            <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+            <p className="text-gray-500">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 51. CONVERSION-OPTIMIZED - "GrowthKit" SaaS Lead Gen
+// ============================================================================
+const ConversionOptimizedDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-white">
+    {/* Hero with CTA */}
+    <header className="max-w-5xl mx-auto px-8 py-16">
+      <div className="text-center">
+        {/* Trust badges */}
+        <div className="flex justify-center gap-4 mb-6">
+          <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">✓ 14-day free trial</span>
+          <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">✓ No credit card</span>
+        </div>
+        
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          Double your leads in 30 days<br />
+          <span className="text-blue-600">or your money back</span>
+        </h1>
+        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          Join 10,000+ marketers using GrowthKit to capture, qualify, and convert more leads.
+        </p>
+        
+        {/* Main CTA Form */}
+        <form className="max-w-md mx-auto flex gap-3 mb-6">
+          <input type="email" placeholder="Enter your email" 
+            className="flex-1 px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+          <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap">
+            Start Free →
+          </button>
+        </form>
+        
+        {/* Social proof */}
+        <div className="flex items-center justify-center gap-2 text-gray-500">
+          <div className="flex -space-x-2">
+            {[1,2,3,4].map(i => (
+              <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 border-2 border-white" />
+            ))}
+          </div>
+          <span>2,847 people signed up this week</span>
+        </div>
+      </div>
+    </header>
+
+    {/* Logos */}
+    <section className="border-y border-gray-200 py-8">
+      <div className="max-w-5xl mx-auto px-8">
+        <p className="text-center text-gray-500 text-sm mb-6">TRUSTED BY LEADING COMPANIES</p>
+        <div className="flex justify-center gap-12 opacity-50">
+          {['Stripe', 'Notion', 'Figma', 'Linear', 'Vercel'].map(logo => (
+            <span key={logo} className="text-xl font-bold text-gray-400">{logo}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Benefits */}
+    <section className="max-w-5xl mx-auto px-8 py-16">
+      <h2 className="text-3xl font-bold text-center mb-12">Why marketers love GrowthKit</h2>
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          { icon: '📈', title: '2x More Leads', desc: 'Smart forms that convert 2x better than traditional forms.' },
+          { icon: '⚡', title: 'Setup in 5 min', desc: 'No code required. Just copy, paste, and start capturing.' },
+          { icon: '🎯', title: 'Lead Scoring', desc: 'AI-powered scoring so you focus on hot leads first.' },
+        ].map((benefit, i) => (
+          <div key={i} className="p-6 bg-gray-50 rounded-xl">
+            <span className="text-4xl mb-4 block">{benefit.icon}</span>
+            <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
+            <p className="text-gray-600">{benefit.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Sticky CTA */}
+    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 md:hidden">
+      <button className="w-full py-4 bg-blue-600 text-white font-semibold rounded-lg">
+        Start Free Trial →
+      </button>
+    </div>
+  </div>
+);
+
+// ============================================================================
+// 52. FEATURE-RICH SHOWCASE - "CloudSync" SaaS Platform
+// ============================================================================
+const FeatureRichShowcaseDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-50">
+    {/* Header */}
+    <header className="bg-white border-b border-gray-200">
+      <div className="max-w-6xl mx-auto px-8 py-6">
+        <MobileNav
+          logo={
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                <span className="text-white">☁</span>
+              </div>
+              <span className="text-xl font-bold">CloudSync</span>
+            </div>
+          }
+          items={[
+            { label: 'Features' },
+            { label: 'Pricing' },
+            { label: 'Docs' },
+            { label: 'Enterprise' },
+          ]}
+          hamburgerColor="#4F46E5"
+          menuBg="bg-white"
+          menuText="text-gray-700"
+        />
+      </div>
+    </header>
+
+    {/* Hero */}
+    <section className="bg-white py-16">
+      <div className="max-w-6xl mx-auto px-8 text-center">
+        <span className="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full mb-6 inline-block">
+          New: API v3 with GraphQL support →
+        </span>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          The complete platform for<br />data synchronization
+        </h1>
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+          Connect any data source, transform in real-time, and sync to any destination. 
+          Built for developers, loved by data teams.
+        </p>
+        <div className="flex gap-4 justify-center">
+          <button className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700">
+            Start Free
+          </button>
+          <button className="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-gray-400">
+            Book Demo
+          </button>
+        </div>
+      </div>
+    </section>
+
+    {/* Feature Tabs */}
+    <section className="max-w-6xl mx-auto px-8 py-16">
+      <h2 className="text-3xl font-bold text-center mb-4">Everything you need</h2>
+      <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        From simple syncs to complex transformations, CloudSync handles it all.
+      </p>
+      
+      {/* Tab Navigation */}
+      <div className="flex justify-center gap-2 mb-8 flex-wrap">
+        {['Connectors', 'Transforms', 'Monitoring', 'Security'].map((tab, i) => (
+          <button key={tab} className={`px-4 py-2 rounded-lg font-medium ${i === 0 ? 'bg-indigo-600 text-white' : 'bg-white text-gray-600 hover:bg-gray-100'}`}>
+            {tab}
+          </button>
+        ))}
+      </div>
+      
+      {/* Feature Grid */}
+      <div className="grid md:grid-cols-3 gap-6">
+        {[
+          { icon: '🔌', title: '200+ Connectors', desc: 'Connect to databases, SaaS apps, warehouses, and more.' },
+          { icon: '⚡', title: 'Real-time Sync', desc: 'Sub-second latency with change data capture.' },
+          { icon: '🔄', title: 'Auto Schema', desc: 'Automatic schema detection and migration.' },
+          { icon: '📊', title: 'Visual Builder', desc: 'Build pipelines without writing code.' },
+          { icon: '🔐', title: 'Enterprise SSO', desc: 'SAML, OIDC, and SCIM provisioning.' },
+          { icon: '📈', title: 'Usage Analytics', desc: 'Track sync health and data volumes.' },
+        ].map((feature, i) => (
+          <div key={i} className="bg-white p-6 rounded-xl border border-gray-200">
+            <span className="text-3xl mb-4 block">{feature.icon}</span>
+            <h3 className="font-semibold mb-2">{feature.title}</h3>
+            <p className="text-gray-600 text-sm">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Pricing Preview */}
+    <section className="max-w-6xl mx-auto px-8 py-16">
+      <div className="bg-white rounded-2xl p-8 border border-gray-200">
+        <h2 className="text-2xl font-bold mb-6">Simple, transparent pricing</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { name: 'Starter', price: '$0', desc: '1,000 syncs/mo' },
+            { name: 'Pro', price: '$99', desc: '100,000 syncs/mo', popular: true },
+            { name: 'Enterprise', price: 'Custom', desc: 'Unlimited syncs' },
+          ].map((plan, i) => (
+            <div key={i} className={`p-6 rounded-xl ${plan.popular ? 'bg-indigo-600 text-white' : 'bg-gray-50'}`}>
+              <h3 className="font-semibold mb-2">{plan.name}</h3>
+              <p className="text-3xl font-bold mb-2">{plan.price}</p>
+              <p className={plan.popular ? 'text-indigo-200' : 'text-gray-500'}>{plan.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 53. MINIMAL & DIRECT - "Pico" Simple Link Shortener
+// ============================================================================
+const MinimalDirectDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-white flex flex-col">
+    <main className="flex-1 flex items-center justify-center px-8">
+      <div className="max-w-xl w-full text-center">
+        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          Shorten links.<br />
+          <span className="text-gray-400">That's it.</span>
+        </h1>
+        <p className="text-xl text-gray-500 mb-12">
+          No tracking. No ads. No accounts. Just shorter URLs.
+        </p>
+        
+        {/* Main Input */}
+        <form className="mb-8">
+          <div className="flex gap-3">
+            <input 
+              type="url" 
+              placeholder="Paste your long URL" 
+              className="flex-1 px-6 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-black focus:outline-none"
+            />
+            <button className="px-8 py-4 bg-black text-white text-lg font-semibold rounded-xl hover:bg-gray-800 transition-colors">
+              Shorten
+            </button>
+          </div>
+        </form>
+        
+        {/* Result Preview */}
+        <div className="p-6 bg-gray-50 rounded-xl mb-8">
+          <p className="text-gray-500 text-sm mb-2">Your short link</p>
+          <div className="flex items-center justify-center gap-3">
+            <span className="text-2xl font-mono text-gray-900">pico.link/abc123</span>
+            <button className="p-2 text-gray-400 hover:text-gray-600">
+              📋
+            </button>
+          </div>
+        </div>
+        
+        {/* Stats */}
+        <p className="text-gray-400">
+          847,293 links shortened. Yours could be next.
+        </p>
+      </div>
+    </main>
+    
+    <footer className="py-8 text-center text-gray-400 text-sm">
+      Open source. No cookies. No tracking.
+    </footer>
+  </div>
+);
+
+// ============================================================================
+// 54. SOCIAL PROOF-FOCUSED - "Acme Consulting" Service Page
+// ============================================================================
+const SocialProofFocusedDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-white">
+    {/* Hero with Testimonial */}
+    <header className="max-w-5xl mx-auto px-8 py-16 text-center">
+      <div className="flex justify-center mb-6">
+        {[1,2,3,4,5].map(i => (
+          <span key={i} className="text-yellow-400 text-2xl">★</span>
+        ))}
+      </div>
+      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        "They increased our revenue by 340% in 6 months"
+      </h1>
+      <div className="flex items-center justify-center gap-4 mb-8">
+        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-purple-500" />
+        <div className="text-left">
+          <p className="font-semibold">Sarah Chen</p>
+          <p className="text-gray-500">CEO, TechStart Inc.</p>
+        </div>
+      </div>
+      <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
+        Get Your Free Strategy Call
+      </button>
+    </header>
+
+    {/* Logo Cloud */}
+    <section className="border-y border-gray-200 py-12">
+      <div className="max-w-5xl mx-auto px-8">
+        <p className="text-center text-gray-500 mb-8">Trusted by 500+ companies worldwide</p>
+        <div className="flex flex-wrap justify-center gap-8 opacity-60">
+          {['Shopify', 'Stripe', 'Notion', 'Linear', 'Vercel', 'Figma'].map(logo => (
+            <span key={logo} className="text-xl font-bold text-gray-400">{logo}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Stats */}
+    <section className="max-w-5xl mx-auto px-8 py-16">
+      <div className="grid grid-cols-3 gap-8 text-center">
+        {[
+          { value: '500+', label: 'Happy Clients' },
+          { value: '$2.4B', label: 'Revenue Generated' },
+          { value: '98%', label: 'Client Retention' },
+        ].map((stat, i) => (
+          <div key={i}>
+            <p className="text-4xl font-bold text-gray-900">{stat.value}</p>
+            <p className="text-gray-500">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Testimonials Grid */}
+    <section className="max-w-5xl mx-auto px-8 py-16">
+      <h2 className="text-3xl font-bold text-center mb-12">What our clients say</h2>
+      <div className="grid md:grid-cols-2 gap-6">
+        {[
+          { quote: "Best investment we ever made. ROI was 10x in the first quarter.", name: "Mike Johnson", role: "CTO, DataFlow" },
+          { quote: "They don't just consult—they become part of your team and deliver results.", name: "Emily Davis", role: "Founder, GrowthLab" },
+          { quote: "Exceeded every metric we set. Our board is thrilled with the results.", name: "Alex Park", role: "CEO, ScaleUp" },
+          { quote: "Professional, data-driven, and genuinely invested in our success.", name: "Lisa Wang", role: "CMO, BrandCo" },
+        ].map((testimonial, i) => (
+          <div key={i} className="p-6 bg-gray-50 rounded-xl">
+            <div className="flex mb-3">
+              {[1,2,3,4,5].map(j => <span key={j} className="text-yellow-400">★</span>)}
+            </div>
+            <p className="text-gray-700 mb-4">"{testimonial.quote}"</p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-blue-500" />
+              <div>
+                <p className="font-semibold text-sm">{testimonial.name}</p>
+                <p className="text-gray-500 text-sm">{testimonial.role}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 55. INTERACTIVE PRODUCT DEMO - "CodePen" Style Playground
+// ============================================================================
+const InteractiveProductDemoDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-900">
+    <header className="max-w-6xl mx-auto px-8 py-8">
+      <MobileNav
+        logo={
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">⚡</span>
+            <span className="text-xl font-bold text-white">PlayCode</span>
+          </div>
+        }
+        items={[
+          { label: 'Explore' },
+          { label: 'Docs' },
+          { label: 'Pro' },
+        ]}
+        hamburgerColor="white"
+        menuBg="bg-gray-800"
+        menuText="text-white"
+      />
+    </header>
+
+    <section className="max-w-6xl mx-auto px-8 py-8">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-white mb-4">
+          Build and share code instantly
+        </h1>
+        <p className="text-gray-400 text-lg">
+          Try it right now — no signup required
+        </p>
+      </div>
+
+      {/* Live Demo */}
+      <div className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700">
+        {/* Editor Tabs */}
+        <div className="flex border-b border-gray-700">
+          {['HTML', 'CSS', 'JS'].map((tab, i) => (
+            <button key={tab} className={`px-6 py-3 text-sm font-medium ${i === 0 ? 'bg-gray-700 text-white' : 'text-gray-400 hover:text-white'}`}>
+              {tab}
+            </button>
+          ))}
+        </div>
+        
+        {/* Code Editor */}
+        <div className="grid md:grid-cols-2">
+          <div className="p-4 font-mono text-sm border-r border-gray-700 min-h-[300px]">
+            <div className="text-gray-500">1</div>
+            <div><span className="text-pink-400">{'<div'}</span> <span className="text-green-400">class</span>=<span className="text-yellow-400">"card"</span><span className="text-pink-400">{'>'}</span></div>
+            <div className="text-gray-500">2</div>
+            <div className="pl-4"><span className="text-pink-400">{'<h1>'}</span><span className="text-white">Hello World</span><span className="text-pink-400">{'</h1>'}</span></div>
+            <div className="text-gray-500">3</div>
+            <div className="pl-4"><span className="text-pink-400">{'<p>'}</span><span className="text-white">Edit this code!</span><span className="text-pink-400">{'</p>'}</span></div>
+            <div className="text-gray-500">4</div>
+            <div><span className="text-pink-400">{'</div>'}</span></div>
+          </div>
+          
+          {/* Preview */}
+          <div className="bg-white p-8 min-h-[300px]">
+            <div className="p-6 bg-gray-100 rounded-lg shadow-sm">
+              <h1 className="text-2xl font-bold mb-2">Hello World</h1>
+              <p className="text-gray-600">Edit this code!</p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Actions */}
+        <div className="flex justify-between items-center p-4 bg-gray-850 border-t border-gray-700">
+          <div className="flex gap-2">
+            <button className="px-4 py-2 bg-green-600 text-white text-sm rounded hover:bg-green-700">
+              ▶ Run
+            </button>
+            <button className="px-4 py-2 text-gray-400 text-sm hover:text-white">
+              Save
+            </button>
+          </div>
+          <button className="px-4 py-2 text-gray-400 text-sm hover:text-white">
+            Share →
+          </button>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="text-center mt-12">
+        <p className="text-gray-400 mb-4">Love it? Create unlimited projects free.</p>
+        <button className="px-8 py-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700">
+          Sign Up Free
+        </button>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 56. TRUST & AUTHORITY - "Meridian Partners" B2B Consulting
+// ============================================================================
+const TrustAuthorityDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-white">
+    <header className="border-b border-gray-200">
+      <div className="max-w-6xl mx-auto px-8 py-6">
+        <MobileNav
+          logo={<span className="text-2xl font-serif text-gray-900">MERIDIAN</span>}
+          items={[
+            { label: 'Services' },
+            { label: 'Industries' },
+            { label: 'Insights' },
+            { label: 'About' },
+            { label: 'Contact' },
+          ]}
+          hamburgerColor="#1F2937"
+          menuBg="bg-white"
+          menuText="text-gray-700"
+        />
+      </div>
+    </header>
+
+    {/* Hero */}
+    <section className="bg-slate-900 text-white py-24">
+      <div className="max-w-6xl mx-auto px-8">
+        <div className="max-w-3xl">
+          <p className="text-amber-500 font-semibold mb-4">Strategic Advisory Services</p>
+          <h1 className="text-4xl md:text-5xl font-serif mb-6">
+            Transforming enterprises through strategic excellence
+          </h1>
+          <p className="text-xl text-gray-300 mb-8">
+            For 30 years, we've partnered with Fortune 500 companies to navigate complexity 
+            and achieve sustainable growth.
+          </p>
+          <button className="px-8 py-4 bg-amber-500 text-slate-900 font-semibold hover:bg-amber-400 transition-colors">
+            Schedule Consultation
+          </button>
+        </div>
+      </div>
+    </section>
+
+    {/* Credentials */}
+    <section className="py-16 border-b border-gray-200">
+      <div className="max-w-6xl mx-auto px-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            { value: '30+', label: 'Years Experience' },
+            { value: '500+', label: 'Enterprise Clients' },
+            { value: '$50B+', label: 'Value Created' },
+            { value: '45', label: 'Countries' },
+          ].map((stat, i) => (
+            <div key={i}>
+              <p className="text-3xl font-serif text-slate-900">{stat.value}</p>
+              <p className="text-gray-500 text-sm mt-1">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Awards & Recognition */}
+    <section className="py-16">
+      <div className="max-w-6xl mx-auto px-8">
+        <h2 className="text-2xl font-serif text-center mb-12">Recognition & Certifications</h2>
+        <div className="flex flex-wrap justify-center gap-8">
+          {['🏆 Consulting Firm of the Year 2024', '🎖️ ISO 27001 Certified', '⭐ Gartner Magic Quadrant Leader', '📊 Top 10 Strategy Firm'].map((award, i) => (
+            <div key={i} className="px-6 py-3 bg-gray-50 rounded-lg text-gray-700">
+              {award}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Leadership */}
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-8">
+        <h2 className="text-2xl font-serif text-center mb-12">Executive Leadership</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            { name: 'James Morrison', role: 'Managing Partner', bg: 'Harvard MBA, 25 years McKinsey' },
+            { name: 'Elizabeth Chen', role: 'Chief Strategy Officer', bg: 'Stanford PhD, Former BCG Partner' },
+            { name: 'Robert Williams', role: 'Head of Operations', bg: 'Wharton MBA, Fortune 100 CFO' },
+          ].map((leader, i) => (
+            <div key={i} className="bg-white p-6 border border-gray-200">
+              <div className="w-20 h-20 bg-slate-200 rounded-full mb-4" />
+              <h3 className="font-semibold text-lg">{leader.name}</h3>
+              <p className="text-amber-600 text-sm mb-2">{leader.role}</p>
+              <p className="text-gray-500 text-sm">{leader.bg}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 57. STORYTELLING-DRIVEN - "Evergreen" Nonprofit
+// ============================================================================
+const StorytellingDrivenDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16">
+    {/* Chapter 1: Problem */}
+    <section className="min-h-screen bg-slate-900 text-white flex items-center">
+      <div className="max-w-4xl mx-auto px-8 py-16">
+        <p className="text-emerald-400 uppercase tracking-widest text-sm mb-4">Chapter 1</p>
+        <h1 className="text-5xl md:text-7xl font-bold mb-8">
+          Every minute,<br />
+          <span className="text-emerald-400">23 acres</span><br />
+          of forest disappear.
+        </h1>
+        <p className="text-xl text-gray-300 max-w-2xl">
+          Climate change, deforestation, and habitat loss threaten our planet's future. 
+          But there's hope — and you can be part of it.
+        </p>
+      </div>
+    </section>
+
+    {/* Chapter 2: Solution */}
+    <section className="min-h-screen bg-emerald-900 text-white flex items-center">
+      <div className="max-w-4xl mx-auto px-8 py-16">
+        <p className="text-emerald-300 uppercase tracking-widest text-sm mb-4">Chapter 2</p>
+        <h2 className="text-4xl md:text-6xl font-bold mb-8">
+          We plant trees.<br />
+          <span className="text-emerald-300">Lots of them.</span>
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8 mt-12">
+          {[
+            { num: '50M+', label: 'Trees Planted' },
+            { num: '120', label: 'Countries' },
+            { num: '100K+', label: 'Supporters' },
+          ].map((stat, i) => (
+            <div key={i}>
+              <p className="text-4xl font-bold text-emerald-300">{stat.num}</p>
+              <p className="text-emerald-100">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Chapter 3: Impact */}
+    <section className="min-h-screen bg-white flex items-center">
+      <div className="max-w-4xl mx-auto px-8 py-16 text-center">
+        <p className="text-emerald-600 uppercase tracking-widest text-sm mb-4">Chapter 3</p>
+        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8">
+          Meet Maria.
+        </h2>
+        <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center">
+          <span className="text-6xl">👩🏽‍🌾</span>
+        </div>
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+          "Evergreen helped my village plant 10,000 trees. Now we have clean water, 
+          shade for our crops, and hope for the future."
+        </p>
+        <p className="text-gray-500">— Maria Santos, Brazil</p>
+      </div>
+    </section>
+
+    {/* Chapter 4: Action */}
+    <section className="min-h-screen bg-emerald-600 text-white flex items-center">
+      <div className="max-w-4xl mx-auto px-8 py-16 text-center">
+        <p className="text-emerald-200 uppercase tracking-widest text-sm mb-4">Your Chapter</p>
+        <h2 className="text-4xl md:text-6xl font-bold mb-8">
+          Plant your first tree.<br />
+          <span className="text-emerald-200">Just $1.</span>
+        </h2>
+        <p className="text-xl text-emerald-100 mb-12 max-w-xl mx-auto">
+          Join 100,000+ supporters who are reforesting our planet, one tree at a time.
+        </p>
+        <button className="px-12 py-5 bg-white text-emerald-600 text-xl font-bold rounded-lg hover:bg-emerald-50 transition-colors">
+          Plant a Tree 🌱
+        </button>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 58. DATA-DENSE DASHBOARD - "DataForge" Analytics Platform
+// ============================================================================
+const DataDenseDashboardDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-100">
+    {/* Header */}
+    <header className="bg-white border-b border-gray-200 px-4 py-2">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <span className="font-bold text-gray-800">DataForge</span>
+          <span className="text-gray-400">|</span>
+          <span className="text-sm text-gray-600">Production Dashboard</span>
+        </div>
+        <div className="flex items-center gap-2 text-sm">
+          <span className="px-2 py-1 bg-green-100 text-green-700 rounded">Live</span>
+          <span className="text-gray-500">Last updated: 2s ago</span>
+        </div>
+      </div>
+    </header>
+
+    {/* Dense Grid */}
+    <div className="p-2">
+      <div className="grid grid-cols-4 md:grid-cols-8 gap-2">
+        {/* Mini KPIs */}
+        {[
+          { label: 'Requests', value: '1.2M', change: '+12%' },
+          { label: 'Latency', value: '23ms', change: '-5%' },
+          { label: 'Errors', value: '0.02%', change: '-18%' },
+          { label: 'Users', value: '45.2K', change: '+8%' },
+          { label: 'CPU', value: '67%', change: '+2%' },
+          { label: 'Memory', value: '4.2GB', change: '+1%' },
+          { label: 'Queue', value: '234', change: '-30%' },
+          { label: 'Uptime', value: '99.99%', change: '0%' },
+        ].map((kpi, i) => (
+          <div key={i} className="bg-white p-2 rounded border border-gray-200">
+            <p className="text-xs text-gray-500 truncate">{kpi.label}</p>
+            <p className="text-lg font-bold">{kpi.value}</p>
+            <p className={`text-xs ${kpi.change.startsWith('+') ? 'text-green-600' : kpi.change.startsWith('-') ? 'text-red-600' : 'text-gray-500'}`}>
+              {kpi.change}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* Tables and Charts Row */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2">
+        {/* Data Table */}
+        <div className="md:col-span-2 bg-white rounded border border-gray-200 overflow-hidden">
+          <div className="px-3 py-2 bg-gray-50 border-b border-gray-200 flex justify-between items-center">
+            <span className="text-sm font-medium">Top Endpoints</span>
+            <span className="text-xs text-gray-500">Last 5 min</span>
+          </div>
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50 text-xs text-gray-500">
+              <tr>
+                <th className="px-3 py-2 text-left">Endpoint</th>
+                <th className="px-3 py-2 text-right">Requests</th>
+                <th className="px-3 py-2 text-right">P50</th>
+                <th className="px-3 py-2 text-right">P99</th>
+                <th className="px-3 py-2 text-right">Errors</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {[
+                { path: '/api/users', req: '45.2K', p50: '12ms', p99: '89ms', err: '0.01%' },
+                { path: '/api/orders', req: '32.1K', p50: '23ms', p99: '156ms', err: '0.03%' },
+                { path: '/api/products', req: '28.9K', p50: '8ms', p99: '45ms', err: '0.00%' },
+                { path: '/api/search', req: '18.4K', p50: '145ms', p99: '890ms', err: '0.12%' },
+              ].map((row, i) => (
+                <tr key={i} className="hover:bg-gray-50">
+                  <td className="px-3 py-2 font-mono text-xs">{row.path}</td>
+                  <td className="px-3 py-2 text-right">{row.req}</td>
+                  <td className="px-3 py-2 text-right text-green-600">{row.p50}</td>
+                  <td className="px-3 py-2 text-right text-yellow-600">{row.p99}</td>
+                  <td className="px-3 py-2 text-right">{row.err}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Sparklines */}
+        <div className="bg-white rounded border border-gray-200">
+          <div className="px-3 py-2 bg-gray-50 border-b border-gray-200">
+            <span className="text-sm font-medium">Trends</span>
+          </div>
+          <div className="p-3 space-y-3">
+            {['Requests', 'Latency', 'Errors', 'Users'].map((metric, i) => (
+              <div key={i} className="flex items-center justify-between">
+                <span className="text-xs text-gray-600">{metric}</span>
+                <div className="w-24 h-4 bg-gray-100 rounded overflow-hidden">
+                  <div className="h-full bg-blue-500 rounded" style={{ width: `${60 + Math.random() * 30}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// ============================================================================
+// 59. HEATMAP DASHBOARD - "HeatView" Analytics
+// ============================================================================
+const HeatmapDashboardDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-slate-900">
+    <header className="px-6 py-4 border-b border-slate-700">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <span className="text-xl">🗺️</span>
+          <span className="text-xl font-bold text-white">HeatView</span>
+        </div>
+        <div className="flex gap-2">
+          <button className="px-3 py-1 bg-slate-800 text-white text-sm rounded">Today</button>
+          <button className="px-3 py-1 text-slate-400 text-sm">Week</button>
+          <button className="px-3 py-1 text-slate-400 text-sm">Month</button>
+        </div>
+      </div>
+    </header>
+
+    <div className="p-6">
+      {/* Main Heatmap */}
+      <div className="bg-slate-800 rounded-xl p-6 mb-6">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-white font-semibold">User Activity Heatmap</h2>
+          <div className="flex items-center gap-2 text-sm">
+            <span className="text-slate-400">Low</span>
+            <div className="flex gap-0.5">
+              {['bg-green-900', 'bg-green-700', 'bg-green-500', 'bg-yellow-500', 'bg-orange-500', 'bg-red-500'].map((color, i) => (
+                <div key={i} className={`w-6 h-4 ${color} rounded`} />
+              ))}
+            </div>
+            <span className="text-slate-400">High</span>
+          </div>
+        </div>
+        
+        {/* Heatmap Grid */}
+        <div className="grid grid-cols-24 gap-1">
+          {Array(24 * 7).fill(null).map((_, i) => {
+            const intensity = Math.random();
+            const color = intensity < 0.2 ? 'bg-green-900' : intensity < 0.4 ? 'bg-green-700' : intensity < 0.6 ? 'bg-yellow-600' : intensity < 0.8 ? 'bg-orange-500' : 'bg-red-500';
+            return <div key={i} className={`aspect-square ${color} rounded-sm cursor-pointer hover:ring-2 hover:ring-white`} />;
+          })}
+        </div>
+        
+        {/* X-axis labels */}
+        <div className="flex justify-between mt-2 text-xs text-slate-500">
+          {['12am', '4am', '8am', '12pm', '4pm', '8pm'].map(t => (
+            <span key={t}>{t}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Geographic Heatmap */}
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-slate-800 rounded-xl p-6">
+          <h3 className="text-white font-semibold mb-4">Geographic Distribution</h3>
+          <div className="aspect-video bg-slate-900 rounded-lg flex items-center justify-center">
+            <span className="text-6xl">🌍</span>
+          </div>
+        </div>
+        
+        <div className="bg-slate-800 rounded-xl p-6">
+          <h3 className="text-white font-semibold mb-4">Top Regions</h3>
+          <div className="space-y-3">
+            {[
+              { region: 'North America', value: 45, color: 'bg-red-500' },
+              { region: 'Europe', value: 32, color: 'bg-orange-500' },
+              { region: 'Asia Pacific', value: 18, color: 'bg-yellow-500' },
+              { region: 'Other', value: 5, color: 'bg-green-500' },
+            ].map((r, i) => (
+              <div key={i}>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-slate-300">{r.region}</span>
+                  <span className="text-slate-400">{r.value}%</span>
+                </div>
+                <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                  <div className={`h-full ${r.color} rounded-full`} style={{ width: `${r.value}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// ============================================================================
+// 60. EXECUTIVE DASHBOARD - "Boardroom" C-Suite View
+// ============================================================================
+const ExecutiveDashboardDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-50">
+    <header className="bg-white border-b border-gray-200 px-8 py-4">
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl font-semibold text-gray-900">Executive Summary</h1>
+          <p className="text-gray-500">Q4 2025 Performance</p>
+        </div>
+        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm">
+          Export Report
+        </button>
+      </div>
+    </header>
+
+    <main className="p-8">
+      {/* KPI Cards */}
+      <div className="grid md:grid-cols-4 gap-6 mb-8">
+        {[
+          { label: 'Revenue', value: '$24.5M', change: '+18%', trend: 'up', icon: '💰' },
+          { label: 'Active Users', value: '1.2M', change: '+12%', trend: 'up', icon: '👥' },
+          { label: 'Net Margin', value: '23%', change: '+2%', trend: 'up', icon: '📈' },
+          { label: 'Churn Rate', value: '2.1%', change: '-0.5%', trend: 'down', icon: '🔄' },
+        ].map((kpi, i) => (
+          <div key={i} className="bg-white p-6 rounded-xl shadow-sm">
+            <div className="flex justify-between items-start mb-4">
+              <span className="text-3xl">{kpi.icon}</span>
+              <span className={`text-sm font-medium ${kpi.trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
+                {kpi.trend === 'up' ? '↑' : '↓'} {kpi.change}
+              </span>
+            </div>
+            <p className="text-4xl font-bold text-gray-900 mb-1">{kpi.value}</p>
+            <p className="text-gray-500">{kpi.label}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Charts Row */}
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-white p-6 rounded-xl shadow-sm">
+          <h3 className="font-semibold text-gray-900 mb-4">Revenue Trend</h3>
+          <div className="h-48 flex items-end gap-2">
+            {[65, 72, 68, 80, 85, 90, 88, 95, 100, 98, 105, 112].map((h, i) => (
+              <div key={i} className="flex-1 bg-blue-500 rounded-t" style={{ height: `${h * 0.8}%` }} />
+            ))}
+          </div>
+          <div className="flex justify-between mt-2 text-xs text-gray-500">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+            <span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+          </div>
+        </div>
+
+        <div className="bg-white p-6 rounded-xl shadow-sm">
+          <h3 className="font-semibold text-gray-900 mb-4">Revenue by Segment</h3>
+          <div className="flex items-center justify-center h-48">
+            <div className="relative w-40 h-40">
+              <div className="absolute inset-0 rounded-full border-[20px] border-blue-500" style={{ clipPath: 'polygon(50% 50%, 100% 0, 100% 100%, 50% 100%)' }} />
+              <div className="absolute inset-0 rounded-full border-[20px] border-green-500" style={{ clipPath: 'polygon(50% 50%, 50% 0, 100% 0)' }} />
+              <div className="absolute inset-0 rounded-full border-[20px] border-yellow-500" style={{ clipPath: 'polygon(50% 50%, 0 0, 50% 0)' }} />
+              <div className="absolute inset-0 rounded-full border-[20px] border-purple-500" style={{ clipPath: 'polygon(50% 50%, 0 100%, 0 0)' }} />
+            </div>
+          </div>
+          <div className="flex justify-center gap-4 text-sm">
+            <span className="flex items-center gap-1"><div className="w-3 h-3 bg-blue-500 rounded" /> Enterprise</span>
+            <span className="flex items-center gap-1"><div className="w-3 h-3 bg-green-500 rounded" /> SMB</span>
+            <span className="flex items-center gap-1"><div className="w-3 h-3 bg-yellow-500 rounded" /> Consumer</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Summary Table */}
+      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+        <div className="px-6 py-4 border-b border-gray-200">
+          <h3 className="font-semibold text-gray-900">Business Unit Performance</h3>
+        </div>
+        <table className="w-full">
+          <thead className="bg-gray-50 text-sm text-gray-500">
+            <tr>
+              <th className="px-6 py-3 text-left">Unit</th>
+              <th className="px-6 py-3 text-right">Revenue</th>
+              <th className="px-6 py-3 text-right">Growth</th>
+              <th className="px-6 py-3 text-right">Margin</th>
+              <th className="px-6 py-3 text-right">Status</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-100">
+            {[
+              { unit: 'North America', rev: '$12.4M', growth: '+22%', margin: '28%', status: 'green' },
+              { unit: 'Europe', rev: '$8.2M', growth: '+15%', margin: '24%', status: 'green' },
+              { unit: 'Asia Pacific', rev: '$3.9M', growth: '+45%', margin: '18%', status: 'yellow' },
+            ].map((row, i) => (
+              <tr key={i}>
+                <td className="px-6 py-4 font-medium">{row.unit}</td>
+                <td className="px-6 py-4 text-right">{row.rev}</td>
+                <td className="px-6 py-4 text-right text-green-600">{row.growth}</td>
+                <td className="px-6 py-4 text-right">{row.margin}</td>
+                <td className="px-6 py-4 text-right">
+                  <span className={`w-3 h-3 rounded-full inline-block ${row.status === 'green' ? 'bg-green-500' : 'bg-yellow-500'}`} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 61. REAL-TIME MONITORING - "Pulse" DevOps Dashboard
+// ============================================================================
+const RealtimeMonitoringDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-slate-950">
+    <header className="px-6 py-3 border-b border-slate-800 flex justify-between items-center">
+      <div className="flex items-center gap-4">
+        <span className="text-xl font-bold text-white">⚡ Pulse</span>
+        <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded animate-pulse">● LIVE</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="text-slate-500 text-sm">Auto-refresh: 5s</span>
+      </div>
+    </header>
+
+    <main className="p-4">
+      {/* Alert Banner */}
+      <div className="mb-4 p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg flex items-center gap-3">
+        <span className="text-yellow-500">⚠️</span>
+        <span className="text-yellow-300 text-sm">High latency detected on us-east-1 (P99: 450ms)</span>
+        <button className="ml-auto text-yellow-400 text-sm hover:underline">Investigate →</button>
+      </div>
+
+      {/* Live Metrics */}
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-3 mb-4">
+        {[
+          { label: 'RPS', value: '12,847', status: 'green' },
+          { label: 'Latency P50', value: '23ms', status: 'green' },
+          { label: 'Latency P99', value: '145ms', status: 'yellow' },
+          { label: 'Error Rate', value: '0.02%', status: 'green' },
+          { label: 'CPU Avg', value: '67%', status: 'yellow' },
+          { label: 'Memory', value: '72%', status: 'green' },
+        ].map((m, i) => (
+          <div key={i} className="bg-slate-900 p-4 rounded-lg border border-slate-800">
+            <p className="text-slate-500 text-xs mb-1">{m.label}</p>
+            <p className="text-2xl font-bold text-white">{m.value}</p>
+            <div className={`w-2 h-2 rounded-full mt-2 ${m.status === 'green' ? 'bg-green-500' : 'bg-yellow-500'}`} />
+          </div>
+        ))}
+      </div>
+
+      {/* Live Chart */}
+      <div className="bg-slate-900 rounded-lg border border-slate-800 p-4 mb-4">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-white font-medium">Request Rate (Live)</h3>
+          <span className="text-slate-500 text-sm">Last 5 minutes</span>
+        </div>
+        <div className="h-40 flex items-end gap-0.5">
+          {Array(60).fill(null).map((_, i) => {
+            const h = 30 + Math.sin(i * 0.2) * 20 + Math.random() * 20;
+            return <div key={i} className="flex-1 bg-green-500 rounded-t" style={{ height: `${h}%` }} />;
+          })}
+        </div>
+      </div>
+
+      {/* Services Grid */}
+      <div className="grid md:grid-cols-4 gap-3">
+        {[
+          { name: 'API Gateway', status: 'healthy', uptime: '99.99%' },
+          { name: 'Auth Service', status: 'healthy', uptime: '99.97%' },
+          { name: 'Database', status: 'degraded', uptime: '99.85%' },
+          { name: 'Cache Layer', status: 'healthy', uptime: '100%' },
+        ].map((svc, i) => (
+          <div key={i} className="bg-slate-900 p-4 rounded-lg border border-slate-800">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-white font-medium">{svc.name}</span>
+              <span className={`px-2 py-0.5 rounded text-xs ${svc.status === 'healthy' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'}`}>
+                {svc.status}
+              </span>
+            </div>
+            <p className="text-slate-500 text-sm">Uptime: {svc.uptime}</p>
+          </div>
+        ))}
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 62. DRILL-DOWN ANALYTICS - "Insights" Exploration Tool
+// ============================================================================
+const DrillDownAnalyticsDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-100">
+    <header className="bg-white border-b border-gray-200 px-6 py-4">
+      <div className="flex items-center gap-2 text-sm">
+        <button className="text-blue-600 hover:underline">All Data</button>
+        <span className="text-gray-400">›</span>
+        <button className="text-blue-600 hover:underline">North America</button>
+        <span className="text-gray-400">›</span>
+        <span className="text-gray-900 font-medium">United States</span>
+      </div>
+    </header>
+
+    <main className="p-6">
+      {/* Filters */}
+      <div className="bg-white rounded-lg p-4 mb-6 flex gap-4 items-center">
+        <span className="text-gray-500 text-sm">Filters:</span>
+        <select className="px-3 py-1.5 border border-gray-300 rounded text-sm">
+          <option>All Segments</option>
+          <option>Enterprise</option>
+          <option>SMB</option>
+        </select>
+        <select className="px-3 py-1.5 border border-gray-300 rounded text-sm">
+          <option>Last 30 days</option>
+          <option>Last 90 days</option>
+          <option>This Year</option>
+        </select>
+        <button className="ml-auto text-blue-600 text-sm hover:underline">Reset Filters</button>
+      </div>
+
+      {/* Summary Cards */}
+      <div className="grid md:grid-cols-3 gap-4 mb-6">
+        {[
+          { label: 'Total Revenue', value: '$8.4M', subtext: '24% of global' },
+          { label: 'Customers', value: '12,847', subtext: '+18% YoY' },
+          { label: 'Avg Deal Size', value: '$12.4K', subtext: '+5% vs prior' },
+        ].map((card, i) => (
+          <div key={i} className="bg-white p-5 rounded-lg shadow-sm">
+            <p className="text-gray-500 text-sm mb-1">{card.label}</p>
+            <p className="text-3xl font-bold text-gray-900">{card.value}</p>
+            <p className="text-gray-500 text-sm mt-1">{card.subtext}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Expandable Table */}
+      <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="px-6 py-4 border-b border-gray-200">
+          <h3 className="font-semibold">Revenue by State</h3>
+        </div>
+        <table className="w-full">
+          <thead className="bg-gray-50 text-sm text-gray-500">
+            <tr>
+              <th className="px-6 py-3 text-left">Region</th>
+              <th className="px-6 py-3 text-right">Revenue</th>
+              <th className="px-6 py-3 text-right">Customers</th>
+              <th className="px-6 py-3 text-right">Growth</th>
+              <th className="px-6 py-3 text-right"></th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-100">
+            {[
+              { region: 'California', rev: '$2.8M', cust: '4,521', growth: '+22%' },
+              { region: 'New York', rev: '$1.9M', cust: '2,847', growth: '+15%' },
+              { region: 'Texas', rev: '$1.4M', cust: '2,103', growth: '+28%' },
+              { region: 'Florida', rev: '$0.9M', cust: '1,456', growth: '+12%' },
+            ].map((row, i) => (
+              <tr key={i} className="hover:bg-blue-50 cursor-pointer">
+                <td className="px-6 py-4">
+                  <span className="text-blue-600 hover:underline">{row.region}</span>
+                </td>
+                <td className="px-6 py-4 text-right font-medium">{row.rev}</td>
+                <td className="px-6 py-4 text-right text-gray-600">{row.cust}</td>
+                <td className="px-6 py-4 text-right text-green-600">{row.growth}</td>
+                <td className="px-6 py-4 text-right text-gray-400">
+                  <span className="hover:text-blue-600">→</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 63. COMPARATIVE ANALYSIS DASHBOARD
+// ============================================================================
+const ComparativeAnalysisDashboardDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-100">
+    <header className="bg-white border-b border-gray-200 px-6 py-4">
+      <div className="flex justify-between items-center">
+        <h1 className="text-xl font-semibold">A/B Test Results: Homepage Redesign</h1>
+        <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Winner: Variant B</span>
+      </div>
+    </header>
+
+    <main className="p-6">
+      {/* Comparison Toggle */}
+      <div className="flex gap-2 mb-6">
+        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium">Control (A)</button>
+        <button className="px-4 py-2 bg-gray-800 text-white rounded-lg text-sm font-medium">Variant (B)</button>
+        <span className="mx-2 text-gray-400">vs</span>
+        <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm">Side by Side</button>
+      </div>
+
+      {/* Split View Comparison */}
+      <div className="grid md:grid-cols-2 gap-6 mb-6">
+        {['Control (A)', 'Variant (B)'].map((variant, i) => (
+          <div key={i} className={`bg-white rounded-lg shadow-sm overflow-hidden ${i === 1 ? 'ring-2 ring-green-500' : ''}`}>
+            <div className={`px-4 py-3 ${i === 0 ? 'bg-blue-600' : 'bg-gray-800'} text-white font-medium`}>
+              {variant} {i === 1 && <span className="ml-2 text-green-300">★ Winner</span>}
+            </div>
+            <div className="p-6">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: 'Conversion', value: i === 0 ? '3.2%' : '4.8%' },
+                  { label: 'Bounce Rate', value: i === 0 ? '45%' : '38%' },
+                  { label: 'Avg Session', value: i === 0 ? '2:34' : '3:12' },
+                  { label: 'Revenue/User', value: i === 0 ? '$12.40' : '$18.20' },
+                ].map((m, j) => (
+                  <div key={j}>
+                    <p className="text-gray-500 text-sm">{m.label}</p>
+                    <p className="text-2xl font-bold">{m.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Difference Chart */}
+      <div className="bg-white rounded-lg shadow-sm p-6">
+        <h3 className="font-semibold mb-4">Improvement (B vs A)</h3>
+        <div className="space-y-4">
+          {[
+            { metric: 'Conversion Rate', diff: '+50%', width: 50 },
+            { metric: 'Revenue per User', diff: '+47%', width: 47 },
+            { metric: 'Session Duration', diff: '+25%', width: 25 },
+            { metric: 'Bounce Rate', diff: '-16%', width: 16 },
+          ].map((m, i) => (
+            <div key={i}>
+              <div className="flex justify-between text-sm mb-1">
+                <span>{m.metric}</span>
+                <span className="text-green-600 font-medium">{m.diff}</span>
+              </div>
+              <div className="h-4 bg-gray-100 rounded-full overflow-hidden">
+                <div className="h-full bg-green-500 rounded-full" style={{ width: `${m.width}%` }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 64. PREDICTIVE ANALYTICS
+// ============================================================================
+const PredictiveAnalyticsDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-indigo-950">
+    <header className="px-6 py-4 border-b border-indigo-800">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <span className="text-xl">🔮</span>
+          <span className="text-xl font-bold text-white">Forecast AI</span>
+        </div>
+        <span className="px-3 py-1 bg-purple-500/20 text-purple-300 text-sm rounded">Model: v3.2 • 94% accuracy</span>
+      </div>
+    </header>
+
+    <main className="p-6">
+      {/* Forecast Summary */}
+      <div className="grid md:grid-cols-3 gap-6 mb-6">
+        {[
+          { label: 'Q1 2026 Revenue', value: '$28.4M', conf: '92%', range: '$26.1M - $30.8M' },
+          { label: 'Expected Growth', value: '+18%', conf: '88%', range: '+14% - +22%' },
+          { label: 'Churn Risk', value: '847 accounts', conf: '85%', range: '780 - 920' },
+        ].map((f, i) => (
+          <div key={i} className="bg-indigo-900/50 rounded-xl p-6 border border-indigo-700">
+            <p className="text-indigo-300 text-sm mb-2">{f.label}</p>
+            <p className="text-3xl font-bold text-white mb-2">{f.value}</p>
+            <div className="flex items-center gap-2 text-sm">
+              <span className="px-2 py-0.5 bg-purple-500/30 text-purple-300 rounded">{f.conf} confidence</span>
+            </div>
+            <p className="text-indigo-400 text-xs mt-2">Range: {f.range}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Forecast Chart */}
+      <div className="bg-indigo-900/50 rounded-xl p-6 border border-indigo-700 mb-6">
+        <h3 className="text-white font-semibold mb-4">Revenue Forecast (12 months)</h3>
+        <div className="h-48 flex items-end gap-1">
+          {/* Historical (solid) */}
+          {[18, 19, 20, 21, 22, 23].map((v, i) => (
+            <div key={i} className="flex-1 bg-purple-500 rounded-t" style={{ height: `${v * 3}%` }} />
+          ))}
+          {/* Forecast (gradient/striped) */}
+          {[24, 25, 26, 27, 28, 29].map((v, i) => (
+            <div key={i} className="flex-1 rounded-t relative" style={{ height: `${v * 3}%` }}>
+              <div className="absolute inset-0 bg-purple-500/50 rounded-t" />
+              <div className="absolute inset-x-0 top-0 h-1/4 bg-purple-400/30 rounded-t" />
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between mt-4 text-xs text-indigo-400">
+          <span>← Historical</span>
+          <span>|</span>
+          <span>Forecast →</span>
+        </div>
+      </div>
+
+      {/* Scenario Analysis */}
+      <div className="bg-indigo-900/50 rounded-xl p-6 border border-indigo-700">
+        <h3 className="text-white font-semibold mb-4">Scenario Analysis</h3>
+        <div className="grid md:grid-cols-3 gap-4">
+          {[
+            { scenario: 'Conservative', value: '$24.2M', prob: '20%' },
+            { scenario: 'Base Case', value: '$28.4M', prob: '60%', active: true },
+            { scenario: 'Optimistic', value: '$32.1M', prob: '20%' },
+          ].map((s, i) => (
+            <div key={i} className={`p-4 rounded-lg ${s.active ? 'bg-purple-600/30 border-2 border-purple-500' : 'bg-indigo-800/50 border border-indigo-700'}`}>
+              <p className="text-indigo-300 text-sm">{s.scenario}</p>
+              <p className="text-2xl font-bold text-white">{s.value}</p>
+              <p className="text-indigo-400 text-sm">{s.prob} probability</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 65. USER BEHAVIOR ANALYTICS
+// ============================================================================
+const UserBehaviorAnalyticsDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-50">
+    <header className="bg-white border-b border-gray-200 px-6 py-4">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <span className="text-xl">👁️</span>
+          <h1 className="text-xl font-semibold">User Behavior Analytics</h1>
+        </div>
+        <select className="px-3 py-1.5 border border-gray-300 rounded text-sm">
+          <option>Checkout Flow</option>
+          <option>Onboarding</option>
+          <option>Feature Discovery</option>
+        </select>
+      </div>
+    </header>
+
+    <main className="p-6">
+      {/* Funnel */}
+      <div className="bg-white rounded-xl p-6 mb-6">
+        <h3 className="font-semibold mb-6">Conversion Funnel</h3>
+        <div className="space-y-2">
+          {[
+            { step: 'Homepage Visit', users: '50,000', pct: 100 },
+            { step: 'Product View', users: '32,500', pct: 65 },
+            { step: 'Add to Cart', users: '12,350', pct: 24.7 },
+            { step: 'Checkout Start', users: '8,420', pct: 16.8 },
+            { step: 'Purchase Complete', users: '5,847', pct: 11.7 },
+          ].map((s, i) => (
+            <div key={i} className="flex items-center gap-4">
+              <span className="w-36 text-sm text-gray-600">{s.step}</span>
+              <div className="flex-1 h-10 bg-gray-100 rounded overflow-hidden">
+                <div className="h-full bg-pink-500 flex items-center justify-end pr-3" style={{ width: `${s.pct}%` }}>
+                  <span className="text-white text-sm font-medium">{s.users}</span>
+                </div>
+              </div>
+              <span className="w-16 text-right text-sm text-gray-500">{s.pct}%</span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 p-3 bg-pink-50 rounded-lg">
+          <p className="text-sm text-pink-800">
+            💡 <strong>68% drop-off</strong> between Add to Cart and Checkout. Consider optimizing the cart page.
+          </p>
+        </div>
+      </div>
+
+      {/* User Flow */}
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-white rounded-xl p-6">
+          <h3 className="font-semibold mb-4">Top User Paths</h3>
+          <div className="space-y-3">
+            {[
+              { path: 'Home → Products → Cart → Checkout', users: '2,847', conv: '45%' },
+              { path: 'Search → Product → Cart → Checkout', users: '1,923', conv: '62%' },
+              { path: 'Home → Category → Product → Cart', users: '1,456', conv: '38%' },
+            ].map((p, i) => (
+              <div key={i} className="p-3 bg-gray-50 rounded-lg">
+                <p className="text-sm font-mono text-gray-700 mb-1">{p.path}</p>
+                <div className="flex gap-4 text-xs text-gray-500">
+                  <span>{p.users} users</span>
+                  <span>Conv: {p.conv}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl p-6">
+          <h3 className="font-semibold mb-4">Drop-off Points</h3>
+          <div className="space-y-3">
+            {[
+              { point: 'Shipping Cost Reveal', drop: '23%', icon: '🚚' },
+              { point: 'Account Creation', drop: '18%', icon: '👤' },
+              { point: 'Payment Form', drop: '12%', icon: '💳' },
+            ].map((d, i) => (
+              <div key={i} className="flex items-center justify-between p-3 bg-red-50 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">{d.icon}</span>
+                  <span className="text-sm">{d.point}</span>
+                </div>
+                <span className="text-red-600 font-medium">-{d.drop}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 66. FINANCIAL DASHBOARD
+// ============================================================================
+const FinancialDashboardDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-100">
+    <header className="bg-white border-b border-gray-200 px-6 py-4">
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-xl font-semibold">Financial Overview</h1>
+          <p className="text-gray-500 text-sm">Period: Q4 2025</p>
+        </div>
+        <div className="flex gap-2">
+          <button className="px-3 py-1.5 border border-gray-300 rounded text-sm">Export</button>
+          <button className="px-3 py-1.5 bg-green-600 text-white rounded text-sm">Generate Report</button>
+        </div>
+      </div>
+    </header>
+
+    <main className="p-6">
+      {/* P&L Summary */}
+      <div className="bg-white rounded-xl shadow-sm overflow-hidden mb-6">
+        <div className="px-6 py-4 border-b border-gray-200 bg-gray-50">
+          <h3 className="font-semibold">Profit & Loss Statement</h3>
+        </div>
+        <table className="w-full">
+          <thead className="text-sm text-gray-500">
+            <tr className="border-b border-gray-100">
+              <th className="px-6 py-3 text-left">Account</th>
+              <th className="px-6 py-3 text-right">Actual</th>
+              <th className="px-6 py-3 text-right">Budget</th>
+              <th className="px-6 py-3 text-right">Variance</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-100">
+            <tr className="bg-green-50">
+              <td className="px-6 py-3 font-semibold">Revenue</td>
+              <td className="px-6 py-3 text-right font-mono">$24,567,890</td>
+              <td className="px-6 py-3 text-right font-mono text-gray-500">$22,500,000</td>
+              <td className="px-6 py-3 text-right text-green-600">+9.2%</td>
+            </tr>
+            <tr>
+              <td className="px-6 py-3 pl-10 text-gray-600">Product Revenue</td>
+              <td className="px-6 py-3 text-right font-mono">$18,234,567</td>
+              <td className="px-6 py-3 text-right font-mono text-gray-500">$17,000,000</td>
+              <td className="px-6 py-3 text-right text-green-600">+7.3%</td>
+            </tr>
+            <tr>
+              <td className="px-6 py-3 pl-10 text-gray-600">Services Revenue</td>
+              <td className="px-6 py-3 text-right font-mono">$6,333,323</td>
+              <td className="px-6 py-3 text-right font-mono text-gray-500">$5,500,000</td>
+              <td className="px-6 py-3 text-right text-green-600">+15.2%</td>
+            </tr>
+            <tr className="bg-red-50">
+              <td className="px-6 py-3 font-semibold">Cost of Revenue</td>
+              <td className="px-6 py-3 text-right font-mono">($8,456,789)</td>
+              <td className="px-6 py-3 text-right font-mono text-gray-500">($8,100,000)</td>
+              <td className="px-6 py-3 text-right text-red-600">+4.4%</td>
+            </tr>
+            <tr className="bg-blue-50 font-semibold">
+              <td className="px-6 py-3">Gross Profit</td>
+              <td className="px-6 py-3 text-right font-mono">$16,111,101</td>
+              <td className="px-6 py-3 text-right font-mono">$14,400,000</td>
+              <td className="px-6 py-3 text-right text-green-600">+11.9%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* Charts */}
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-white rounded-xl p-6 shadow-sm">
+          <h3 className="font-semibold mb-4">Cash Flow</h3>
+          <div className="space-y-3">
+            {[
+              { label: 'Operating', value: '$4.2M', color: 'bg-green-500' },
+              { label: 'Investing', value: '($1.8M)', color: 'bg-red-500' },
+              { label: 'Financing', value: '($0.5M)', color: 'bg-yellow-500' },
+            ].map((cf, i) => (
+              <div key={i} className="flex items-center gap-4">
+                <span className="w-24 text-sm text-gray-600">{cf.label}</span>
+                <div className={`h-6 ${cf.color} rounded`} style={{ width: `${Math.abs(parseFloat(cf.value.replace(/[^0-9.-]/g, ''))) * 20}%` }} />
+                <span className="font-mono text-sm">{cf.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl p-6 shadow-sm">
+          <h3 className="font-semibold mb-4">Key Ratios</h3>
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { label: 'Gross Margin', value: '65.6%', status: 'green' },
+              { label: 'Net Margin', value: '23.4%', status: 'green' },
+              { label: 'Current Ratio', value: '2.1x', status: 'green' },
+              { label: 'Debt/Equity', value: '0.4x', status: 'green' },
+            ].map((r, i) => (
+              <div key={i} className="p-3 bg-gray-50 rounded-lg">
+                <p className="text-gray-500 text-sm">{r.label}</p>
+                <p className="text-xl font-bold">{r.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 67. SALES INTELLIGENCE DASHBOARD
+// ============================================================================
+const SalesIntelligenceDashboardDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-100">
+    <header className="bg-white border-b border-gray-200 px-6 py-4">
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-xl font-semibold">Sales Dashboard</h1>
+          <p className="text-gray-500 text-sm">December 2025</p>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="text-sm text-gray-500">Team: North America</span>
+          <button className="px-3 py-1.5 bg-blue-600 text-white rounded text-sm">+ New Deal</button>
+        </div>
+      </div>
+    </header>
+
+    <main className="p-6">
+      {/* Quota Progress */}
+      <div className="bg-white rounded-xl p-6 mb-6 shadow-sm">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="font-semibold">Quota Progress</h3>
+          <span className="text-2xl font-bold text-green-600">78% to goal</span>
+        </div>
+        <div className="h-4 bg-gray-200 rounded-full overflow-hidden mb-2">
+          <div className="h-full bg-gradient-to-r from-blue-500 to-green-500 rounded-full" style={{ width: '78%' }} />
+        </div>
+        <div className="flex justify-between text-sm text-gray-500">
+          <span>$780K closed</span>
+          <span>$1M quota</span>
+        </div>
+      </div>
+
+      {/* Pipeline & Leaderboard */}
+      <div className="grid md:grid-cols-2 gap-6 mb-6">
+        {/* Pipeline */}
+        <div className="bg-white rounded-xl p-6 shadow-sm">
+          <h3 className="font-semibold mb-4">Pipeline by Stage</h3>
+          <div className="space-y-3">
+            {[
+              { stage: 'Discovery', value: '$450K', count: 23, color: 'bg-blue-500' },
+              { stage: 'Proposal', value: '$320K', count: 12, color: 'bg-purple-500' },
+              { stage: 'Negotiation', value: '$180K', count: 5, color: 'bg-orange-500' },
+              { stage: 'Closing', value: '$95K', count: 3, color: 'bg-green-500' },
+            ].map((s, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <div className={`w-3 h-3 ${s.color} rounded-full`} />
+                <span className="w-24 text-sm">{s.stage}</span>
+                <div className="flex-1 h-6 bg-gray-100 rounded overflow-hidden">
+                  <div className={`h-full ${s.color}`} style={{ width: `${parseInt(s.value.replace(/\D/g, '')) / 4.5}%` }} />
+                </div>
+                <span className="text-sm font-medium">{s.value}</span>
+                <span className="text-xs text-gray-500">({s.count})</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Leaderboard */}
+        <div className="bg-white rounded-xl p-6 shadow-sm">
+          <h3 className="font-semibold mb-4">Team Leaderboard</h3>
+          <div className="space-y-3">
+            {[
+              { rank: 1, name: 'Sarah Johnson', closed: '$245K', quota: '123%' },
+              { rank: 2, name: 'Mike Chen', closed: '$198K', quota: '99%' },
+              { rank: 3, name: 'Emily Davis', closed: '$187K', quota: '94%' },
+              { rank: 4, name: 'Alex Kim', closed: '$150K', quota: '75%' },
+            ].map((rep, i) => (
+              <div key={i} className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-50">
+                <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${i === 0 ? 'bg-yellow-400 text-yellow-900' : 'bg-gray-200 text-gray-600'}`}>
+                  {rep.rank}
+                </span>
+                <div className="flex-1">
+                  <p className="font-medium">{rep.name}</p>
+                  <p className="text-sm text-gray-500">{rep.closed} closed</p>
+                </div>
+                <span className={`text-sm font-semibold ${parseInt(rep.quota) >= 100 ? 'text-green-600' : 'text-gray-600'}`}>
+                  {rep.quota}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Hot Deals */}
+      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+        <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+          <h3 className="font-semibold">Hot Deals</h3>
+          <span className="text-sm text-gray-500">Closing this month</span>
+        </div>
+        <div className="divide-y divide-gray-100">
+          {[
+            { company: 'Acme Corp', value: '$85K', stage: 'Negotiation', prob: '80%', owner: 'Sarah J.' },
+            { company: 'TechStart', value: '$62K', stage: 'Proposal', prob: '60%', owner: 'Mike C.' },
+            { company: 'GlobalFin', value: '$48K', stage: 'Closing', prob: '90%', owner: 'Emily D.' },
+          ].map((deal, i) => (
+            <div key={i} className="px-6 py-4 flex items-center justify-between hover:bg-gray-50">
+              <div>
+                <p className="font-medium">{deal.company}</p>
+                <p className="text-sm text-gray-500">{deal.owner} • {deal.stage}</p>
+              </div>
+              <div className="text-right">
+                <p className="font-semibold">{deal.value}</p>
+                <p className="text-sm text-green-600">{deal.prob} win rate</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </main>
+  </div>
+);
+
 // Map all demos to their slugs
 const styleDemos: Record<string, React.FC<StyleDemoProps>> = {
   'minimalism-swiss-style': MinimalismDemo,
@@ -4056,4 +5651,24 @@ const styleDemos: Record<string, React.FC<StyleDemoProps>> = {
   'editorial-grid-magazine': EditorialGridDemo,
   'chromatic-aberration-rgb-split': ChromaticDemo,
   'vintage-analog-retro-film': VintageAnalogDemo,
+  // Landing Page Styles
+  'hero-centric-design': HeroCentricDemo,
+  'conversion-optimized': ConversionOptimizedDemo,
+  'feature-rich-showcase': FeatureRichShowcaseDemo,
+  'minimal-direct': MinimalDirectDemo,
+  'social-proof-focused': SocialProofFocusedDemo,
+  'interactive-product-demo': InteractiveProductDemoDemo,
+  'trust-authority': TrustAuthorityDemo,
+  'storytelling-driven': StorytellingDrivenDemo,
+  // BI & Analytics Styles
+  'data-dense-dashboard': DataDenseDashboardDemo,
+  'heatmap-dashboard': HeatmapDashboardDemo,
+  'executive-dashboard': ExecutiveDashboardDemo,
+  'realtime-monitoring': RealtimeMonitoringDemo,
+  'drill-down-analytics': DrillDownAnalyticsDemo,
+  'comparative-analysis-dashboard': ComparativeAnalysisDashboardDemo,
+  'predictive-analytics': PredictiveAnalyticsDemo,
+  'user-behavior-analytics': UserBehaviorAnalyticsDemo,
+  'financial-dashboard': FinancialDashboardDemo,
+  'sales-intelligence-dashboard': SalesIntelligenceDashboardDemo,
 };
