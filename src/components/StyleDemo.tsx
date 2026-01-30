@@ -1,4 +1,5 @@
 import { type UIStyle } from '../data/styles';
+import { MobileNav } from './MobileNav';
 
 interface StyleDemoProps {
   style: UIStyle;
@@ -718,22 +719,25 @@ const AccessibleDemo = ({ }: StyleDemoProps) => (
 
     {/* Header */}
     <header className="border-b-4 border-blue-700">
-      <div className="max-w-4xl mx-auto px-6 py-4">
-        <nav className="flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-blue-700 rounded-lg flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">A</span>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
+        <MobileNav
+          logo={
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-blue-700 rounded-lg flex items-center justify-center">
+                <span className="text-white text-xl sm:text-2xl font-bold">A</span>
+              </div>
+              <span className="text-xl sm:text-2xl font-bold text-gray-900">AccessFirst</span>
             </div>
-            <span className="text-2xl font-bold text-gray-900">AccessFirst</span>
-          </div>
-          <div className="flex gap-6">
-            {['Services', 'Help', 'Contact'].map((item) => (
-              <a key={item} href="#" className="text-lg text-gray-900 underline hover:no-underline focus:outline-none focus:ring-4 focus:ring-blue-300 rounded px-2 py-1">
-                {item}
-              </a>
-            ))}
-          </div>
-        </nav>
+          }
+          items={[
+            { label: 'Services' },
+            { label: 'Help' },
+            { label: 'Contact' },
+          ]}
+          hamburgerColor="#1d4ed8"
+          menuBg="bg-white"
+          menuText="text-gray-900 text-lg"
+        />
       </div>
     </header>
 
@@ -1693,21 +1697,28 @@ const MicroInteractionsDemo = ({ }: StyleDemoProps) => (
 // 17. INCLUSIVE DESIGN - "CityMove" Public Transit
 // ============================================================================
 const InclusiveDesignDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-white">
+  <div className="min-h-screen pt-16 bg-white overflow-x-hidden">
     {/* Header */}
     <header className="bg-blue-900 text-white">
-      <div className="max-w-4xl mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <span className="text-blue-900 text-2xl">🚌</span>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
+        <MobileNav
+          logo={
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full flex items-center justify-center">
+                <span className="text-blue-900 text-xl sm:text-2xl">🚌</span>
+              </div>
+              <span className="text-xl sm:text-2xl font-bold">CityMove</span>
             </div>
-            <span className="text-2xl font-bold">CityMove</span>
-          </div>
-          <button className="px-4 py-2 border-2 border-white rounded-lg font-semibold focus:outline-none focus:ring-4 focus:ring-yellow-400">
-            Accessibility Options
-          </button>
-        </div>
+          }
+          items={[
+            { label: 'Routes' },
+            { label: 'Schedules' },
+            { label: 'Accessibility' },
+          ]}
+          hamburgerColor="#fff"
+          menuBg="bg-blue-900"
+          menuText="text-white"
+        />
       </div>
     </header>
 
@@ -2007,22 +2018,23 @@ const SoftUIEvolutionDemo = ({ }: StyleDemoProps) => (
 // 20. NEUBRUTALISM - "DEV.STACK" Tech Blog
 // ============================================================================
 const NeubrutalismDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-amber-50">
+  <div className="min-h-screen pt-16 bg-amber-50 overflow-x-hidden">
     {/* Header */}
     <header className="border-b-4 border-black">
-      <div className="max-w-5xl mx-auto px-6 py-4">
-        <nav className="flex justify-between items-center">
-          <span className="text-3xl font-black">DEV.STACK</span>
-          <div className="flex gap-4">
-            {['Articles', 'Tutorials', 'Newsletter'].map((item) => (
-              <a key={item} href="#" className="px-4 py-2 font-bold hover:bg-yellow-300 border-2 border-transparent hover:border-black transition-all">{item}</a>
-            ))}
-            <button className="px-4 py-2 bg-blue-500 text-white border-4 border-black font-bold"
-              style={{ boxShadow: '4px 4px 0 #000' }}>
-              Subscribe
-            </button>
-          </div>
-        </nav>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4">
+        <MobileNav
+          logo={<span className="text-2xl sm:text-3xl font-black">DEV.STACK</span>}
+          items={[
+            { label: 'Articles' },
+            { label: 'Tutorials' },
+            { label: 'Newsletter' },
+            { label: 'Subscribe' },
+          ]}
+          hamburgerColor="#000"
+          menuBg="bg-amber-50"
+          menuText="text-black font-bold"
+          desktopItemClass="gap-4"
+        />
       </div>
     </header>
 
@@ -2206,18 +2218,20 @@ const CyberpunkDemo = ({ }: StyleDemoProps) => (
     `}</style>
     <div className="absolute inset-0 opacity-5 pointer-events-none"
       style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,0,0.1) 2px, rgba(0,255,0,0.1) 4px)' }} />
-    <header className="max-w-6xl mx-auto px-8 py-6 relative z-10">
-      <nav className="flex justify-between items-center">
-        <h1 className="text-3xl font-mono font-bold glitch" style={{ color: '#00FF00', textShadow: '0 0 20px #00FF00' }}>
-          NEXUS.CORP
-        </h1>
-        <div className="flex gap-6 font-mono text-sm">
-          {['TRADE', 'WALLET', 'MARKETS', 'DOCS'].map((item) => (
-            <a key={item} href="#" className="text-green-400 hover:text-green-300 transition-colors"
-              style={{ textShadow: '0 0 5px #00FF00' }}>{item}</a>
-          ))}
-        </div>
-      </nav>
+    <header className="max-w-6xl mx-auto px-4 sm:px-8 py-6 relative z-10">
+      <MobileNav
+        logo={<h1 className="text-2xl sm:text-3xl font-mono font-bold glitch" style={{ color: '#00FF00', textShadow: '0 0 20px #00FF00' }}>NEXUS.CORP</h1>}
+        items={[
+          { label: 'TRADE' },
+          { label: 'WALLET' },
+          { label: 'MARKETS' },
+          { label: 'DOCS' },
+        ]}
+        hamburgerColor="#00FF00"
+        menuBg="bg-black"
+        menuText="text-green-400"
+        desktopItemClass="font-mono text-sm text-green-400"
+      />
     </header>
     <section className="max-w-6xl mx-auto px-8 py-12 relative z-10">
       <p className="font-mono text-green-500 text-sm mb-4">// SYSTEM STATUS: ONLINE</p>
