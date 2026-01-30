@@ -2194,6 +2194,1665 @@ const Y2KDemo = ({ }: StyleDemoProps) => (
   </div>
 );
 
+// ============================================================================
+// 23. CYBERPUNK UI - "NEXUS.CORP" Crypto Trading Platform
+// ============================================================================
+const CyberpunkDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#0D0D0D' }}>
+    <style>{`
+      @keyframes glitch { 0%, 100% { text-shadow: -2px 0 #FF00FF, 2px 0 #00FFFF; } 50% { text-shadow: 2px 0 #FF00FF, -2px 0 #00FFFF; } }
+      @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+      .glitch:hover { animation: glitch 0.3s infinite; }
+    `}</style>
+    <div className="absolute inset-0 opacity-5 pointer-events-none"
+      style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,0,0.1) 2px, rgba(0,255,0,0.1) 4px)' }} />
+    <header className="max-w-6xl mx-auto px-8 py-6 relative z-10">
+      <nav className="flex justify-between items-center">
+        <h1 className="text-3xl font-mono font-bold glitch" style={{ color: '#00FF00', textShadow: '0 0 20px #00FF00' }}>
+          NEXUS.CORP
+        </h1>
+        <div className="flex gap-6 font-mono text-sm">
+          {['TRADE', 'WALLET', 'MARKETS', 'DOCS'].map((item) => (
+            <a key={item} href="#" className="text-green-400 hover:text-green-300 transition-colors"
+              style={{ textShadow: '0 0 5px #00FF00' }}>{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <section className="max-w-6xl mx-auto px-8 py-12 relative z-10">
+      <p className="font-mono text-green-500 text-sm mb-4">// SYSTEM STATUS: ONLINE</p>
+      <h2 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#00FF00', textShadow: '0 0 40px rgba(0,255,0,0.5)' }}>
+        DECENTRALIZED<br />TRADING <span style={{ color: '#FF00FF' }}>PROTOCOL</span>
+      </h2>
+      <p className="font-mono text-gray-400 max-w-xl mb-8">
+        &gt; Execute trades at light speed on the blockchain. Zero trust. Full transparency. Maximum gains.
+      </p>
+      <div className="flex gap-4">
+        <button className="px-8 py-4 font-mono font-bold text-black"
+          style={{ background: '#00FF00', boxShadow: '0 0 20px rgba(0,255,0,0.5)' }}>
+          [CONNECT_WALLET]
+        </button>
+        <button className="px-8 py-4 font-mono border border-green-500 text-green-500 hover:bg-green-500/10">
+          [VIEW_DOCS]
+        </button>
+      </div>
+    </section>
+    <section className="max-w-6xl mx-auto px-8 py-8 relative z-10">
+      <div className="grid md:grid-cols-3 gap-6">
+        {[
+          { label: 'TVL', value: '$2.4B', change: '+12.4%' },
+          { label: 'VOLUME_24H', value: '$847M', change: '+5.7%' },
+          { label: 'USERS', value: '1.2M', change: '+3.2%' },
+        ].map((stat, i) => (
+          <div key={i} className="p-6 border border-green-500/30" style={{ background: 'rgba(0,255,0,0.05)' }}>
+            <p className="font-mono text-gray-500 text-sm">{stat.label}</p>
+            <p className="text-3xl font-mono font-bold mt-2" style={{ color: '#00FF00' }}>{stat.value}</p>
+            <p className="font-mono text-sm mt-1" style={{ color: '#00FFFF' }}>{stat.change}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+    <section className="max-w-6xl mx-auto px-8 py-8 relative z-10">
+      <div className="p-8 border border-green-500/30" style={{ background: 'rgba(0,255,0,0.02)' }}>
+        <div className="flex items-center gap-4 mb-6">
+          <span className="w-3 h-3 rounded-full animate-pulse" style={{ background: '#00FF00', boxShadow: '0 0 10px #00FF00' }} />
+          <span className="font-mono text-green-500">LIVE_MARKET_FEED</span>
+        </div>
+        {[
+          { pair: 'ETH/USDC', price: '$3,847.23', change: '+2.4%' },
+          { pair: 'BTC/USDC', price: '$67,234.56', change: '+1.8%' },
+          { pair: 'SOL/USDC', price: '$142.87', change: '+5.2%' },
+        ].map((item, i) => (
+          <div key={i} className="flex justify-between items-center py-4 border-t border-green-500/20 font-mono">
+            <span className="text-gray-300">{item.pair}</span>
+            <span className="text-green-400">{item.price}</span>
+            <span style={{ color: '#00FFFF' }}>{item.change}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 24. ORGANIC BIOPHILIC - "Willow" Sustainable Living App
+// ============================================================================
+const OrganicBiophilicDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#F5F5DC' }}>
+    <header className="max-w-5xl mx-auto px-8 py-8">
+      <nav className="flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <span className="text-4xl">🌿</span>
+          <span className="text-2xl font-serif text-green-800">Willow</span>
+        </div>
+        <div className="flex gap-6">
+          {['Home', 'Garden', 'Recipes', 'Community'].map((item) => (
+            <a key={item} href="#" className="text-green-700 hover:text-green-900 transition-colors">{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <section className="max-w-5xl mx-auto px-8 py-16">
+      <h1 className="text-5xl md:text-6xl font-serif text-green-900 mb-6 leading-tight">
+        Live in harmony<br />with nature
+      </h1>
+      <p className="text-xl text-green-700 max-w-xl mb-12">
+        Track your sustainable journey, grow your own food, and connect with a community 
+        that cares about our planet.
+      </p>
+      <div className="flex gap-4">
+        <button className="px-8 py-4 rounded-full font-medium text-white"
+          style={{ background: '#228B22', boxShadow: '0 10px 30px rgba(34,139,34,0.3)' }}>
+          Start Growing
+        </button>
+        <button className="px-8 py-4 rounded-full font-medium text-green-800 border-2 border-green-800 hover:bg-green-800 hover:text-white transition-colors">
+          Learn More
+        </button>
+      </div>
+    </section>
+    <section className="max-w-5xl mx-auto px-8 py-8">
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          { icon: '🌱', title: 'Grow Tracker', desc: 'Monitor your plants from seed to harvest with personalized care tips.' },
+          { icon: '🥗', title: 'Seasonal Recipes', desc: 'Cook with what is fresh and in season in your garden.' },
+          { icon: '🌍', title: 'Impact Score', desc: 'See the positive impact of your sustainable choices.' },
+        ].map((feature, i) => (
+          <div key={i} className="p-8 rounded-3xl" style={{ background: 'rgba(34,139,34,0.1)' }}>
+            <span className="text-5xl mb-4 block">{feature.icon}</span>
+            <h3 className="text-xl font-serif text-green-900 mb-2">{feature.title}</h3>
+            <p className="text-green-700">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+    <section className="max-w-5xl mx-auto px-8 py-16">
+      <div className="p-8 rounded-3xl flex items-center gap-8" style={{ background: 'rgba(139,69,19,0.1)' }}>
+        <div className="text-8xl">🌻</div>
+        <div>
+          <h3 className="text-2xl font-serif text-green-900 mb-2">This Week's Challenge</h3>
+          <p className="text-green-700 mb-4">Plant 3 pollinator-friendly flowers and help support local bee populations!</p>
+          <button className="text-green-800 font-medium underline">Join 2,847 others →</button>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 25. AI-NATIVE UI - "Copilot" AI Assistant Interface
+// ============================================================================
+const AINativeDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-50 flex flex-col">
+    <header className="px-8 py-4 bg-white border-b border-gray-200">
+      <div className="max-w-3xl mx-auto flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+            <span className="text-white text-sm">✨</span>
+          </div>
+          <span className="font-semibold">Copilot</span>
+        </div>
+        <button className="text-gray-500 hover:text-gray-700">New Chat</button>
+      </div>
+    </header>
+    <main className="flex-1 max-w-3xl mx-auto w-full px-8 py-8">
+      <div className="space-y-6">
+        <div className="flex gap-4">
+          <div className="w-8 h-8 rounded-full bg-gray-300 flex-shrink-0" />
+          <div className="flex-1">
+            <p className="text-gray-800">Can you help me write a product description for a sustainable water bottle?</p>
+          </div>
+        </div>
+        <div className="flex gap-4">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex-shrink-0 flex items-center justify-center">
+            <span className="text-white text-xs">✨</span>
+          </div>
+          <div className="flex-1">
+            <div className="p-4 bg-white rounded-2xl shadow-sm">
+              <p className="text-gray-800 mb-4">
+                I would be happy to help! Here's a compelling product description:
+              </p>
+              <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                <h4 className="font-semibold text-gray-900 mb-2">EcoFlow Hydration Bottle</h4>
+                <p className="text-gray-700 text-sm">
+                  Stay refreshed while staying sustainable. Our triple-insulated stainless steel bottle 
+                  keeps drinks cold for 24 hours or hot for 12. Made from 100% recycled materials with 
+                  a lifetime warranty. One bottle saves 167 plastic bottles per year.
+                </p>
+              </div>
+              <div className="flex gap-2 mt-4">
+                <button className="px-3 py-1 text-sm bg-gray-100 rounded-full hover:bg-gray-200">Copy</button>
+                <button className="px-3 py-1 text-sm bg-gray-100 rounded-full hover:bg-gray-200">Regenerate</button>
+                <button className="px-3 py-1 text-sm bg-gray-100 rounded-full hover:bg-gray-200">Make shorter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center gap-2 text-gray-400 text-sm">
+          <div className="flex gap-1">
+            <span className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+            <span className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
+          </div>
+          <span>Copilot is thinking...</span>
+        </div>
+      </div>
+    </main>
+    <footer className="px-8 py-4 bg-white border-t border-gray-200">
+      <div className="max-w-3xl mx-auto">
+        <div className="flex gap-4 items-center p-4 bg-gray-50 rounded-2xl border border-gray-200">
+          <input type="text" className="flex-1 bg-transparent outline-none text-gray-800" 
+            placeholder="Ask anything..." />
+          <button className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
+            ↑
+          </button>
+        </div>
+        <p className="text-xs text-gray-400 text-center mt-4">
+          Copilot can make mistakes. Consider checking important information.
+        </p>
+      </div>
+    </footer>
+  </div>
+);
+
+// ============================================================================
+// 26. MEMPHIS DESIGN - "SHAPES" Creative Festival
+// ============================================================================
+const MemphisDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 relative overflow-hidden" style={{ background: '#FFFEF7' }}>
+    <div className="absolute top-20 left-10 w-32 h-32 rounded-full" style={{ background: '#FF71CE' }} />
+    <div className="absolute top-40 right-20 w-20 h-20" style={{ background: '#FFCE5C', transform: 'rotate(45deg)' }} />
+    <div className="absolute bottom-40 left-1/4 w-0 h-0" style={{ borderLeft: '40px solid transparent', borderRight: '40px solid transparent', borderBottom: '70px solid #86CCCA' }} />
+    <div className="absolute top-1/2 right-10 w-16 h-40" style={{ background: 'repeating-linear-gradient(45deg, #000, #000 5px, transparent 5px, transparent 10px)' }} />
+    <header className="max-w-5xl mx-auto px-8 py-8 relative z-10">
+      <nav className="flex justify-between items-center">
+        <h1 className="text-4xl font-black" style={{ color: '#6A7BB4' }}>SHAPES</h1>
+        <div className="flex gap-6 font-bold">
+          {['PROGRAM', 'ARTISTS', 'TICKETS', 'INFO'].map((item) => (
+            <a key={item} href="#" className="hover:underline" style={{ textDecorationThickness: '3px' }}>{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <section className="max-w-5xl mx-auto px-8 py-16 relative z-10">
+      <p className="font-bold text-xl mb-4" style={{ color: '#FF71CE' }}>JULY 15-18, 2025 • BROOKLYN, NY</p>
+      <h2 className="text-6xl md:text-8xl font-black mb-8 leading-none">
+        <span style={{ color: '#FF71CE' }}>ART</span> <span style={{ color: '#6A7BB4' }}>MUSIC</span><br />
+        <span style={{ color: '#86CCCA' }}>DESIGN</span> <span style={{ color: '#FFCE5C' }}>CHAOS</span>
+      </h2>
+      <p className="text-xl max-w-xl mb-12">
+        Four days of boundary-pushing creativity. 50+ artists. Infinite possibilities.
+      </p>
+      <button className="px-10 py-5 text-xl font-black text-white"
+        style={{ background: '#FF71CE', boxShadow: '8px 8px 0 #6A7BB4' }}>
+        GET TICKETS ↗
+      </button>
+    </section>
+    <section className="max-w-5xl mx-auto px-8 py-8 relative z-10">
+      <div className="grid md:grid-cols-4 gap-6">
+        {[
+          { day: 'FRI', title: 'Opening Night', color: '#FF71CE' },
+          { day: 'SAT', title: 'Main Stage', color: '#FFCE5C' },
+          { day: 'SUN', title: 'Workshops', color: '#86CCCA' },
+          { day: 'MON', title: 'Closing Party', color: '#6A7BB4' },
+        ].map((event, i) => (
+          <div key={i} className="p-6 text-white" style={{ background: event.color, transform: `rotate(${i % 2 ? 2 : -2}deg)` }}>
+            <p className="font-black text-sm opacity-80">{event.day}</p>
+            <h3 className="text-2xl font-black mt-2">{event.title}</h3>
+          </div>
+        ))}
+      </div>
+    </section>
+    <section className="max-w-5xl mx-auto px-8 py-16 relative z-10">
+      <div className="p-8 border-4 border-black" style={{ background: '#FFCE5C', boxShadow: '12px 12px 0 #000' }}>
+        <h3 className="text-3xl font-black mb-4">EARLY BIRD SPECIAL ★</h3>
+        <p className="text-xl mb-6">Save 30% when you buy before May 1st!</p>
+        <span className="text-4xl font-black">$149 → $99</span>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 27. VAPORWAVE - "PARADISE.FM" Lo-Fi Music Platform
+// ============================================================================
+const VaporwaveDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 relative overflow-hidden"
+    style={{ background: 'linear-gradient(180deg, #FF71CE 0%, #01CDFE 50%, #B967FF 100%)' }}>
+    <div className="absolute inset-0 opacity-30"
+      style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px)' }} />
+    <header className="max-w-5xl mx-auto px-8 py-8 relative z-10 text-center">
+      <h1 className="text-5xl md:text-7xl font-bold text-white mb-4"
+        style={{ textShadow: '4px 4px 0 #B967FF, 8px 8px 0 #01CDFE', fontFamily: 'serif' }}>
+        ＰＡＲＡＤＩＳＥ．ＦＭ
+      </h1>
+      <p className="text-white/80 text-xl">永遠の音楽 • Eternal Music</p>
+    </header>
+    <section className="max-w-4xl mx-auto px-8 py-8 relative z-10">
+      <div className="p-8 rounded-lg text-center"
+        style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)' }}>
+        <div className="text-8xl mb-6">🌴</div>
+        <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: 'serif' }}>
+          ＮＯＷ ＰＬＡＹＩＮＧ
+        </h2>
+        <p className="text-2xl text-white mb-2">ＳＵＮＳＥＴ ＤＲＥＡＭＳ</p>
+        <p className="text-white/70">by リサフランク420</p>
+        <div className="mt-8 flex justify-center gap-6">
+          <button className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center text-white text-2xl hover:bg-white/30">⏮</button>
+          <button className="w-20 h-20 rounded-full bg-white flex items-center justify-center text-3xl"
+            style={{ color: '#B967FF', boxShadow: '0 0 40px rgba(255,255,255,0.5)' }}>▶</button>
+          <button className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center text-white text-2xl hover:bg-white/30">⏭</button>
+        </div>
+      </div>
+    </section>
+    <section className="max-w-4xl mx-auto px-8 py-8 relative z-10">
+      <h3 className="text-2xl font-bold text-white mb-6 text-center" style={{ fontFamily: 'serif' }}>
+        ＴＯＰＰＬＡＹＬＩＳＴＳ
+      </h3>
+      <div className="grid md:grid-cols-3 gap-6">
+        {[
+          { title: 'ＭＡＬＬ ＷＡＶＥ', tracks: '24 tracks', emoji: '🛒' },
+          { title: 'ＬＡＴＥ ＮＩＧＨＴ', tracks: '32 tracks', emoji: '🌙' },
+          { title: 'ＯＣＥＡＮ ＤＲＩＶＥ', tracks: '18 tracks', emoji: '🌊' },
+        ].map((playlist, i) => (
+          <div key={i} className="p-6 rounded-lg text-center cursor-pointer hover:scale-105 transition-transform"
+            style={{ background: 'rgba(255,255,255,0.2)' }}>
+            <div className="text-5xl mb-4">{playlist.emoji}</div>
+            <h4 className="text-white font-bold" style={{ fontFamily: 'serif' }}>{playlist.title}</h4>
+            <p className="text-white/60 text-sm">{playlist.tracks}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+    <footer className="text-center py-8 relative z-10">
+      <p className="text-white/50" style={{ fontFamily: 'serif' }}>© １９８９ ＰＡＲＡＤＩＳＥ ＣＯＲＰ</p>
+    </footer>
+  </div>
+);
+
+// ============================================================================
+// 28. DIMENSIONAL LAYERING - "Layers" Project Management
+// ============================================================================
+const DimensionalDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-100">
+    <header className="max-w-6xl mx-auto px-8 py-6">
+      <nav className="flex justify-between items-center">
+        <div className="flex items-center gap-2">
+          <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold shadow-lg">L</div>
+          <span className="text-xl font-semibold text-gray-900">Layers</span>
+        </div>
+        <div className="flex gap-6">
+          {['Projects', 'Team', 'Calendar', 'Settings'].map((item) => (
+            <a key={item} href="#" className="text-gray-600 hover:text-gray-900">{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <main className="max-w-6xl mx-auto px-8 py-8">
+      <div className="relative">
+        <div className="absolute -top-4 -left-4 w-full h-full bg-indigo-200 rounded-3xl" style={{ zIndex: 1 }} />
+        <div className="absolute -top-2 -left-2 w-full h-full bg-indigo-100 rounded-3xl" style={{ zIndex: 2 }} />
+        <div className="relative bg-white rounded-3xl p-8 shadow-xl" style={{ zIndex: 3 }}>
+          <div className="flex justify-between items-start mb-8">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Product Launch Q4</h1>
+              <p className="text-gray-500 mt-1">Marketing Campaign • 12 tasks remaining</p>
+            </div>
+            <div className="flex -space-x-2">
+              {['bg-pink-500', 'bg-blue-500', 'bg-green-500', 'bg-yellow-500'].map((color, i) => (
+                <div key={i} className={`w-10 h-10 ${color} rounded-full border-2 border-white`} />
+              ))}
+            </div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {['To Do', 'In Progress', 'Done'].map((status, i) => (
+              <div key={i}>
+                <h3 className="font-semibold text-gray-700 mb-4">{status}</h3>
+                <div className="space-y-4">
+                  {[1, 2].map((j) => (
+                    <div key={j} className="relative">
+                      <div className="absolute -bottom-1 -right-1 w-full h-full bg-gray-200 rounded-xl" />
+                      <div className="relative bg-white p-4 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
+                        <h4 className="font-medium text-gray-900">Task {i * 2 + j}</h4>
+                        <p className="text-sm text-gray-500 mt-1">Due in {j + i} days</p>
+                        <div className="flex gap-2 mt-3">
+                          <span className="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs rounded">Design</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 29. EXAGGERATED MINIMALISM - "VOID" Architecture Studio
+// ============================================================================
+const ExaggeratedMinimalismDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-white">
+    <header className="max-w-7xl mx-auto px-8 py-8">
+      <nav className="flex justify-between items-center">
+        <span className="text-xl tracking-widest">VOID</span>
+        <div className="flex gap-8 text-sm tracking-widest">
+          {['WORK', 'ABOUT', 'CONTACT'].map((item) => (
+            <a key={item} href="#" className="hover:line-through">{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <main className="max-w-7xl mx-auto px-8 py-24">
+      <h1 className="text-[12vw] font-black leading-[0.85] tracking-tight text-black mb-24">
+        SPACE<br />
+        IS<br />
+        <span className="text-white" style={{ WebkitTextStroke: '2px black' }}>EVERYTHING</span>
+      </h1>
+      <div className="flex justify-between items-end">
+        <p className="text-xl max-w-sm text-gray-600">
+          We create architecture that breathes. 
+          Minimal intervention. Maximum impact.
+        </p>
+        <button className="px-12 py-6 border-2 border-black text-black font-bold tracking-widest hover:bg-black hover:text-white transition-colors">
+          VIEW PROJECTS
+        </button>
+      </div>
+    </main>
+    <section className="max-w-7xl mx-auto px-8 py-24 border-t-2 border-black">
+      <div className="grid grid-cols-2 gap-24">
+        <div>
+          <span className="text-9xl font-black text-gray-200">01</span>
+          <h3 className="text-4xl font-bold mt-8 mb-4">Tokyo Residence</h3>
+          <p className="text-gray-600">A home that dissolves the boundary between inside and outside.</p>
+        </div>
+        <div>
+          <span className="text-9xl font-black text-gray-200">02</span>
+          <h3 className="text-4xl font-bold mt-8 mb-4">Oslo Pavilion</h3>
+          <p className="text-gray-600">Pure geometry in dialogue with the Nordic landscape.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 30. KINETIC TYPOGRAPHY - "MOTION" Creative Studio
+// ============================================================================
+const KineticTypographyDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-black text-white overflow-hidden">
+    <style>{`
+      @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      @keyframes typewriter { from { width: 0; } to { width: 100%; } }
+      .marquee { animation: slide 20s linear infinite; }
+    `}</style>
+    <header className="max-w-6xl mx-auto px-8 py-8">
+      <nav className="flex justify-between items-center">
+        <span className="text-2xl font-bold">MOTION</span>
+        <div className="flex gap-6">
+          {['Work', 'About', 'Contact'].map((item) => (
+            <a key={item} href="#" className="hover:opacity-50">{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <section className="py-24 overflow-hidden">
+      <div className="whitespace-nowrap marquee">
+        <span className="text-[15vw] font-black inline-block">
+          WE CREATE MOTION • WE CREATE EMOTION • WE CREATE MOTION • WE CREATE EMOTION •
+        </span>
+      </div>
+    </section>
+    <section className="max-w-6xl mx-auto px-8 py-16">
+      <h2 className="text-6xl font-bold mb-8 overflow-hidden">
+        <span className="inline-block" style={{ animation: 'typewriter 2s steps(20) forwards' }}>
+          Design that moves.
+        </span>
+      </h2>
+      <p className="text-xl text-gray-400 max-w-xl mb-12">
+        We are a motion design studio that brings brands to life through animation, 
+        visual effects, and kinetic experiences.
+      </p>
+      <div className="grid md:grid-cols-2 gap-8">
+        {[
+          { title: 'Brand Animation', desc: 'Logos that breathe and move' },
+          { title: 'UI Motion', desc: 'Interfaces that feel alive' },
+          { title: 'Title Sequences', desc: 'Stories told in seconds' },
+          { title: 'Social Content', desc: 'Scroll-stopping moments' },
+        ].map((service, i) => (
+          <div key={i} className="p-8 border border-gray-800 hover:border-white transition-colors group">
+            <h3 className="text-2xl font-bold mb-2 group-hover:translate-x-4 transition-transform">{service.title}</h3>
+            <p className="text-gray-500">{service.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 31. PARALLAX STORYTELLING - "Journey" Brand Story
+// ============================================================================
+const ParallaxDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#1A1A2E' }}>
+    <div className="fixed inset-0 pt-16 flex items-center justify-center pointer-events-none" style={{ zIndex: 0 }}>
+      <div className="text-[30vw] font-black text-white/5">STORY</div>
+    </div>
+    <div className="relative z-10">
+      <section className="min-h-screen flex items-center justify-center px-8">
+        <div className="text-center">
+          <p className="text-pink-500 uppercase tracking-widest mb-4">Scroll to discover</p>
+          <h1 className="text-6xl md:text-8xl font-bold text-white mb-8">Our Journey</h1>
+          <p className="text-xl text-gray-400 max-w-xl mx-auto">
+            From a small garage in San Francisco to serving millions worldwide. This is our story.
+          </p>
+          <div className="mt-12 animate-bounce">
+            <span className="text-4xl">↓</span>
+          </div>
+        </div>
+      </section>
+      <section className="min-h-screen flex items-center px-8" style={{ background: 'linear-gradient(180deg, transparent, rgba(233,69,96,0.2))' }}>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="text-pink-500 text-9xl font-black opacity-50">01</span>
+            <h2 className="text-5xl font-bold text-white mt-4 mb-6">The Beginning</h2>
+            <p className="text-gray-400 text-lg">
+              In 2015, three friends with a shared vision started building something different. 
+              No investors, no fancy office—just passion and purpose.
+            </p>
+          </div>
+          <div className="aspect-square bg-gradient-to-br from-pink-500 to-orange-500 rounded-3xl" />
+        </div>
+      </section>
+      <section className="min-h-screen flex items-center px-8" style={{ background: 'linear-gradient(180deg, rgba(233,69,96,0.2), rgba(15,52,96,0.5))' }}>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="aspect-square bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl order-2 md:order-1" />
+          <div className="order-1 md:order-2">
+            <span className="text-blue-500 text-9xl font-black opacity-50">02</span>
+            <h2 className="text-5xl font-bold text-white mt-4 mb-6">The Growth</h2>
+            <p className="text-gray-400 text-lg">
+              By 2020, we had 1 million users. Not through growth hacks or viral marketing, 
+              but by building something people actually love.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="min-h-screen flex items-center justify-center px-8 text-center" style={{ background: 'rgba(15,52,96,0.5)' }}>
+        <div>
+          <span className="text-white text-9xl font-black opacity-50">∞</span>
+          <h2 className="text-5xl font-bold text-white mt-4 mb-6">The Future</h2>
+          <p className="text-gray-400 text-lg max-w-xl mx-auto mb-12">
+            This is just the beginning. Join us as we write the next chapter together.
+          </p>
+          <button className="px-12 py-5 bg-gradient-to-r from-pink-500 to-orange-500 text-white font-bold rounded-full">
+            Join Our Journey
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+);
+
+// ============================================================================
+// 32. SWISS MODERNISM 2.0 - "Ratio" Design System
+// ============================================================================
+const SwissModernism2Demo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-white">
+    <header className="max-w-6xl mx-auto px-8 py-8 border-b border-gray-200">
+      <nav className="grid grid-cols-12 gap-4 items-center">
+        <div className="col-span-2">
+          <span className="text-2xl font-bold tracking-tight">ratio.</span>
+        </div>
+        <div className="col-span-8 flex justify-center gap-8">
+          {['Components', 'Guidelines', 'Resources', 'Changelog'].map((item) => (
+            <a key={item} href="#" className="text-gray-600 hover:text-black transition-colors">{item}</a>
+          ))}
+        </div>
+        <div className="col-span-2 text-right">
+          <button className="px-4 py-2 bg-black text-white text-sm">Get Started</button>
+        </div>
+      </nav>
+    </header>
+    <main className="max-w-6xl mx-auto px-8 py-16">
+      <div className="grid grid-cols-12 gap-8">
+        <div className="col-span-8">
+          <p className="text-red-600 font-medium mb-4">Version 3.0</p>
+          <h1 className="text-6xl font-bold leading-tight mb-8">
+            A systematic approach to modern interface design.
+          </h1>
+          <p className="text-xl text-gray-600 mb-8">
+            Ratio is a comprehensive design system built on mathematical principles, 
+            typographic scales, and grid-based layouts.
+          </p>
+          <div className="flex gap-4">
+            <button className="px-6 py-3 bg-black text-white font-medium">Read Documentation</button>
+            <button className="px-6 py-3 border border-black text-black font-medium">View on GitHub</button>
+          </div>
+        </div>
+        <div className="col-span-4">
+          <div className="space-y-4">
+            <div className="h-32 bg-black rounded" />
+            <div className="h-20 bg-red-600 rounded" />
+            <div className="h-16 bg-gray-200 rounded" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <section className="max-w-6xl mx-auto px-8 py-16 border-t border-gray-200">
+      <div className="grid grid-cols-12 gap-8">
+        <div className="col-span-4">
+          <span className="text-sm text-gray-500 font-medium">01</span>
+          <h3 className="text-2xl font-bold mt-2 mb-4">Grid System</h3>
+          <p className="text-gray-600">12-column responsive grid with mathematical spacing scale.</p>
+        </div>
+        <div className="col-span-4">
+          <span className="text-sm text-gray-500 font-medium">02</span>
+          <h3 className="text-2xl font-bold mt-2 mb-4">Typography</h3>
+          <p className="text-gray-600">Modular scale based on perfect fourth (1.333) ratio.</p>
+        </div>
+        <div className="col-span-4">
+          <span className="text-sm text-gray-500 font-medium">03</span>
+          <h3 className="text-2xl font-bold mt-2 mb-4">Components</h3>
+          <p className="text-gray-600">60+ accessible components following systematic principles.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 33. HUD / SCI-FI FUI - "ORBITAL" Space Operations
+// ============================================================================
+const HUDSciFiDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 relative" style={{ background: '#0A0F1C' }}>
+    <div className="absolute inset-0 opacity-10"
+      style={{ backgroundImage: 'linear-gradient(rgba(0,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+    <header className="max-w-6xl mx-auto px-8 py-6 relative z-10">
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-4">
+          <div className="w-3 h-3 rounded-full animate-pulse" style={{ background: '#00FFFF', boxShadow: '0 0 10px #00FFFF' }} />
+          <span className="font-mono text-cyan-400 tracking-widest">ORBITAL COMMAND</span>
+        </div>
+        <div className="font-mono text-cyan-400/60 text-sm">
+          MISSION TIME: 047:23:15
+        </div>
+      </div>
+    </header>
+    <main className="max-w-6xl mx-auto px-8 py-8 relative z-10">
+      <div className="grid md:grid-cols-3 gap-6 mb-8">
+        {[
+          { label: 'ALTITUDE', value: '408 KM', status: 'NOMINAL' },
+          { label: 'VELOCITY', value: '7.66 KM/S', status: 'OPTIMAL' },
+          { label: 'CREW STATUS', value: '6 ACTIVE', status: 'HEALTHY' },
+        ].map((stat, i) => (
+          <div key={i} className="p-6 border relative overflow-hidden" style={{ borderColor: 'rgba(0,255,255,0.3)', background: 'rgba(0,255,255,0.05)' }}>
+            <div className="absolute top-0 right-0 w-16 h-16 border-t border-r" style={{ borderColor: 'rgba(0,255,255,0.5)' }} />
+            <p className="font-mono text-cyan-400/60 text-xs tracking-widest">{stat.label}</p>
+            <p className="font-mono text-3xl text-cyan-400 mt-2" style={{ textShadow: '0 0 10px rgba(0,255,255,0.5)' }}>{stat.value}</p>
+            <p className="font-mono text-xs text-green-400 mt-2">● {stat.status}</p>
+          </div>
+        ))}
+      </div>
+      <div className="p-8 border relative" style={{ borderColor: 'rgba(0,255,255,0.3)', background: 'rgba(0,255,255,0.02)' }}>
+        <div className="absolute top-2 left-2 w-4 h-4 border-t border-l" style={{ borderColor: '#00FFFF' }} />
+        <div className="absolute top-2 right-2 w-4 h-4 border-t border-r" style={{ borderColor: '#00FFFF' }} />
+        <div className="absolute bottom-2 left-2 w-4 h-4 border-b border-l" style={{ borderColor: '#00FFFF' }} />
+        <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r" style={{ borderColor: '#00FFFF' }} />
+        <div className="text-center">
+          <p className="font-mono text-cyan-400/60 text-sm mb-4">ORBITAL TRAJECTORY</p>
+          <div className="w-64 h-64 mx-auto rounded-full border-2 relative" style={{ borderColor: 'rgba(0,255,255,0.3)' }}>
+            <div className="absolute inset-4 rounded-full border" style={{ borderColor: 'rgba(0,255,255,0.2)' }} />
+            <div className="absolute inset-8 rounded-full border" style={{ borderColor: 'rgba(0,255,255,0.1)' }} />
+            <div className="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ background: '#00FFFF', boxShadow: '0 0 20px #00FFFF' }} />
+            <div className="absolute top-4 left-1/2 w-2 h-2 -translate-x-1/2 rounded-full bg-green-400 animate-pulse" />
+          </div>
+        </div>
+      </div>
+      <div className="mt-8 flex justify-center gap-4">
+        <button className="px-8 py-3 font-mono text-cyan-400 border" style={{ borderColor: 'rgba(0,255,255,0.5)', background: 'rgba(0,255,255,0.1)' }}>
+          [ DOCK ]
+        </button>
+        <button className="px-8 py-3 font-mono text-white" style={{ background: '#00FFFF', color: '#0A0F1C' }}>
+          [ LAUNCH ]
+        </button>
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 34. PIXEL ART - "8-BIT QUEST" Retro Game Platform
+// ============================================================================
+const PixelArtDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#0F0F23', imageRendering: 'pixelated' }}>
+    <style>{`
+      @font-face { font-family: 'PixelFont'; src: local('Courier New'); }
+      * { font-family: 'Courier New', monospace; }
+      .pixel-border { box-shadow: 4px 0 0 #FFF, -4px 0 0 #FFF, 0 4px 0 #FFF, 0 -4px 0 #FFF, 4px 4px 0 #FFF, -4px -4px 0 #FFF, 4px -4px 0 #FFF, -4px 4px 0 #FFF; }
+    `}</style>
+    <header className="max-w-4xl mx-auto px-8 py-8">
+      <nav className="flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-yellow-400">★ 8-BIT QUEST ★</h1>
+        <div className="flex gap-6 text-sm">
+          {['PLAY', 'SHOP', 'SCORES'].map((item) => (
+            <a key={item} href="#" className="text-white hover:text-yellow-400">{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <section className="max-w-4xl mx-auto px-8 py-12 text-center">
+      <div className="text-6xl mb-8">🎮</div>
+      <h2 className="text-4xl font-bold text-white mb-4" style={{ textShadow: '4px 4px 0 #FF0000' }}>
+        CLASSIC GAMES
+      </h2>
+      <p className="text-green-400 mb-8">PRESS START TO CONTINUE</p>
+      <div className="inline-block p-6 bg-blue-900" style={{ boxShadow: '8px 8px 0 #000' }}>
+        <p className="text-white text-xl">HIGH SCORE: 999,999</p>
+      </div>
+    </section>
+    <section className="max-w-4xl mx-auto px-8 py-8">
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          { title: 'SPACE BLASTER', color: 'bg-red-600', emoji: '🚀' },
+          { title: 'DUNGEON CRAWL', color: 'bg-green-600', emoji: '🗡️' },
+          { title: 'PIXEL RACER', color: 'bg-blue-600', emoji: '🏎️' },
+        ].map((game, i) => (
+          <div key={i} className={`${game.color} p-6 text-center`} style={{ boxShadow: '8px 8px 0 #000' }}>
+            <div className="text-5xl mb-4">{game.emoji}</div>
+            <h3 className="text-white font-bold mb-2">{game.title}</h3>
+            <button className="px-4 py-2 bg-yellow-400 text-black font-bold text-sm mt-4"
+              style={{ boxShadow: '4px 4px 0 #000' }}>
+              PLAY NOW
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
+    <section className="max-w-4xl mx-auto px-8 py-12 text-center">
+      <div className="inline-block p-8 bg-purple-900" style={{ boxShadow: '8px 8px 0 #000' }}>
+        <p className="text-yellow-400 text-xl mb-4">★ DAILY CHALLENGE ★</p>
+        <p className="text-white mb-4">Beat today's level for bonus coins!</p>
+        <p className="text-green-400 text-3xl font-bold">+500 🪙</p>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 35. BENTO GRIDS - "Craft" Personal Portfolio
+// ============================================================================
+const BentoGridsDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#F5F5F7' }}>
+    <header className="max-w-5xl mx-auto px-8 py-12">
+      <h1 className="text-4xl font-semibold text-gray-900">Sarah Chen</h1>
+      <p className="text-gray-500 mt-2">Product Designer • San Francisco</p>
+    </header>
+    <main className="max-w-5xl mx-auto px-8 py-4">
+      <div className="grid grid-cols-4 gap-4 auto-rows-[140px]">
+        <div className="col-span-2 row-span-2 bg-gradient-to-br from-violet-500 to-purple-600 rounded-3xl p-8 flex flex-col justify-between text-white">
+          <div>
+            <p className="text-white/70 text-sm">Featured Project</p>
+            <h3 className="text-2xl font-semibold mt-2">Fintech App Redesign</h3>
+          </div>
+          <p className="text-white/80">A complete overhaul of a banking app serving 2M+ users</p>
+        </div>
+        <div className="bg-white rounded-3xl p-6 flex flex-col justify-between shadow-sm">
+          <span className="text-3xl">📧</span>
+          <p className="text-sm text-gray-600">hello@sarah.design</p>
+        </div>
+        <div className="bg-gray-900 rounded-3xl p-6 flex flex-col justify-between text-white">
+          <span className="text-3xl">🎯</span>
+          <p className="text-sm">10 years experience</p>
+        </div>
+        <div className="col-span-2 bg-gradient-to-r from-orange-400 to-pink-500 rounded-3xl p-6 flex items-center justify-between text-white">
+          <div>
+            <p className="text-white/80 text-sm">Latest Article</p>
+            <h3 className="font-semibold mt-1">Design Systems at Scale</h3>
+          </div>
+          <span className="text-4xl">📝</span>
+        </div>
+        <div className="bg-white rounded-3xl p-6 flex flex-col justify-center items-center shadow-sm">
+          <p className="text-4xl font-bold text-gray-900">50+</p>
+          <p className="text-sm text-gray-500 mt-1">Projects</p>
+        </div>
+        <div className="bg-white rounded-3xl p-6 flex flex-col justify-between shadow-sm">
+          <span className="text-3xl">🐦</span>
+          <p className="text-sm text-gray-600">@sarahdesigns</p>
+        </div>
+        <div className="col-span-2 bg-blue-500 rounded-3xl p-6 flex items-center gap-4 text-white">
+          <span className="text-5xl">💼</span>
+          <div>
+            <p className="font-semibold">Open to opportunities</p>
+            <p className="text-white/80 text-sm">Senior Product Design roles</p>
+          </div>
+        </div>
+        <div className="bg-white rounded-3xl p-6 flex flex-col justify-center items-center shadow-sm">
+          <span className="text-3xl">🏆</span>
+          <p className="text-sm text-gray-600 mt-2">3x Awwwards</p>
+        </div>
+        <div className="bg-green-500 rounded-3xl p-6 flex flex-col justify-between text-white">
+          <span className="text-3xl">🎨</span>
+          <p className="text-sm">View Dribbble</p>
+        </div>
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 36. SPATIAL UI (VISIONOS) - "Atmosphere" Meditation Experience
+// ============================================================================
+const SpatialUIDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 relative overflow-hidden"
+    style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)' }}>
+    <div className="absolute inset-0">
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-purple-500/20 blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-blue-500/20 blur-3xl" />
+    </div>
+    <div className="relative z-10 max-w-4xl mx-auto px-8 py-12">
+      <header className="text-center mb-16">
+        <div className="inline-block px-8 py-4 rounded-3xl mb-8"
+          style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(40px) saturate(180%)', border: '1px solid rgba(255,255,255,0.2)' }}>
+          <span className="text-white/80 text-sm">Now in Spatial Audio</span>
+        </div>
+        <h1 className="text-5xl font-semibold text-white mb-4">Atmosphere</h1>
+        <p className="text-white/60">Immersive meditation for Vision Pro</p>
+      </header>
+      <section className="grid md:grid-cols-2 gap-6 mb-12">
+        {[
+          { title: 'Forest Sanctuary', duration: '20 min', icon: '🌲' },
+          { title: 'Ocean Depths', duration: '15 min', icon: '🌊' },
+          { title: 'Mountain Peak', duration: '25 min', icon: '🏔️' },
+          { title: 'Night Sky', duration: '30 min', icon: '✨' },
+        ].map((env, i) => (
+          <div key={i} className="p-6 rounded-3xl cursor-pointer transition-transform hover:scale-105"
+            style={{ background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(40px) saturate(180%)', border: '1px solid rgba(255,255,255,0.2)' }}>
+            <span className="text-4xl">{env.icon}</span>
+            <h3 className="text-xl font-medium text-white mt-4">{env.title}</h3>
+            <p className="text-white/50 text-sm mt-1">{env.duration}</p>
+          </div>
+        ))}
+      </section>
+      <section className="p-8 rounded-3xl text-center"
+        style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(40px) saturate(180%)', border: '1px solid rgba(255,255,255,0.2)' }}>
+        <div className="w-32 h-32 mx-auto rounded-full flex items-center justify-center mb-6"
+          style={{ background: 'rgba(255,255,255,0.1)', border: '2px solid rgba(255,255,255,0.3)' }}>
+          <span className="text-5xl">🧘</span>
+        </div>
+        <h2 className="text-2xl font-medium text-white mb-2">Ready to begin?</h2>
+        <p className="text-white/60 mb-6">Put on your headset and enter a world of calm</p>
+        <button className="px-8 py-4 rounded-full text-white font-medium"
+          style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.3)' }}>
+          Start Session
+        </button>
+      </section>
+    </div>
+  </div>
+);
+
+// ============================================================================
+// 37. E-INK / PAPER - "Chronicle" Digital Journal
+// ============================================================================
+const EInkDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#FDFBF7' }}>
+    <header className="max-w-2xl mx-auto px-8 py-8 border-b-2 border-gray-900">
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-serif font-bold">Chronicle</h1>
+        <span className="font-serif text-gray-600">December 15, 2025</span>
+      </div>
+    </header>
+    <main className="max-w-2xl mx-auto px-8 py-12">
+      <article className="font-serif">
+        <h2 className="text-4xl font-bold mb-4 leading-tight">The Art of Slow Reading</h2>
+        <p className="text-gray-600 mb-8">By Elena Marchetti • 8 min read</p>
+        <p className="text-xl leading-relaxed mb-6 first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+          In an age of infinite scroll and endless notifications, there is a quiet revolution 
+          brewing among readers who have chosen to slow down.
+        </p>
+        <p className="text-lg leading-relaxed mb-6 text-gray-800">
+          They call it "slow reading"—a deliberate practice of engaging deeply with text, 
+          savoring each sentence, and allowing ideas to marinate in the mind before moving on.
+        </p>
+        <blockquote className="border-l-4 border-gray-900 pl-6 my-8 italic text-xl">
+          "A book is a garden carried in the pocket."
+          <span className="block text-base mt-2 not-italic text-gray-600">— Chinese Proverb</span>
+        </blockquote>
+        <p className="text-lg leading-relaxed mb-6 text-gray-800">
+          The practice has roots in ancient contemplative traditions, but its modern revival 
+          speaks to a growing hunger for depth in an increasingly shallow digital landscape.
+        </p>
+      </article>
+      <div className="flex justify-between items-center pt-8 border-t-2 border-gray-200 mt-12">
+        <button className="font-serif text-gray-600 hover:text-black">← Previous</button>
+        <button className="font-serif text-gray-600 hover:text-black">Next →</button>
+      </div>
+    </main>
+    <footer className="max-w-2xl mx-auto px-8 py-8 text-center font-serif text-gray-500">
+      <p>Read in peace. No ads. No tracking.</p>
+    </footer>
+  </div>
+);
+
+// ============================================================================
+// 38. GEN Z CHAOS / MAXIMALISM - "UNHINGED" Fashion Drop
+// ============================================================================
+const GenZChaosDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 relative overflow-hidden" style={{ background: '#FFFF00' }}>
+    <div className="absolute top-20 left-10 text-8xl rotate-12">🔥</div>
+    <div className="absolute top-40 right-10 text-6xl -rotate-12">✨</div>
+    <div className="absolute bottom-20 left-1/4 text-7xl rotate-45">👀</div>
+    <div className="absolute top-1/2 right-1/4 text-5xl -rotate-6">💀</div>
+    <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h40v40H0V0zm20 20v20H0V20h20zm20 0v20H20V20h20zM20 0v20H0V0h20z\' fill=\'%23FF00FF\' fill-opacity=\'0.05\'/%3E%3C/svg%3E")' }} />
+    <header className="relative z-10 max-w-5xl mx-auto px-8 py-8">
+      <h1 className="text-6xl font-black" style={{ transform: 'rotate(-2deg)', textShadow: '4px 4px 0 #FF00FF' }}>
+        UNHINGED
+      </h1>
+    </header>
+    <section className="relative z-10 max-w-5xl mx-auto px-8 py-8">
+      <div className="p-8" style={{ background: '#FF00FF', transform: 'rotate(1deg)', boxShadow: '8px 8px 0 #000' }}>
+        <p className="text-white font-black text-xl mb-2">⚠️ LIMITED DROP ⚠️</p>
+        <h2 className="text-5xl font-black text-white mb-4" style={{ textShadow: '3px 3px 0 #00FFFF' }}>
+          CHAOS COLLECTION
+        </h2>
+        <p className="text-white text-xl">DROPS IN 00:47:23</p>
+      </div>
+    </section>
+    <section className="relative z-10 max-w-5xl mx-auto px-8 py-8">
+      <div className="grid md:grid-cols-3 gap-6">
+        {[
+          { name: 'CHAOS TEE', price: '$69', bg: '#00FFFF' },
+          { name: 'UNHINGED HOODIE', price: '$129', bg: '#FF6B6B' },
+          { name: 'BRAIN ROT CAP', price: '$45', bg: '#00FF00' },
+        ].map((item, i) => (
+          <div key={i} className="p-6 text-center" style={{ background: item.bg, transform: `rotate(${i % 2 ? 2 : -2}deg)`, boxShadow: '6px 6px 0 #000' }}>
+            <div className="text-6xl mb-4">👕</div>
+            <h3 className="font-black text-xl mb-2">{item.name}</h3>
+            <p className="font-black text-2xl">{item.price}</p>
+            <button className="mt-4 px-6 py-2 bg-black text-white font-black">
+              NEED IT
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
+    <section className="relative z-10 max-w-5xl mx-auto px-8 py-8">
+      <div className="overflow-hidden whitespace-nowrap">
+        <span className="inline-block animate-pulse text-4xl font-black" style={{ animationDuration: '0.5s' }}>
+          NO REFUNDS • FINAL SALE • NO THOUGHTS • JUST VIBES • NO REFUNDS • FINAL SALE •
+        </span>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 39. BIOMIMETIC / ORGANIC 2.0 - "Bloom" Biotech Platform
+// ============================================================================
+const BiomimeticDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: 'linear-gradient(180deg, #001E3C 0%, #0A2540 100%)' }}>
+    <style>{`
+      @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+      .breathing { animation: breathe 4s ease-in-out infinite; }
+    `}</style>
+    <header className="max-w-5xl mx-auto px-8 py-8">
+      <nav className="flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full breathing" style={{ background: 'linear-gradient(135deg, #00FF41, #00FFFF)' }} />
+          <span className="text-xl font-medium text-white">Bloom</span>
+        </div>
+        <div className="flex gap-6">
+          {['Research', 'Platform', 'About'].map((item) => (
+            <a key={item} href="#" className="text-white/60 hover:text-white transition-colors">{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <section className="max-w-5xl mx-auto px-8 py-16 text-center">
+      <div className="w-40 h-40 mx-auto mb-12 rounded-full breathing"
+        style={{ background: 'radial-gradient(circle, rgba(0,255,65,0.3) 0%, transparent 70%)', border: '2px solid rgba(0,255,65,0.5)' }}>
+        <div className="w-full h-full rounded-full flex items-center justify-center"
+          style={{ background: 'radial-gradient(circle, rgba(0,255,255,0.2) 0%, transparent 60%)' }}>
+          <span className="text-6xl">🧬</span>
+        </div>
+      </div>
+      <h1 className="text-5xl font-light text-white mb-6">
+        Life-inspired<br />
+        <span style={{ color: '#00FF41' }}>technology</span>
+      </h1>
+      <p className="text-xl text-white/60 max-w-xl mx-auto mb-12">
+        We study nature's 3.8 billion years of R&D to create sustainable solutions for humanity's greatest challenges.
+      </p>
+      <button className="px-8 py-4 rounded-full text-white font-medium"
+        style={{ background: 'linear-gradient(135deg, rgba(0,255,65,0.3), rgba(0,255,255,0.3))', border: '1px solid rgba(0,255,65,0.5)' }}>
+        Explore Our Research
+      </button>
+    </section>
+    <section className="max-w-5xl mx-auto px-8 py-8">
+      <div className="grid md:grid-cols-3 gap-6">
+        {[
+          { title: 'Cellular Computing', desc: 'Processing inspired by neural networks', icon: '🔬' },
+          { title: 'Bio-materials', desc: 'Self-healing sustainable materials', icon: '🌱' },
+          { title: 'Swarm Intelligence', desc: 'Collective problem-solving systems', icon: '🐝' },
+        ].map((item, i) => (
+          <div key={i} className="p-6 rounded-3xl breathing" style={{ background: 'rgba(0,255,65,0.05)', border: '1px solid rgba(0,255,65,0.2)', animationDelay: `${i * 0.5}s` }}>
+            <span className="text-4xl">{item.icon}</span>
+            <h3 className="text-xl text-white mt-4 mb-2">{item.title}</h3>
+            <p className="text-white/60">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 40. ANTI-POLISH / RAW AESTHETIC - "Sketch" Creative Portfolio
+// ============================================================================
+const AntiPolishDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#FAFAF8' }}>
+    <style>{`
+      .sketch-border { border: 2px solid #1A1A1A; border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; }
+      .hand-drawn { font-family: 'Comic Sans MS', cursive, sans-serif; }
+    `}</style>
+    <header className="max-w-4xl mx-auto px-8 py-8">
+      <h1 className="text-4xl hand-drawn" style={{ transform: 'rotate(-1deg)' }}>alex's portfolio ✏️</h1>
+    </header>
+    <main className="max-w-4xl mx-auto px-8 py-8">
+      <section className="mb-16">
+        <p className="text-xl text-gray-600 hand-drawn mb-8" style={{ transform: 'rotate(0.5deg)' }}>
+          hi! i make things on the internet. sometimes they work. ¯\_(ツ)_/¯
+        </p>
+        <div className="sketch-border p-8" style={{ background: '#FFFEF0', transform: 'rotate(-0.5deg)' }}>
+          <h2 className="text-2xl hand-drawn mb-4">about me</h2>
+          <p className="hand-drawn text-gray-700">
+            designer & developer based in brooklyn. i like making weird websites, 
+            drinking too much coffee, and pretending i understand CSS grid.
+          </p>
+        </div>
+      </section>
+      <section className="mb-16">
+        <h2 className="text-3xl hand-drawn mb-8" style={{ transform: 'rotate(1deg)' }}>selected work *</h2>
+        <div className="space-y-6">
+          {[
+            { title: 'weird website #1', desc: 'a site that does... something?', year: '2024' },
+            { title: 'app thing', desc: 'an app i made for fun', year: '2024' },
+            { title: 'brand stuff', desc: 'logos and colors and fonts oh my', year: '2023' },
+          ].map((work, i) => (
+            <div key={i} className="sketch-border p-6 flex justify-between items-center"
+              style={{ transform: `rotate(${i % 2 ? 0.5 : -0.5}deg)`, background: i === 1 ? '#FFF9DB' : '#FFF' }}>
+              <div>
+                <h3 className="text-xl hand-drawn">{work.title}</h3>
+                <p className="text-gray-600 hand-drawn">{work.desc}</p>
+              </div>
+              <span className="hand-drawn text-gray-400">{work.year}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="sketch-border p-8 text-center" style={{ background: '#F0FFF0', transform: 'rotate(0.5deg)' }}>
+        <h2 className="text-2xl hand-drawn mb-4">wanna chat? 💬</h2>
+        <p className="hand-drawn text-gray-700 mb-4">i'm always down to talk about projects, ideas, or just random stuff</p>
+        <a href="mailto:alex@email.com" className="hand-drawn text-blue-600 underline">alex@email.com</a>
+      </section>
+    </main>
+    <footer className="max-w-4xl mx-auto px-8 py-8 text-center">
+      <p className="hand-drawn text-gray-400">made with ☕ and questionable decisions</p>
+    </footer>
+  </div>
+);
+
+// ============================================================================
+// 41. TACTILE DIGITAL / DEFORMABLE UI - "Bounce" Social App
+// ============================================================================
+const TactileDigitalDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: 'linear-gradient(180deg, #E8F4F8 0%, #FFF5F5 100%)' }}>
+    <style>{`
+      .squishy:active { transform: scale(0.95); }
+      .squishy { transition: transform 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      .bouncy:hover { animation: bounce 0.5s; }
+      @keyframes bounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+    `}</style>
+    <header className="max-w-md mx-auto px-6 py-6">
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-bold" style={{ color: '#FF6B6B' }}>Bounce</h1>
+        <div className="w-10 h-10 rounded-full squishy cursor-pointer"
+          style={{ background: 'linear-gradient(135deg, #FF6B6B, #FFE66D)', boxShadow: '0 4px 12px rgba(255,107,107,0.3)' }} />
+      </div>
+    </header>
+    <main className="max-w-md mx-auto px-6 py-4 space-y-4">
+      <div className="p-6 rounded-3xl squishy cursor-pointer"
+        style={{ background: '#FFF', boxShadow: '0 10px 30px rgba(0,0,0,0.1), inset 0 -4px 0 rgba(0,0,0,0.05)' }}>
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-12 h-12 rounded-full bouncy"
+            style={{ background: 'linear-gradient(135deg, #87CEEB, #4ECDC4)' }} />
+          <div>
+            <p className="font-semibold">Jamie Park</p>
+            <p className="text-sm text-gray-500">2 hours ago</p>
+          </div>
+        </div>
+        <p className="text-gray-800 mb-4">Just discovered this amazing coffee shop! The vibes are immaculate ✨☕</p>
+        <div className="flex gap-3">
+          {[{ emoji: '❤️', count: 42 }, { emoji: '💬', count: 8 }, { emoji: '🔄', count: 3 }].map((action, i) => (
+            <button key={i} className="px-4 py-2 rounded-full flex items-center gap-2 squishy"
+              style={{ background: '#F5F5F5' }}>
+              <span className="bouncy inline-block">{action.emoji}</span>
+              <span className="text-sm text-gray-600">{action.count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="p-6 rounded-3xl squishy cursor-pointer"
+        style={{ background: 'linear-gradient(135deg, #FFE66D, #FF6B6B)', boxShadow: '0 10px 30px rgba(255,230,109,0.3)' }}>
+        <p className="text-white font-semibold mb-2">🎉 Weekend Challenge!</p>
+        <p className="text-white/90">Share 3 things that made you smile today</p>
+        <button className="mt-4 px-6 py-3 bg-white rounded-full font-semibold squishy"
+          style={{ color: '#FF6B6B' }}>
+          Join Challenge
+        </button>
+      </div>
+      <div className="grid grid-cols-3 gap-3">
+        {['🎨', '📸', '🎵'].map((icon, i) => (
+          <button key={i} className="aspect-square rounded-2xl flex items-center justify-center text-3xl squishy bouncy"
+            style={{ background: '#FFF', boxShadow: '0 6px 20px rgba(0,0,0,0.08)' }}>
+            {icon}
+          </button>
+        ))}
+      </div>
+    </main>
+    <nav className="fixed bottom-0 left-0 right-0 bg-white px-8 py-4">
+      <div className="max-w-md mx-auto flex justify-around">
+        {['🏠', '🔍', '➕', '💬', '👤'].map((icon, i) => (
+          <button key={i} className={`w-12 h-12 rounded-full flex items-center justify-center text-xl squishy bouncy ${i === 2 ? 'text-white' : ''}`}
+            style={i === 2 ? { background: 'linear-gradient(135deg, #FF6B6B, #FFE66D)', boxShadow: '0 4px 12px rgba(255,107,107,0.4)' } : {}}>
+            {icon}
+          </button>
+        ))}
+      </div>
+    </nav>
+  </div>
+);
+
+// ============================================================================
+// 42. NATURE DISTILLED - "Terra" Sustainable Goods
+// ============================================================================
+const NatureDistilledDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#F5F0E1' }}>
+    <header className="max-w-5xl mx-auto px-8 py-8">
+      <nav className="flex justify-between items-center">
+        <h1 className="text-2xl font-serif" style={{ color: '#5D4E37' }}>Terra</h1>
+        <div className="flex gap-6">
+          {['Shop', 'About', 'Journal'].map((item) => (
+            <a key={item} href="#" className="text-sm" style={{ color: '#8B7355' }}>{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <section className="max-w-5xl mx-auto px-8 py-16">
+      <h2 className="text-5xl font-serif mb-6" style={{ color: '#5D4E37' }}>
+        Goods from<br />the earth
+      </h2>
+      <p className="text-xl max-w-xl mb-12" style={{ color: '#8B7355' }}>
+        Handcrafted essentials made with sustainable materials and traditional techniques. 
+        Every piece tells a story.
+      </p>
+      <button className="px-8 py-4 rounded-full font-medium"
+        style={{ background: '#C67B5C', color: '#FFF' }}>
+        Explore Collection
+      </button>
+    </section>
+    <section className="max-w-5xl mx-auto px-8 py-8">
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          { name: 'Ceramic Vase', price: '$89', material: 'Hand-thrown clay' },
+          { name: 'Linen Throw', price: '$145', material: 'Organic linen' },
+          { name: 'Wooden Bowl', price: '$65', material: 'Reclaimed oak' },
+        ].map((product, i) => (
+          <div key={i} className="group">
+            <div className="aspect-square rounded-2xl mb-4 flex items-center justify-center"
+              style={{ background: '#E8DFD0' }}>
+              <span className="text-6xl group-hover:scale-110 transition-transform">
+                {i === 0 ? '🏺' : i === 1 ? '🧣' : '🥣'}
+              </span>
+            </div>
+            <h3 className="font-serif text-lg" style={{ color: '#5D4E37' }}>{product.name}</h3>
+            <p className="text-sm" style={{ color: '#8B7355' }}>{product.material}</p>
+            <p className="font-medium mt-2" style={{ color: '#C67B5C' }}>{product.price}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+    <section className="max-w-5xl mx-auto px-8 py-16">
+      <div className="p-12 rounded-3xl" style={{ background: '#E8DFD0' }}>
+        <div className="max-w-xl">
+          <h3 className="text-3xl font-serif mb-4" style={{ color: '#5D4E37' }}>Our Promise</h3>
+          <p className="text-lg" style={{ color: '#8B7355' }}>
+            Every Terra product is made to last, sourced responsibly, and crafted by artisans 
+            who are paid fairly. When you choose Terra, you choose a better way.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 43. INTERACTIVE CURSOR DESIGN - "Studio" Creative Agency
+// ============================================================================
+const InteractiveCursorDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gray-900 text-white">
+    <style>{`
+      .cursor-hover:hover { cursor: none; }
+      .magnetic:hover { transform: scale(1.1); }
+      .reveal:hover span { transform: translateY(0); }
+      .reveal span { transform: translateY(100%); transition: transform 0.3s; }
+    `}</style>
+    <header className="max-w-6xl mx-auto px-8 py-8">
+      <nav className="flex justify-between items-center">
+        <span className="text-2xl font-bold magnetic transition-transform">STUDIO</span>
+        <div className="flex gap-8">
+          {['Work', 'About', 'Contact'].map((item) => (
+            <a key={item} href="#" className="magnetic transition-transform hover:text-pink-500">{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <main className="max-w-6xl mx-auto px-8 py-24">
+      <h1 className="text-7xl font-bold mb-8 leading-tight">
+        We create<br />
+        <span className="text-transparent" style={{ WebkitTextStroke: '2px white' }}>experiences</span><br />
+        that matter
+      </h1>
+      <p className="text-xl text-gray-400 max-w-xl mb-12">
+        A creative agency specializing in digital experiences, brand identity, and interactive design.
+      </p>
+      <div className="inline-block">
+        <button className="group px-8 py-4 border-2 border-white rounded-full magnetic transition-all hover:bg-white hover:text-gray-900 overflow-hidden">
+          <span className="flex items-center gap-2">
+            View Our Work
+            <span className="group-hover:translate-x-2 transition-transform">→</span>
+          </span>
+        </button>
+      </div>
+    </main>
+    <section className="max-w-6xl mx-auto px-8 py-16">
+      <div className="grid md:grid-cols-2 gap-8">
+        {[
+          { title: 'Nike Campaign', type: 'Digital Experience' },
+          { title: 'Spotify Redesign', type: 'Brand Identity' },
+          { title: 'Apple Launch', type: 'Interactive' },
+          { title: 'Google Doodle', type: 'Animation' },
+        ].map((project, i) => (
+          <div key={i} className="group p-8 border border-gray-800 rounded-2xl cursor-none cursor-hover magnetic transition-all hover:border-pink-500 hover:bg-pink-500/10">
+            <p className="text-gray-500 text-sm mb-2">{project.type}</p>
+            <h3 className="text-2xl font-bold group-hover:text-pink-500 transition-colors">{project.title}</h3>
+            <div className="mt-4 overflow-hidden reveal">
+              <span className="inline-block text-pink-500">View Project →</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 44. VOICE-FIRST MULTIMODAL - "Aria" Voice Assistant
+// ============================================================================
+const VoiceFirstDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-gradient-to-b from-gray-50 to-gray-100 flex flex-col">
+    <style>{`
+      @keyframes wave { 0%, 100% { height: 20px; } 50% { height: 40px; } }
+      .wave { animation: wave 1s ease-in-out infinite; }
+    `}</style>
+    <header className="px-8 py-6">
+      <div className="max-w-md mx-auto flex justify-between items-center">
+        <span className="font-semibold text-gray-800">Aria</span>
+        <button className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center">⚙️</button>
+      </div>
+    </header>
+    <main className="flex-1 flex flex-col items-center justify-center px-8">
+      <div className="text-center mb-12">
+        <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-2xl">
+          <div className="flex gap-1 items-end">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="w-2 bg-white rounded wave" style={{ animationDelay: `${i * 0.1}s` }} />
+            ))}
+          </div>
+        </div>
+        <h2 className="text-2xl text-gray-800 mb-2">Listening...</h2>
+        <p className="text-gray-500">Say "Hey Aria" to start</p>
+      </div>
+      <div className="w-full max-w-md">
+        <div className="bg-white rounded-2xl p-6 shadow-lg mb-6">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex-shrink-0" />
+            <div>
+              <p className="text-gray-800 mb-3">
+                "Good morning! It's 72°F and sunny today. You have 3 meetings scheduled. 
+                Would you like me to summarize them?"
+              </p>
+              <div className="flex gap-2">
+                <button className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">
+                  Yes, please
+                </button>
+                <button className="px-4 py-2 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">
+                  Not now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="text-center text-gray-400 text-sm">
+          <p>Try saying:</p>
+          <p className="mt-2">"What's on my calendar?" • "Play some music" • "Set a reminder"</p>
+        </div>
+      </div>
+    </main>
+    <footer className="px-8 py-6">
+      <div className="max-w-md mx-auto">
+        <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow">
+          <button className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-2xl shadow-lg">
+            🎤
+          </button>
+          <input type="text" placeholder="Or type a message..." 
+            className="flex-1 bg-transparent outline-none text-gray-800" />
+        </div>
+      </div>
+    </footer>
+  </div>
+);
+
+// ============================================================================
+// 45. 3D PRODUCT PREVIEW - "Luxe" Watch Store
+// ============================================================================
+const ThreeDProductDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#F8F8F8' }}>
+    <header className="max-w-6xl mx-auto px-8 py-6">
+      <nav className="flex justify-between items-center">
+        <span className="text-2xl font-light tracking-widest">LUXE</span>
+        <div className="flex gap-6 text-sm">
+          {['Collections', 'About', 'Stores'].map((item) => (
+            <a key={item} href="#" className="text-gray-600 hover:text-black">{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <main className="max-w-6xl mx-auto px-8 py-8">
+      <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl flex items-center justify-center relative overflow-hidden">
+          <div className="text-[200px] transform hover:rotate-12 transition-transform duration-500 cursor-grab">
+            ⌚
+          </div>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            <button className="w-10 h-10 bg-white rounded-full shadow flex items-center justify-center">↻</button>
+            <button className="w-10 h-10 bg-white rounded-full shadow flex items-center justify-center">⊕</button>
+            <button className="w-10 h-10 bg-white rounded-full shadow flex items-center justify-center">📸</button>
+          </div>
+          <p className="absolute bottom-20 left-1/2 -translate-x-1/2 text-gray-400 text-sm">
+            Drag to rotate • Scroll to zoom
+          </p>
+        </div>
+        <div>
+          <p className="text-gray-400 text-sm uppercase tracking-widest mb-2">Heritage Collection</p>
+          <h1 className="text-4xl font-light mb-4">Chronograph Elite</h1>
+          <p className="text-gray-600 mb-8">
+            Crafted with Swiss precision, the Chronograph Elite features a 42mm 
+            stainless steel case, sapphire crystal, and automatic movement with 
+            72-hour power reserve.
+          </p>
+          <div className="mb-8">
+            <p className="text-sm text-gray-500 mb-3">Select Case</p>
+            <div className="flex gap-3">
+              {['Silver', 'Gold', 'Black'].map((color, i) => (
+                <button key={color} className={`w-10 h-10 rounded-full border-2 ${i === 0 ? 'border-black' : 'border-gray-200'}`}
+                  style={{ background: i === 0 ? '#C0C0C0' : i === 1 ? '#FFD700' : '#1A1A1A' }} />
+              ))}
+            </div>
+          </div>
+          <div className="mb-8">
+            <p className="text-sm text-gray-500 mb-3">Select Strap</p>
+            <div className="flex gap-3">
+              {['Leather', 'Metal', 'Rubber'].map((strap, i) => (
+                <button key={strap} className={`px-4 py-2 rounded-full text-sm ${i === 0 ? 'bg-black text-white' : 'bg-gray-100 text-gray-700'}`}>
+                  {strap}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="flex items-center justify-between mb-8">
+            <span className="text-3xl font-light">$4,500</span>
+            <button className="px-4 py-2 text-sm text-gray-600 flex items-center gap-2">
+              <span>View in AR</span>
+              <span>📱</span>
+            </button>
+          </div>
+          <button className="w-full py-4 bg-black text-white font-medium rounded-full">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 46. GRADIENT MESH / AURORA EVOLVED - "Prism" Creative Studio
+// ============================================================================
+const GradientMeshDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 relative overflow-hidden">
+    <style>{`
+      @keyframes aurora { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    `}</style>
+    <div className="absolute inset-0"
+      style={{
+        background: 'linear-gradient(-45deg, #00FFFF, #FF00FF, #FFFF00, #0066FF, #00FF66, #FF6B6B)',
+        backgroundSize: '400% 400%',
+        animation: 'aurora 15s ease infinite'
+      }} />
+    <div className="absolute inset-0 backdrop-blur-3xl" style={{ background: 'rgba(255,255,255,0.1)' }} />
+    <div className="relative z-10 max-w-5xl mx-auto px-8">
+      <header className="py-8">
+        <nav className="flex justify-between items-center">
+          <span className="text-2xl font-bold text-white drop-shadow-lg">Prism</span>
+          <div className="flex gap-6">
+            {['Work', 'Services', 'Contact'].map((item) => (
+              <a key={item} href="#" className="text-white/80 hover:text-white">{item}</a>
+            ))}
+          </div>
+        </nav>
+      </header>
+      <section className="py-24 text-center">
+        <h1 className="text-6xl md:text-8xl font-bold text-white mb-8 drop-shadow-lg">
+          Color is<br />everything
+        </h1>
+        <p className="text-xl text-white/80 max-w-xl mx-auto mb-12">
+          We craft visual experiences that captivate, engage, and inspire. 
+          Let's paint something beautiful together.
+        </p>
+        <div className="flex gap-4 justify-center">
+          <button className="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold shadow-xl hover:scale-105 transition-transform">
+            Start a Project
+          </button>
+          <button className="px-8 py-4 bg-white/20 text-white rounded-full font-semibold backdrop-blur border border-white/30 hover:bg-white/30 transition-colors">
+            View Work
+          </button>
+        </div>
+      </section>
+      <section className="py-16">
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { title: 'Brand Identity', count: '50+ projects' },
+            { title: 'Web Design', count: '80+ sites' },
+            { title: 'Motion', count: '30+ videos' },
+          ].map((service, i) => (
+            <div key={i} className="p-8 rounded-3xl backdrop-blur"
+              style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.2)' }}>
+              <h3 className="text-2xl font-semibold text-white mb-2">{service.title}</h3>
+              <p className="text-white/60">{service.count}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
+);
+
+// ============================================================================
+// 47. EDITORIAL GRID / MAGAZINE - "Slate" Online Magazine
+// ============================================================================
+const EditorialGridDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 bg-white">
+    <header className="border-b-2 border-black">
+      <div className="max-w-6xl mx-auto px-8 py-6">
+        <div className="flex justify-between items-center">
+          <h1 className="text-5xl font-black">SLATE</h1>
+          <div className="flex gap-6 text-sm font-medium">
+            {['Culture', 'Tech', 'Design', 'Opinion'].map((cat) => (
+              <a key={cat} href="#" className="hover:underline underline-offset-4">{cat}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </header>
+    <main className="max-w-6xl mx-auto px-8 py-12">
+      <div className="grid grid-cols-12 gap-8">
+        <article className="col-span-8 border-b-2 border-gray-200 pb-8 mb-8">
+          <span className="text-red-600 font-bold text-sm uppercase">Featured</span>
+          <h2 className="text-5xl font-bold mt-4 mb-4 leading-tight">
+            The Future of Design is Already Here—We Just Don't See It
+          </h2>
+          <p className="text-xl text-gray-600 mb-6">
+            How emerging technologies are quietly reshaping the creative industry, 
+            and why most designers are missing the revolution.
+          </p>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-gray-200 rounded-full" />
+            <div>
+              <p className="font-semibold">Marcus Chen</p>
+              <p className="text-sm text-gray-500">December 15, 2025 • 12 min read</p>
+            </div>
+          </div>
+        </article>
+        <aside className="col-span-4">
+          <h3 className="font-bold text-sm uppercase mb-6 border-b-2 border-black pb-2">Most Read</h3>
+          <div className="space-y-6">
+            {[
+              { num: '01', title: 'Why Silicon Valley is Betting on Spatial Computing' },
+              { num: '02', title: 'The Death of the Homepage (And What Comes Next)' },
+              { num: '03', title: "Inside Apple's Secret Design Lab" },
+            ].map((article, i) => (
+              <div key={i} className="flex gap-4">
+                <span className="text-3xl font-black text-gray-200">{article.num}</span>
+                <p className="font-semibold hover:underline cursor-pointer">{article.title}</p>
+              </div>
+            ))}
+          </div>
+        </aside>
+      </div>
+      <section className="grid grid-cols-3 gap-8 border-t-2 border-black pt-8">
+        {[
+          { cat: 'Culture', title: 'How Gen Z is Redefining Luxury', author: 'Sofia Rivera' },
+          { cat: 'Tech', title: 'The AI Tools Every Designer Needs in 2025', author: 'James Liu' },
+          { cat: 'Opinion', title: 'Minimalism is Dead. Long Live Maximalism.', author: 'Elena Park' },
+        ].map((article, i) => (
+          <article key={i}>
+            <span className="text-red-600 font-bold text-xs uppercase">{article.cat}</span>
+            <h3 className="text-xl font-bold mt-2 mb-3 hover:underline cursor-pointer">{article.title}</h3>
+            <p className="text-sm text-gray-500">{article.author}</p>
+          </article>
+        ))}
+      </section>
+    </main>
+  </div>
+);
+
+// ============================================================================
+// 48. CHROMATIC ABERRATION / RGB SPLIT - "Glitch" Music Label
+// ============================================================================
+const ChromaticDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16" style={{ background: '#0A0A0A' }}>
+    <style>{`
+      @keyframes rgbSplit { 0%, 100% { text-shadow: -2px 0 #FF0000, 2px 0 #00FFFF; } 50% { text-shadow: 2px 0 #FF0000, -2px 0 #00FFFF; } }
+      @keyframes glitch { 0%, 90%, 100% { transform: translate(0); } 92% { transform: translate(-2px, 1px); } 94% { transform: translate(2px, -1px); } 96% { transform: translate(-1px, 2px); } 98% { transform: translate(1px, -2px); } }
+      .rgb-text { animation: rgbSplit 0.5s infinite; }
+      .glitch-hover:hover { animation: glitch 0.3s infinite; }
+    `}</style>
+    <header className="max-w-5xl mx-auto px-8 py-8">
+      <nav className="flex justify-between items-center">
+        <h1 className="text-3xl font-black text-white rgb-text">GLITCH</h1>
+        <div className="flex gap-6">
+          {['Artists', 'Releases', 'Events', 'Shop'].map((item) => (
+            <a key={item} href="#" className="text-gray-400 hover:text-white glitch-hover">{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <section className="max-w-5xl mx-auto px-8 py-16 text-center">
+      <p className="text-gray-500 mb-4">NEW RELEASE</p>
+      <h2 className="text-6xl md:text-8xl font-black text-white mb-8 rgb-text">
+        SYSTEM<br />ERROR
+      </h2>
+      <p className="text-xl text-gray-400 max-w-xl mx-auto mb-12">
+        The debut album from VOID_WALKER. 12 tracks of pure electronic chaos.
+      </p>
+      <div className="flex gap-4 justify-center">
+        <button className="px-8 py-4 bg-white text-black font-bold glitch-hover">
+          STREAM NOW
+        </button>
+        <button className="px-8 py-4 border border-white text-white font-bold glitch-hover"
+          style={{ textShadow: '-1px 0 #FF0000, 1px 0 #00FFFF' }}>
+          PRE-ORDER VINYL
+        </button>
+      </div>
+    </section>
+    <section className="max-w-5xl mx-auto px-8 py-8">
+      <h3 className="text-xl font-bold text-white mb-6 rgb-text">LATEST RELEASES</h3>
+      <div className="grid md:grid-cols-3 gap-6">
+        {[
+          { title: 'Digital Decay', artist: 'CIRCUIT_BREAKER' },
+          { title: 'Neon Nights', artist: 'SYNTH_GHOST' },
+          { title: 'Data Stream', artist: 'PIXEL_WITCH' },
+        ].map((release, i) => (
+          <div key={i} className="group cursor-pointer">
+            <div className="aspect-square mb-4 relative overflow-hidden"
+              style={{ background: `linear-gradient(${45 + i * 30}deg, #FF0000, #00FF00, #0000FF)`, filter: 'saturate(0.8)' }}>
+              <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-50 group-hover:opacity-100 transition-opacity">
+                🎵
+              </div>
+            </div>
+            <h4 className="font-bold text-white glitch-hover">{release.title}</h4>
+            <p className="text-gray-500 text-sm">{release.artist}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+);
+
+// ============================================================================
+// 49. VINTAGE ANALOG / RETRO FILM - "Analog" Photography Portfolio
+// ============================================================================
+const VintageAnalogDemo = ({ }: StyleDemoProps) => (
+  <div className="min-h-screen pt-16 relative" style={{ background: '#F5E6C8' }}>
+    <div className="absolute inset-0 opacity-30 pointer-events-none"
+      style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }} />
+    <header className="relative z-10 max-w-4xl mx-auto px-8 py-8">
+      <nav className="flex justify-between items-center">
+        <h1 className="text-3xl font-serif" style={{ color: '#5D4037' }}>analog</h1>
+        <div className="flex gap-6 font-serif">
+          {['Gallery', 'About', 'Contact'].map((item) => (
+            <a key={item} href="#" style={{ color: '#8D6E63' }} className="hover:underline">{item}</a>
+          ))}
+        </div>
+      </nav>
+    </header>
+    <main className="relative z-10 max-w-4xl mx-auto px-8 py-12">
+      <section className="text-center mb-16">
+        <h2 className="text-5xl font-serif mb-6" style={{ color: '#4E342E' }}>
+          Capturing moments<br />on film
+        </h2>
+        <p className="text-xl font-serif max-w-xl mx-auto" style={{ color: '#8D6E63' }}>
+          A collection of photographs shot exclusively on 35mm and medium format film. 
+          No digital. No filters. Just light and chemistry.
+        </p>
+      </section>
+      <section className="grid md:grid-cols-2 gap-6 mb-16">
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className="relative group cursor-pointer">
+            <div className="aspect-[4/3] flex items-center justify-center text-6xl"
+              style={{
+                background: `linear-gradient(${i * 45}deg, #D4A574, #8B7355)`,
+                filter: 'sepia(0.3) contrast(0.9) saturate(0.8)',
+                border: '8px solid #FFF',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.2)'
+              }}>
+              📷
+            </div>
+            <div className="absolute bottom-4 left-4 right-4 bg-white/90 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+              <p className="font-serif text-sm" style={{ color: '#5D4037' }}>Kodak Portra 400 • Contax G2</p>
+            </div>
+          </div>
+        ))}
+      </section>
+      <section className="p-8 text-center" style={{ background: 'rgba(255,255,255,0.5)' }}>
+        <h3 className="text-2xl font-serif mb-4" style={{ color: '#4E342E' }}>Equipment</h3>
+        <div className="flex justify-center gap-8 font-serif" style={{ color: '#8D6E63' }}>
+          <span>Leica M6</span>
+          <span>•</span>
+          <span>Hasselblad 500C</span>
+          <span>•</span>
+          <span>Contax G2</span>
+        </div>
+      </section>
+    </main>
+    <footer className="relative z-10 text-center py-8 font-serif" style={{ color: '#A1887F' }}>
+      <p>Shot on film since 2015</p>
+    </footer>
+  </div>
+);
+
 // Map all demos to their slugs
 const styleDemos: Record<string, React.FC<StyleDemoProps>> = {
   'minimalism-swiss-style': MinimalismDemo,
@@ -2218,4 +3877,31 @@ const styleDemos: Record<string, React.FC<StyleDemoProps>> = {
   'neubrutalism': NeubrutalismDemo,
   'bento-box-grid': BentoBoxGridDemo,
   'y2k-aesthetic': Y2KDemo,
+  'cyberpunk-ui': CyberpunkDemo,
+  'organic-biophilic': OrganicBiophilicDemo,
+  'ai-native-ui': AINativeDemo,
+  'memphis-design': MemphisDemo,
+  'vaporwave': VaporwaveDemo,
+  'dimensional-layering': DimensionalDemo,
+  'exaggerated-minimalism': ExaggeratedMinimalismDemo,
+  'kinetic-typography': KineticTypographyDemo,
+  'parallax-storytelling': ParallaxDemo,
+  'swiss-modernism-2': SwissModernism2Demo,
+  'hud-scifi-fui': HUDSciFiDemo,
+  'pixel-art': PixelArtDemo,
+  'bento-grids': BentoGridsDemo,
+  'spatial-ui-visionos': SpatialUIDemo,
+  'e-ink-paper': EInkDemo,
+  'gen-z-chaos-maximalism': GenZChaosDemo,
+  'biomimetic-organic-2': BiomimeticDemo,
+  'anti-polish-raw-aesthetic': AntiPolishDemo,
+  'tactile-digital-deformable-ui': TactileDigitalDemo,
+  'nature-distilled': NatureDistilledDemo,
+  'interactive-cursor-design': InteractiveCursorDemo,
+  'voice-first-multimodal': VoiceFirstDemo,
+  '3d-product-preview': ThreeDProductDemo,
+  'gradient-mesh-aurora-evolved': GradientMeshDemo,
+  'editorial-grid-magazine': EditorialGridDemo,
+  'chromatic-aberration-rgb-split': ChromaticDemo,
+  'vintage-analog-retro-film': VintageAnalogDemo,
 };
