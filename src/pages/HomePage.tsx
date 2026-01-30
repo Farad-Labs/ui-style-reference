@@ -7,38 +7,13 @@ const StyleCard = ({ style }: { style: UIStyle }) => {
       to={`/style/${style.slug}`}
       className="group block bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
     >
-      <div
-        className="h-32 relative overflow-hidden"
-        style={{
-          background: style.primaryColors.length > 1
-            ? `linear-gradient(135deg, ${style.primaryColors[0]}, ${style.primaryColors[1]})`
-            : style.primaryColors[0],
-        }}
-      >
-        <div className="absolute inset-0 opacity-30">
-          {/* Pattern overlay based on style category */}
-          {style.category === 'experimental-artistic' && (
-            <div className="w-full h-full"
-              style={{
-                backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)'
-              }}
-            />
-          )}
-          {style.category === 'retro-nostalgia' && (
-            <div className="w-full h-full"
-              style={{
-                backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px)'
-              }}
-            />
-          )}
-          {style.category === 'nature-organic' && (
-            <div className="w-full h-full"
-              style={{
-                backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(255,255,255,0.2) 0%, transparent 50%)'
-              }}
-            />
-          )}
-        </div>
+      <div className="aspect-[16/10] relative overflow-hidden bg-gray-100">
+        <img 
+          src={`/previews/${style.slug}.png`}
+          alt={`${style.name} preview`}
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+        />
         <div className="absolute bottom-2 left-2 flex gap-1">
           {style.primaryColors.slice(0, 4).map((color, i) => (
             <div
