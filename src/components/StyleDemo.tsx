@@ -3971,19 +3971,27 @@ const VintageAnalogDemo = ({ }: StyleDemoProps) => (
         </p>
       </section>
       <section className="grid md:grid-cols-2 gap-6 mb-16">
-        {[1, 2, 3, 4].map((i) => (
+        {[
+          { src: '/images/vintage-1.png', film: 'Kodak Portra 400', camera: 'Contax G2' },
+          { src: '/images/vintage-2.png', film: 'Kodak Ektar 100', camera: 'Hasselblad 500C' },
+          { src: '/images/vintage-3.png', film: 'Kodak Portra 160', camera: 'Leica M6' },
+          { src: '/images/vintage-4.png', film: 'Fuji Pro 400H', camera: 'Contax G2' },
+        ].map((photo, i) => (
           <div key={i} className="relative group cursor-pointer">
-            <div className="aspect-[4/3] flex items-center justify-center text-6xl"
+            <div className="aspect-[4/3] overflow-hidden"
               style={{
-                background: `linear-gradient(${i * 45}deg, #D4A574, #8B7355)`,
-                filter: 'sepia(0.3) contrast(0.9) saturate(0.8)',
                 border: '8px solid #FFF',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.2)'
               }}>
-              📷
+              <img 
+                src={photo.src} 
+                alt={`Film photograph ${i + 1}`}
+                className="w-full h-full object-cover"
+                style={{ filter: 'sepia(0.15) contrast(0.95) saturate(0.9)' }}
+              />
             </div>
             <div className="absolute bottom-4 left-4 right-4 bg-white/90 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
-              <p className="font-serif text-sm" style={{ color: '#5D4037' }}>Kodak Portra 400 • Contax G2</p>
+              <p className="font-serif text-sm" style={{ color: '#5D4037' }}>{photo.film} • {photo.camera}</p>
             </div>
           </div>
         ))}
