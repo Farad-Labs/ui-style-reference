@@ -275,7 +275,7 @@ export const HomePage = () => {
             <p className="text-sm text-gray-500 mb-10">
               Built with ♥ by{' '}
               <a 
-                href="https://www.farad.dev" 
+                href="https://www.farad.dev?utm_source=uistyleguide&utm_medium=referral&utm_campaign=styleguide" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 onClick={() => handleOutboundClick('https://www.farad.dev', 'farad_hero')}
@@ -448,7 +448,7 @@ export const HomePage = () => {
               <span className="text-[#39FF14]">♥</span>
               <span className="text-gray-600">by</span>
               <a 
-                href="https://www.farad.dev" 
+                href="https://www.farad.dev?utm_source=uistyleguide&utm_medium=referral&utm_campaign=styleguide" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#39FF14] transition-colors"
@@ -466,7 +466,7 @@ export const HomePage = () => {
                 GitHub
               </a>
               <a
-                href="https://www.farad.dev"
+                href="https://www.farad.dev?utm_source=uistyleguide&utm_medium=referral&utm_campaign=styleguide"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-gray-900 text-gray-300 rounded-lg border border-gray-700 text-sm hover:border-[#39FF14]/50 hover:text-[#39FF14] transition-colors"
