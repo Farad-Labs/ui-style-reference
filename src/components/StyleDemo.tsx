@@ -23,13 +23,13 @@ const DefaultDemo = ({ style }: StyleDemoProps) => (
 // 1. MINIMALISM & SWISS STYLE - "Clarity Analytics" SaaS Dashboard
 // ============================================================================
 const MinimalismDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-white">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-white">
     {/* Hero */}
     <header className="max-w-6xl mx-auto px-8 py-24">
       <div className="grid grid-cols-12 gap-8">
         <div className="col-span-12 md:col-span-8">
           <p className="text-sm uppercase tracking-widest text-gray-500 mb-4">Clarity Analytics</p>
-          <h1 className="text-6xl md:text-7xl font-light tracking-tight text-black mb-8 leading-tight">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-light tracking-tight text-black mb-8 leading-tight">
             Data that speaks<br />for itself.
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
@@ -352,7 +352,7 @@ const GlassmorphismDemo = ({ }: StyleDemoProps) => (
 // 4. BRUTALISM - "RAWFORM" Design Studio
 // ============================================================================
 const BrutalismDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-white">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-white">
     {/* Hero */}
     <header className="border-b-4 border-black">
       <div className="max-w-6xl mx-auto p-8">
@@ -437,7 +437,7 @@ const ThreeDDemo = ({ }: StyleDemoProps) => (
     {/* Hero */}
     <header className="max-w-6xl mx-auto px-8 py-16 text-center" style={{ perspective: '1000px' }}>
       <p className="text-amber-500 uppercase tracking-widest text-sm mb-4">Next Generation</p>
-      <h1 className="text-6xl md:text-7xl font-bold text-white mb-6"
+      <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6"
         style={{ textShadow: '0 0 60px rgba(255, 165, 0, 0.3)' }}>
         Phantom X1
       </h1>
@@ -612,7 +612,7 @@ const VibrantDemo = ({ }: StyleDemoProps) => (
 // 7. DARK MODE (OLED) - "NightCode" Developer Tools
 // ============================================================================
 const DarkModeDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-black overflow-x-hidden">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-black overflow-x-hidden">
     {/* Hero */}
     <header className="max-w-5xl mx-auto px-4 sm:px-8 py-8 sm:py-16">
       <nav className="flex justify-between items-center mb-8 sm:mb-16">
@@ -711,7 +711,7 @@ const DarkModeDemo = ({ }: StyleDemoProps) => (
 // 8. ACCESSIBLE & ETHICAL - "AccessFirst" Public Services
 // ============================================================================
 const AccessibleDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-white">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-white">
     {/* Skip Link */}
     <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-20 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-700 focus:text-white focus:rounded">
       Skip to main content
@@ -960,7 +960,7 @@ const AuroraDemo = ({ }: StyleDemoProps) => (
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-8 py-16 text-center">
-        <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
           Music that moves<br />with you
         </h1>
         <p className="text-xl text-white/90 max-w-2xl mx-auto mb-12">
@@ -1171,7 +1171,7 @@ const RetroFuturismDemo = ({ }: StyleDemoProps) => (
 // 12. FLAT DESIGN - "Taskr" Productivity App
 // ============================================================================
 const FlatDesignDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-gray-100 overflow-x-hidden">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-gray-100 overflow-x-hidden">
     {/* Header */}
     <header className="bg-white border-b border-gray-200">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4">
@@ -1415,7 +1415,7 @@ const LiquidGlassDemo = ({ }: StyleDemoProps) => (
 
       {/* Hero */}
       <section className="text-center mb-16">
-        <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
           Design that<br />flows
         </h1>
         <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12">
@@ -1497,7 +1497,7 @@ const LiquidGlassDemo = ({ }: StyleDemoProps) => (
 // 15. MOTION-DRIVEN - "Kinetic Studios" Creative Portfolio
 // ============================================================================
 const MotionDrivenDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
     <style>{`
       @keyframes float {
         0%, 100% { transform: translateY(0px); }
@@ -1597,7 +1597,7 @@ const MotionDrivenDemo = ({ }: StyleDemoProps) => (
 // 16. MICRO-INTERACTIONS - "Pulse" Social App
 // ============================================================================
 const MicroInteractionsDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-gray-50">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-gray-50">
     <style>{`
       .btn-hover:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(99,102,241,0.3); }
       .btn-hover:active { transform: scale(0.95); }
@@ -1697,7 +1697,7 @@ const MicroInteractionsDemo = ({ }: StyleDemoProps) => (
 // 17. INCLUSIVE DESIGN - "CityMove" Public Transit
 // ============================================================================
 const InclusiveDesignDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-white overflow-x-hidden">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-white overflow-x-hidden">
     {/* Header */}
     <header className="bg-blue-900 text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
@@ -1803,7 +1803,7 @@ const InclusiveDesignDemo = ({ }: StyleDemoProps) => (
 // 18. ZERO INTERFACE - "Echo" AI Assistant
 // ============================================================================
 const ZeroInterfaceDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-gray-50 flex flex-col">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-gray-50 flex flex-col">
     {/* Minimal Header */}
     <header className="px-8 py-6">
       <div className="max-w-md mx-auto text-center">
@@ -2018,7 +2018,7 @@ const SoftUIEvolutionDemo = ({ }: StyleDemoProps) => (
 // 20. NEUBRUTALISM - "DEV.STACK" Tech Blog
 // ============================================================================
 const NeubrutalismDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-amber-50 overflow-x-hidden">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-amber-50 overflow-x-hidden">
     {/* Header */}
     <header className="border-b-4 border-black">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4">
@@ -2041,7 +2041,7 @@ const NeubrutalismDemo = ({ }: StyleDemoProps) => (
     {/* Hero */}
     <section className="border-b-4 border-black">
       <div className="max-w-5xl mx-auto px-6 py-12">
-        <h1 className="text-5xl md:text-7xl font-black mb-6">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-black mb-6">
           Where developers <span className="bg-yellow-300 px-2">actually</span> learn stuff.
         </h1>
         <p className="text-xl max-w-2xl mb-8">
@@ -2124,14 +2124,14 @@ const NeubrutalismDemo = ({ }: StyleDemoProps) => (
 
 // 21. Bento Box Grid - "Mosaic" Product Features
 const BentoBoxGridDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16" style={{ background: '#F5F5F7' }}>
-    <header className="max-w-6xl mx-auto px-8 py-12 text-center">
+  <div className="min-h-screen pt-16 overflow-x-hidden" style={{ background: '#F5F5F7' }}>
+    <header className="max-w-6xl mx-auto px-4 sm:px-8 py-8 sm:py-12 text-center">
       <p className="text-gray-500 mb-2">Introducing</p>
-      <h1 className="text-6xl font-semibold text-gray-900 mb-4">Mosaic</h1>
-      <p className="text-xl text-gray-600 max-w-2xl mx-auto">The complete design system for modern apps. Beautiful. Flexible. Powerful.</p>
+      <h1 className="text-4xl sm:text-6xl font-semibold text-gray-900 mb-4">Mosaic</h1>
+      <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">The complete design system for modern apps. Beautiful. Flexible. Powerful.</p>
     </header>
-    <section className="max-w-6xl mx-auto px-8 py-8">
-      <div className="grid grid-cols-4 gap-4 auto-rows-[200px]">
+    <section className="max-w-6xl mx-auto px-4 sm:px-8 py-8">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 auto-rows-[150px] sm:auto-rows-[200px]">
         <div className="col-span-2 row-span-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl p-8 flex flex-col justify-end text-white">
           <span className="text-6xl mb-4">✨</span>
           <h3 className="text-2xl font-semibold">Design Tokens</h3>
@@ -2235,7 +2235,7 @@ const CyberpunkDemo = ({ }: StyleDemoProps) => (
     </header>
     <section className="max-w-6xl mx-auto px-8 py-12 relative z-10">
       <p className="font-mono text-green-500 text-sm mb-4">// SYSTEM STATUS: ONLINE</p>
-      <h2 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#00FF00', textShadow: '0 0 40px rgba(0,255,0,0.5)' }}>
+      <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6" style={{ color: '#00FF00', textShadow: '0 0 40px rgba(0,255,0,0.5)' }}>
         DECENTRALIZED<br />TRADING <span style={{ color: '#FF00FF' }}>PROTOCOL</span>
       </h2>
       <p className="font-mono text-gray-400 max-w-xl mb-8">
@@ -2356,7 +2356,7 @@ const OrganicBiophilicDemo = ({ }: StyleDemoProps) => (
 // 25. AI-NATIVE UI - "Copilot" AI Assistant Interface
 // ============================================================================
 const AINativeDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-gray-50 flex flex-col">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-gray-50 flex flex-col">
     <header className="px-8 py-4 bg-white border-b border-gray-200">
       <div className="max-w-3xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -2495,7 +2495,7 @@ const VaporwaveDemo = ({ }: StyleDemoProps) => (
     <div className="absolute inset-0 opacity-30"
       style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent 0px, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px)' }} />
     <header className="max-w-5xl mx-auto px-4 sm:px-8 py-8 relative z-10 text-center">
-      <h1 className="text-5xl md:text-7xl font-bold text-white mb-4"
+      <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4"
         style={{ textShadow: '4px 4px 0 #B967FF, 8px 8px 0 #01CDFE', fontFamily: 'serif' }}>
         ＰＡＲＡＤＩＳＥ．ＦＭ
       </h1>
@@ -2547,7 +2547,7 @@ const VaporwaveDemo = ({ }: StyleDemoProps) => (
 // 28. DIMENSIONAL LAYERING - "Layers" Project Management
 // ============================================================================
 const DimensionalDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-gray-100">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-gray-100">
     <header className="max-w-6xl mx-auto px-8 py-6">
       <nav className="flex justify-between items-center">
         <div className="flex items-center gap-2">
@@ -2608,7 +2608,7 @@ const DimensionalDemo = ({ }: StyleDemoProps) => (
 // 29. EXAGGERATED MINIMALISM - "VOID" Architecture Studio
 // ============================================================================
 const ExaggeratedMinimalismDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-white">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-white">
     <header className="max-w-7xl mx-auto px-8 py-8">
       <nav className="flex justify-between items-center">
         <span className="text-xl tracking-widest">VOID</span>
@@ -2656,7 +2656,7 @@ const ExaggeratedMinimalismDemo = ({ }: StyleDemoProps) => (
 // 30. KINETIC TYPOGRAPHY - "MOTION" Creative Studio
 // ============================================================================
 const KineticTypographyDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-black text-white overflow-hidden">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-black text-white overflow-hidden">
     <style>{`
       @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
       @keyframes typewriter { from { width: 0; } to { width: 100%; } }
@@ -2773,7 +2773,7 @@ const ParallaxDemo = ({ }: StyleDemoProps) => (
 // 32. SWISS MODERNISM 2.0 - "Ratio" Design System
 // ============================================================================
 const SwissModernism2Demo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-white">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-white">
     <header className="max-w-6xl mx-auto px-8 py-8 border-b border-gray-200">
       <nav className="grid grid-cols-12 gap-4 items-center">
         <div className="col-span-2">
@@ -3415,7 +3415,7 @@ const NatureDistilledDemo = ({ }: StyleDemoProps) => (
 // 43. INTERACTIVE CURSOR DESIGN - "Studio" Creative Agency
 // ============================================================================
 const InteractiveCursorDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-gray-900 text-white">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-gray-900 text-white">
     <style>{`
       .cursor-hover:hover { cursor: none; }
       .magnetic:hover { transform: scale(1.1); }
@@ -3475,7 +3475,7 @@ const InteractiveCursorDemo = ({ }: StyleDemoProps) => (
 // 44. VOICE-FIRST MULTIMODAL - "Aria" Voice Assistant
 // ============================================================================
 const VoiceFirstDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-gradient-to-b from-gray-50 to-gray-100 flex flex-col">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-gradient-to-b from-gray-50 to-gray-100 flex flex-col">
     <style>{`
       @keyframes wave { 0%, 100% { height: 20px; } 50% { height: 40px; } }
       .wave { animation: wave 1s ease-in-out infinite; }
@@ -3677,7 +3677,7 @@ const GradientMeshDemo = ({ }: StyleDemoProps) => (
 // 47. EDITORIAL GRID / MAGAZINE - "Slate" Online Magazine
 // ============================================================================
 const EditorialGridDemo = ({ }: StyleDemoProps) => (
-  <div className="min-h-screen pt-16 bg-white">
+  <div className="min-h-screen pt-16 overflow-x-hidden bg-white">
     <header className="border-b-2 border-black">
       <div className="max-w-6xl mx-auto px-8 py-6">
         <div className="flex justify-between items-center">
