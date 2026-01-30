@@ -5,14 +5,14 @@ import { categories, getStylesByCategory, type UIStyle } from '../data/styles';
 const Logo = ({ className = '', size = 'default' }: { className?: string; size?: 'default' | 'large' }) => (
   <div className={`flex items-center gap-2 ${className}`}>
     <div className={`relative ${size === 'large' ? 'w-12 h-12' : 'w-8 h-8'}`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-orange-400 rounded-xl rotate-6" />
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-600 via-fuchsia-500 to-orange-500 rounded-xl flex items-center justify-center">
-        <span className={`font-black text-white ${size === 'large' ? 'text-2xl' : 'text-lg'}`}>UI</span>
+      <div className="absolute inset-0 bg-black rounded-xl translate-x-1 translate-y-1" />
+      <div className="absolute inset-0 bg-[#F472B6] border-3 border-black rounded-xl flex items-center justify-center">
+        <span className={`font-black text-black ${size === 'large' ? 'text-2xl' : 'text-lg'}`}>UI</span>
       </div>
     </div>
-    <span className={`font-bold tracking-tight ${size === 'large' ? 'text-3xl' : 'text-xl'}`}>
-      <span className="text-gray-900">Style</span>
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">Guide</span>
+    <span className={`font-black tracking-tight ${size === 'large' ? 'text-3xl' : 'text-xl'}`}>
+      <span className="text-black">Style</span>
+      <span className="text-[#F472B6]">Guide</span>
     </span>
   </div>
 );
@@ -21,38 +21,37 @@ const StyleCard = ({ style }: { style: UIStyle }) => {
   return (
     <Link
       to={`/style/${style.slug}`}
-      className="group block bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-2xl hover:shadow-fuchsia-500/10 transition-all duration-300 hover:-translate-y-1"
+      className="group block bg-white rounded-2xl border-3 border-black overflow-hidden shadow-[4px_4px_0_#000] hover:shadow-[6px_6px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-200"
     >
-      <div className="aspect-[16/10] relative overflow-hidden bg-gray-100">
+      <div className="aspect-[16/10] relative overflow-hidden bg-[#FACC15] border-b-3 border-black">
         <img 
           src={`/previews/${style.slug}.png`}
           alt={`${style.name} preview`}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
         <div className="absolute bottom-2 left-2 flex gap-1">
           {style.primaryColors.slice(0, 4).map((color, i) => (
             <div
               key={i}
-              className="w-4 h-4 rounded-full border-2 border-white shadow-md"
+              className="w-5 h-5 rounded-full border-2 border-black"
               style={{ backgroundColor: color.includes('rgba') ? color : color }}
             />
           ))}
         </div>
       </div>
-      <div className="p-4">
-        <h3 className="font-semibold text-gray-900 group-hover:text-fuchsia-600 transition-colors">
+      <div className="p-4 bg-white">
+        <h3 className="font-black text-black text-lg group-hover:text-[#F472B6] transition-colors">
           {style.name}
         </h3>
-        <p className="text-sm text-gray-500 mt-1 line-clamp-2">
+        <p className="text-sm text-black/70 mt-1 line-clamp-2 font-medium">
           {style.description.slice(0, 100)}...
         </p>
-        <div className="flex flex-wrap gap-1 mt-3">
+        <div className="flex flex-wrap gap-1.5 mt-3">
           {style.keywords.slice(0, 3).map((keyword, i) => (
             <span
               key={i}
-              className="text-xs px-2 py-0.5 bg-gray-100 text-gray-600 rounded-full"
+              className="text-xs px-2 py-1 bg-[#22D3EE] text-black rounded-lg border-2 border-black font-bold"
             >
               {keyword}
             </span>
@@ -71,8 +70,8 @@ const CategorySection = ({ categoryId, categoryName, description }: { categoryId
   return (
     <section className="mb-16">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">{categoryName}</h2>
-        <p className="text-gray-500 mt-1">{description}</p>
+        <h2 className="text-3xl font-black text-black inline-block bg-[#FACC15] px-4 py-2 border-3 border-black rounded-xl shadow-[4px_4px_0_#000]">{categoryName}</h2>
+        <p className="text-black/70 mt-3 font-medium text-lg">{description}</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {categoryStyles.map((style) => (
@@ -85,20 +84,20 @@ const CategorySection = ({ categoryId, categoryName, description }: { categoryId
 
 export const HomePage = () => {
   return (
-    <div className="min-h-screen bg-[#FAFAFA]">
+    <div className="min-h-screen bg-[#FEF9C3]">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#22D3EE] border-b-4 border-black">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <Logo />
           <div className="flex items-center gap-4">
-            <a href="#styles" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
+            <a href="#styles" className="text-sm font-bold text-black hover:bg-[#FACC15] px-3 py-1.5 rounded-lg border-2 border-black transition-colors hidden sm:block">
               Browse Styles
             </a>
             <a
               href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-1"
+              className="text-sm font-bold text-black bg-[#F472B6] hover:bg-[#FACC15] px-3 py-1.5 rounded-lg border-2 border-black shadow-[2px_2px_0_#000] hover:shadow-[3px_3px_0_#000] transition-all flex items-center gap-1"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
               <span className="hidden sm:inline">Get the Skill</span>
@@ -109,47 +108,49 @@ export const HomePage = () => {
 
       {/* Hero Section */}
       <header className="relative pt-16 overflow-hidden">
-        {/* Gradient Orbs */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet-400 rounded-full blur-3xl opacity-20 -translate-y-1/2" />
-        <div className="absolute top-20 right-1/4 w-80 h-80 bg-fuchsia-400 rounded-full blur-3xl opacity-20" />
-        <div className="absolute top-40 left-1/2 w-72 h-72 bg-orange-400 rounded-full blur-3xl opacity-15" />
+        {/* Decorative shapes */}
+        <div className="absolute top-24 left-10 w-20 h-20 bg-[#F472B6] border-4 border-black rounded-full rotate-12 hidden lg:block" />
+        <div className="absolute top-40 right-20 w-16 h-16 bg-[#84CC16] border-4 border-black rotate-45 hidden lg:block" />
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-[#22D3EE] border-4 border-black rounded-lg -rotate-12 hidden lg:block" />
         
         <div className="relative max-w-7xl mx-auto px-4 py-20 sm:py-32">
           <div className="text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-100 to-fuchsia-100 rounded-full mb-8">
-              <span className="w-2 h-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-gray-700">67 Interactive Design Styles</span>
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#84CC16] border-3 border-black rounded-full mb-8 shadow-[3px_3px_0_#000]">
+              <span className="w-3 h-3 bg-black rounded-full animate-pulse" />
+              <span className="text-sm font-black text-black">67 Interactive Design Styles</span>
             </div>
             
             {/* Main Heading */}
-            <h1 className="text-5xl sm:text-7xl font-black text-gray-900 mb-6 tracking-tight leading-tight pb-1">
+            <h1 className="text-5xl sm:text-7xl font-black text-black mb-6 tracking-tight leading-tight">
               The Ultimate
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-600 to-orange-500 pb-2">
-                UI Style Guide
+              <span className="block mt-2">
+                <span className="inline-block bg-[#F472B6] px-6 py-2 border-4 border-black rounded-2xl shadow-[6px_6px_0_#000] -rotate-1">
+                  UI Style Guide
+                </span>
               </span>
             </h1>
             
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6 leading-relaxed">
+            <p className="text-xl text-black/80 max-w-2xl mx-auto mb-6 leading-relaxed font-medium">
               A visual showcase of the design styles available in{' '}
               <a 
                 href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
+                className="text-black font-black underline decoration-4 decoration-[#22D3EE] hover:bg-[#22D3EE] transition-colors"
               >
                 UI UX Pro Max
               </a>
               . Explore 67 styles with live demos, color palettes, and implementation tips.
             </p>
             
-            <p className="text-sm text-gray-500 mb-10">
+            <p className="text-sm text-black/70 mb-10 font-bold">
               Built with ♥ by{' '}
               <a 
                 href="https://www.farad.dev" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-fuchsia-600 font-medium transition-colors"
+                className="text-black underline decoration-2 hover:bg-[#FACC15] transition-colors"
               >
                 Farad Labs
               </a>
@@ -159,7 +160,7 @@ export const HomePage = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="#styles"
-                className="group px-8 py-4 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-fuchsia-600 text-white rounded-2xl font-semibold hover:shadow-xl hover:shadow-fuchsia-500/25 transition-all duration-300 hover:-translate-y-0.5"
+                className="group px-8 py-4 bg-[#F472B6] text-black border-4 border-black rounded-2xl font-black text-lg shadow-[5px_5px_0_#000] hover:shadow-[7px_7px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-200"
               >
                 Explore All Styles
                 <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -168,7 +169,7 @@ export const HomePage = () => {
                 href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-white text-gray-700 border border-gray-200 rounded-2xl font-semibold hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                className="px-8 py-4 bg-white text-black border-4 border-black rounded-2xl font-black text-lg shadow-[5px_5px_0_#000] hover:shadow-[7px_7px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-[#FACC15] transition-all duration-200"
               >
                 Get the Skill
               </a>
@@ -178,9 +179,9 @@ export const HomePage = () => {
         
         {/* Preview Strip */}
         <div className="relative max-w-6xl mx-auto px-4 pb-8">
-          <div className="flex gap-4 overflow-hidden rounded-2xl p-2 bg-white shadow-2xl shadow-gray-200/50 border border-gray-100">
+          <div className="flex gap-4 overflow-hidden rounded-2xl p-3 bg-white shadow-[6px_6px_0_#000] border-4 border-black">
             {['glassmorphism', 'neubrutalism', 'cyberpunk-ui', 'minimalism-swiss-style', 'retro-futurism'].map((slug) => (
-              <Link key={slug} to={`/style/${slug}`} className="flex-shrink-0 w-48 aspect-[4/3] rounded-xl overflow-hidden hover:ring-2 hover:ring-fuchsia-500 transition-all">
+              <Link key={slug} to={`/style/${slug}`} className="flex-shrink-0 w-48 aspect-[4/3] rounded-xl overflow-hidden border-3 border-black hover:shadow-[3px_3px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all">
                 <img src={`/previews/${slug}.png`} alt="" className="w-full h-full object-cover" />
               </Link>
             ))}
@@ -189,24 +190,24 @@ export const HomePage = () => {
       </header>
 
       {/* Stats Bar */}
-      <div className="bg-white border-y border-gray-100">
+      <div className="bg-[#22D3EE] border-y-4 border-black">
         <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">67</div>
-              <div className="text-sm text-gray-500 mt-1">Design Styles</div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div className="bg-white p-4 rounded-xl border-3 border-black shadow-[4px_4px_0_#000]">
+              <div className="text-4xl font-black text-black">67</div>
+              <div className="text-sm text-black/70 mt-1 font-bold">Design Styles</div>
             </div>
-            <div>
-              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-orange-500">10</div>
-              <div className="text-sm text-gray-500 mt-1">Categories</div>
+            <div className="bg-[#F472B6] p-4 rounded-xl border-3 border-black shadow-[4px_4px_0_#000]">
+              <div className="text-4xl font-black text-black">10</div>
+              <div className="text-sm text-black/70 mt-1 font-bold">Categories</div>
             </div>
-            <div>
-              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">100%</div>
-              <div className="text-sm text-gray-500 mt-1">Free</div>
+            <div className="bg-[#FACC15] p-4 rounded-xl border-3 border-black shadow-[4px_4px_0_#000]">
+              <div className="text-4xl font-black text-black">100%</div>
+              <div className="text-sm text-black/70 mt-1 font-bold">Free</div>
             </div>
-            <div>
-              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Open</div>
-              <div className="text-sm text-gray-500 mt-1">Source</div>
+            <div className="bg-[#84CC16] p-4 rounded-xl border-3 border-black shadow-[4px_4px_0_#000]">
+              <div className="text-4xl font-black text-black">Open</div>
+              <div className="text-sm text-black/70 mt-1 font-bold">Source</div>
             </div>
           </div>
         </div>
@@ -225,16 +226,16 @@ export const HomePage = () => {
       </main>
 
       {/* About Section */}
-      <section id="about" className="bg-gradient-to-b from-white to-gray-50 border-t border-gray-100">
+      <section id="about" className="bg-[#F472B6] border-t-4 border-black">
         <div className="max-w-4xl mx-auto px-4 py-20 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">What is UI Style Guide?</h2>
-          <p className="text-lg text-gray-600 leading-relaxed mb-8">
+          <h2 className="text-3xl font-black text-black mb-4 inline-block bg-white px-6 py-3 border-4 border-black rounded-2xl shadow-[5px_5px_0_#000]">What is UI Style Guide?</h2>
+          <p className="text-lg text-black/80 leading-relaxed mb-8 mt-8 font-medium">
             UI Style Guide is a visual showcase of the design styles available in{' '}
             <a 
               href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-fuchsia-600 hover:text-fuchsia-700 font-medium underline underline-offset-2"
+              className="text-black font-black underline decoration-4 decoration-black hover:bg-[#FACC15] transition-colors"
             >
               UI UX Pro Max
             </a>
@@ -244,17 +245,20 @@ export const HomePage = () => {
             aesthetics — find inspiration and practical guidance here.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {['Designers', 'Developers', 'AI Agents', 'Agencies'].map((tag) => (
-              <span key={tag} className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
-                Built for {tag}
-              </span>
-            ))}
+            {['Designers', 'Developers', 'AI Agents', 'Agencies'].map((tag, i) => {
+              const colors = ['#FACC15', '#22D3EE', '#84CC16', '#fff'];
+              return (
+                <span key={tag} className="px-4 py-2 text-black rounded-xl text-sm font-black border-3 border-black shadow-[3px_3px_0_#000]" style={{ backgroundColor: colors[i] }}>
+                  Built for {tag}
+                </span>
+              );
+            })}
           </div>
           <a 
             href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-xl font-medium hover:bg-gray-800 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-xl font-black border-4 border-black shadow-[4px_4px_0_#FACC15] hover:shadow-[6px_6px_0_#FACC15] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             Get the UI UX Pro Max Skill
@@ -263,48 +267,48 @@ export const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white">
+      <footer className="bg-black text-white border-t-4 border-black">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-orange-400 rounded-xl flex items-center justify-center">
-                <span className="font-black text-white text-sm">UI</span>
+              <div className="w-10 h-10 bg-[#F472B6] border-3 border-white rounded-xl flex items-center justify-center shadow-[3px_3px_0_#F472B6]">
+                <span className="font-black text-black text-lg">UI</span>
               </div>
-              <span className="font-bold text-lg">
-                Style<span className="text-fuchsia-400">Guide</span>
+              <span className="font-black text-xl">
+                Style<span className="text-[#F472B6]">Guide</span>
               </span>
             </div>
-            <p className="text-gray-400 text-sm text-center">
+            <p className="text-white/80 text-sm text-center font-medium">
               A showcase of styles from the{' '}
               <a 
                 href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-fuchsia-400 hover:text-fuchsia-300 transition-colors"
+                className="text-[#22D3EE] hover:text-[#FACC15] transition-colors font-bold"
               >
                 UI UX Pro Max
               </a>
               {' '}agent skill
             </p>
-            <div className="flex items-center gap-2 text-sm">
-              <span className="text-gray-500">Built with</span>
-              <span className="text-red-400">♥</span>
-              <span className="text-gray-500">by</span>
+            <div className="flex items-center gap-2 text-sm font-bold">
+              <span className="text-white/70">Built with</span>
+              <span className="text-[#F472B6]">♥</span>
+              <span className="text-white/70">by</span>
               <a 
                 href="https://www.farad.dev" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white font-medium hover:text-fuchsia-400 transition-colors"
+                className="text-white hover:text-[#FACC15] transition-colors"
               >
                 Farad Labs
               </a>
             </div>
-            <div className="flex gap-6 pt-2">
+            <div className="flex gap-4 pt-2">
               <a
                 href="https://github.com/Farad-Labs/ui-style-reference"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
+                className="px-4 py-2 bg-[#22D3EE] text-black rounded-lg border-2 border-white font-bold text-sm hover:bg-[#FACC15] transition-colors"
               >
                 GitHub
               </a>
@@ -312,7 +316,7 @@ export const HomePage = () => {
                 href="https://www.farad.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
+                className="px-4 py-2 bg-[#84CC16] text-black rounded-lg border-2 border-white font-bold text-sm hover:bg-[#FACC15] transition-colors"
               >
                 Farad Labs
               </a>
