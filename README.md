@@ -2,14 +2,14 @@
 
 **Live site:** [uistyleguide.com](https://www.uistyleguide.com)
 
-A visual showcase of 49 UI design styles from the [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) AI agent skill. Each style includes an interactive demo, color palettes, typography suggestions, CSS implementation tips, and real-world use cases.
+A visual showcase of 67 UI design styles from the [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) AI agent skill. Each style includes an interactive demo, color palettes, typography suggestions, CSS implementation tips, and real-world use cases.
 
 Built with ♥ by [Farad Labs](https://www.farad.dev)
 
 ## What's Inside
 
-- **49 Design Styles** — From glassmorphism to brutalism, cyberpunk to minimalism
-- **8 Categories** — Modern SaaS, Retro, Gaming, Accessibility, Experimental, Nature, Motion, Futuristic
+- **67 Design Styles** — From glassmorphism to brutalism, cyberpunk to minimalism
+- **10 Categories** — Modern SaaS, Retro, Gaming, Accessibility, Experimental, Nature, Motion, Futuristic, Landing Pages, BI & Analytics
 - **Interactive Demos** — Live CSS examples for each style
 - **Color Palettes** — Primary and secondary colors with hex codes
 - **Usage Guidance** — "Best for" and "Don't use for" recommendations
