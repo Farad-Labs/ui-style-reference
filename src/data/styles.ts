@@ -12,7 +12,32 @@ export interface UIStyle {
   description: string;
   cssKeywords: string;
   era: string;
+  industries?: string[];
 }
+
+// Industry tags for filtering styles by use case
+export const industries = [
+  { id: 'saas', name: 'SaaS', icon: '💻' },
+  { id: 'ecommerce', name: 'E-commerce', icon: '🛒' },
+  { id: 'healthcare', name: 'Healthcare', icon: '🏥' },
+  { id: 'fintech', name: 'Fintech & Banking', icon: '💳' },
+  { id: 'education', name: 'Education', icon: '📚' },
+  { id: 'entertainment', name: 'Entertainment & Media', icon: '🎬' },
+  { id: 'gaming', name: 'Gaming', icon: '🎮' },
+  { id: 'creative', name: 'Creative & Portfolio', icon: '🎨' },
+  { id: 'corporate', name: 'Corporate & B2B', icon: '🏢' },
+  { id: 'startup', name: 'Startup & Tech', icon: '🚀' },
+  { id: 'food', name: 'Food & Restaurant', icon: '🍽️' },
+  { id: 'travel', name: 'Travel & Tourism', icon: '✈️' },
+  { id: 'realestate', name: 'Real Estate', icon: '🏠' },
+  { id: 'fitness', name: 'Fitness & Wellness', icon: '💪' },
+  { id: 'nonprofit', name: 'Nonprofit & Government', icon: '🏛️' },
+  { id: 'legal', name: 'Legal & Professional', icon: '⚖️' },
+  { id: 'kids', name: 'Kids & Family', icon: '👶' },
+  { id: 'luxury', name: 'Luxury & Premium', icon: '✨' },
+] as const;
+
+export type IndustryId = typeof industries[number]['id'];
 
 export const categories = [
   { id: 'modern-saas', name: 'Modern SaaS', description: 'Clean, professional styles for software products' },
@@ -41,7 +66,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Creative portfolios', 'Entertainment', 'Playful brands'],
     description: 'Rooted in the Swiss International Style of the 1950s, this approach emphasizes clarity, readability, and objectivity. Uses grid-based layouts, sans-serif typography, and generous white space to create functional, timeless designs.',
     cssKeywords: 'display: grid, gap: 2rem, font-family: sans-serif, max-width: 1200px',
-    era: '1950s Swiss'
+    era: '1950s Swiss',
+    industries: ['saas', 'corporate', 'fintech', 'legal']
   },
   {
     id: 2,
@@ -56,7 +82,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Complex apps', 'Data-heavy dashboards', 'High-contrast required'],
     description: 'A modern evolution of skeuomorphism that creates soft, extruded plastic-like interfaces. Uses subtle shadows and highlights to simulate depth while maintaining a minimal aesthetic.',
     cssKeywords: 'border-radius: 12-16px, box-shadow: -5px -5px 15px, 5px 5px 15px',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['healthcare', 'fitness']
   },
   {
     id: 3,
@@ -71,7 +98,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Low-contrast backgrounds', 'Critical accessibility', 'Performance-limited'],
     description: 'Inspired by frosted glass, this style creates depth through transparency and blur effects. Perfect for layered interfaces where content hierarchy is important.',
     cssKeywords: 'backdrop-filter: blur(15px), background: rgba(255,255,255,0.15), border: 1px solid rgba(255,255,255,0.2)',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['saas', 'fintech', 'corporate', 'luxury', 'realestate']
   },
   {
     id: 4,
@@ -86,7 +114,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Corporate environments', 'Conservative industries', 'Customer-facing professional'],
     description: 'Inspired by Brutalist architecture, this style embraces raw, honest aesthetics. Features intentionally "ugly" design with default fonts, visible borders, and a rejection of conventional beauty.',
     cssKeywords: 'border-radius: 0px, transition: none, font-weight: 700+, border: 2-4px solid',
-    era: '1950s Brutalist'
+    era: '1950s Brutalist',
+    industries: ['creative']
   },
   {
     id: 5,
@@ -101,7 +130,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Low-end mobile', 'Performance-limited', 'Data tables/forms'],
     description: 'Creates immersive experiences through realistic 3D rendering, complex textures, and spatial depth. Best suited for showcasing products or creating game-like interfaces.',
     cssKeywords: 'transform: translate3d, perspective: 1000px, WebGL, Three.js',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['gaming', 'entertainment', 'realestate', 'ecommerce']
   },
   {
     id: 6,
@@ -116,7 +146,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Financial institutions', 'Healthcare', 'Government', 'Elderly audiences'],
     description: 'High-energy design with bold color blocks, geometric shapes, and vibrant palettes. Creates excitement and draws attention through visual contrast.',
     cssKeywords: 'display: flex/grid with large gaps (48px+), font-size: 32px+, animated patterns',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['startup', 'creative', 'gaming', 'entertainment']
   },
   {
     id: 7,
@@ -131,7 +162,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Print-first content', 'High-brightness outdoor', 'Color-accuracy-critical'],
     description: 'Optimized for OLED displays and low-light environments. Uses true blacks to save battery and reduce eye strain while maintaining vibrant accent colors.',
     cssKeywords: 'background: #000000 or #121212, text-shadow: 0 0 10px neon-color',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['saas', 'fintech', 'gaming', 'entertainment']
   },
   {
     id: 8,
@@ -146,7 +178,8 @@ export const styles: UIStyle[] = [
     doNotUse: [],
     description: 'Prioritizes accessibility and ethical considerations above all else. Ensures everyone can use the interface regardless of ability or device.',
     cssKeywords: 'color-contrast: 7:1+, font-size: 16px+, focus-visible: 3-4px ring, touch-target: 44x44px',
-    era: 'Universal'
+    era: 'Universal',
+    industries: ['healthcare', 'education', 'nonprofit', 'legal']
   },
   {
     id: 9,
@@ -161,7 +194,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Formal corporate', 'Professional services', 'Medical', 'Finance'],
     description: 'A playful evolution of neumorphism that looks like soft clay or plasticine. Features chunky rounded elements with thick borders and soft shadows.',
     cssKeywords: 'border-radius: 16-24px, border: 3-4px solid, box-shadow: inset + outer',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['education', 'kids', 'saas', 'startup']
   },
   {
     id: 10,
@@ -176,7 +210,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Data-heavy dashboards', 'Critical accessibility', 'Content-heavy sites'],
     description: 'Inspired by the Northern Lights, featuring flowing gradients and smooth color transitions. Creates a premium, modern feel with dynamic backgrounds.',
     cssKeywords: 'background: conic-gradient or radial-gradient, animation: @keyframes gradient (8-12s)',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['saas', 'creative', 'entertainment', 'luxury', 'travel']
   },
   {
     id: 11,
@@ -191,7 +226,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Conservative industries', 'Healthcare', 'Professional/corporate', 'Elderly'],
     description: 'Combines 1980s retrofuturistic aesthetics with modern web technology. Features neon colors, synthwave vibes, and CRT-style effects.',
     cssKeywords: 'color: neon colors, text-shadow: 0 0 10px neon, background: #000, font-family: monospace',
-    era: '1980s Retro'
+    era: '1980s Retro',
+    industries: ['gaming', 'entertainment', 'creative']
   },
   {
     id: 12,
@@ -206,7 +242,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Complex 3D', 'Premium/luxury', 'Artistic portfolios', 'Immersive experiences'],
     description: 'Emerged in the early 2010s as a reaction to skeuomorphism. Uses simple 2D elements, bold colors, and no shadows or gradients.',
     cssKeywords: 'box-shadow: none, background: solid color, border-radius: 0-4px',
-    era: '2010s Modern'
+    era: '2010s Modern',
+    industries: ['saas', 'startup', 'ecommerce', 'corporate']
   },
   {
     id: 13,
@@ -221,7 +258,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Modern enterprise', 'Critical accessibility', 'Web (use Flat/Modern)'],
     description: 'Uses real-world textures and metaphors to make digital interfaces feel familiar. Think leather textures, wood grain, and realistic shadows.',
     cssKeywords: 'background: complex gradient (8-12 stops), box-shadow: realistic multi-layer, texture overlay',
-    era: '2007-2012 iOS'
+    era: '2007-2012 iOS',
+    industries: ['gaming', 'luxury', 'entertainment']
   },
   {
     id: 14,
@@ -236,7 +274,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Performance-limited', 'Critical accessibility', 'Complex data', 'Budget projects'],
     description: 'Advanced glassmorphism with flowing, morphing animations. Creates a liquid-like feel with chromatic aberration and iridescent effects.',
     cssKeywords: 'animation: morphing SVG paths (400-600ms), backdrop-filter: blur + saturate',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['luxury', 'ecommerce', 'creative', 'saas']
   },
   {
     id: 15,
@@ -251,7 +290,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Data dashboards', 'Critical accessibility', 'Low-power devices', 'Motion-sensitive'],
     description: 'Design where animation is the primary mode of communication. Every interaction has purposeful motion that guides users through the experience.',
     cssKeywords: 'animation: @keyframes scroll-reveal, transform: translateY/X, Intersection Observer',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['creative', 'entertainment', 'travel', 'startup']
   },
   {
     id: 16,
@@ -266,7 +306,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Desktop-only', 'Critical performance', 'Accessibility-first'],
     description: 'Focuses on small, delightful animations that provide feedback and guide users. Every tap, swipe, and hover has a response.',
     cssKeywords: 'animation: short 50-100ms, transition: hover states, haptic-feedback',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['saas', 'ecommerce', 'startup']
   },
   {
     id: 17,
@@ -281,7 +322,8 @@ export const styles: UIStyle[] = [
     doNotUse: [],
     description: 'Goes beyond basic accessibility to create truly universal experiences. Considers all users including those with disabilities, elderly, and those in challenging environments.',
     cssKeywords: 'aria-* attributes, role attributes semantic, focus-visible: 3-4px ring, color-contrast: 7:1+',
-    era: 'Universal'
+    era: 'Universal',
+    industries: ['nonprofit', 'education', 'healthcare', 'fintech']
   },
   {
     id: 18,
@@ -296,7 +338,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Complex workflows', 'Data-entry heavy', 'Legacy support', 'Explicit control'],
     description: 'The interface disappears, leaving only content and context-aware interactions. Uses AI, voice, and gestures to anticipate user needs.',
     cssKeywords: 'voice-commands: Web Speech API, gesture-detection: touch events, minimal UI visible',
-    era: '2020s AI-Era'
+    era: '2020s AI-Era',
+    industries: ['saas', 'startup']
   },
   {
     id: 19,
@@ -311,7 +354,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Extreme minimalism', 'Critical performance', 'Systems without modern OS'],
     description: 'The next evolution of neumorphism with improved accessibility and contrast. Maintains the soft aesthetic while meeting WCAG standards.',
     cssKeywords: 'box-shadow: softer multi-layer, background: improved contrast pastels, border-radius: 8-12px',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['saas', 'healthcare', 'fitness', 'corporate']
   },
   {
     id: 20,
@@ -326,7 +370,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Luxury brands', 'Finance', 'Healthcare', 'Conservative industries'],
     description: 'A modern, playful take on brutalism. Combines raw aesthetics with bright colors and bold shadows. Think Figma and Notion.',
     cssKeywords: 'border: 3px solid black, box-shadow: 5px 5px 0px black, colors: high saturation',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['startup', 'creative', 'saas']
   },
   {
     id: 21,
@@ -341,7 +386,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Dense data tables', 'Text-heavy content', 'Real-time monitoring'],
     description: 'Inspired by Japanese bento boxes, this layout uses modular cards of varying sizes to create visual hierarchy and interest.',
     cssKeywords: 'display: grid, grid-template-columns: repeat(4, 1fr), gap: 16px, border-radius: 24px',
-    era: '2020s Apple'
+    era: '2020s Apple',
+    industries: ['saas', 'creative', 'startup', 'ecommerce']
   },
   {
     id: 22,
@@ -356,7 +402,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['B2B enterprise', 'Healthcare', 'Finance', 'Elderly users'],
     description: 'Celebrates early 2000s digital optimism with chrome textures, bubblegum colors, and futuristic-retro aesthetics.',
     cssKeywords: 'background: linear-gradient(135deg, #FF69B4, #00FFFF), filter: drop-shadow, metallic gradients',
-    era: 'Y2K 2000s'
+    era: 'Y2K 2000s',
+    industries: ['entertainment', 'ecommerce', 'creative']
   },
   {
     id: 23,
@@ -371,7 +418,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Corporate enterprise', 'Healthcare', 'Family apps', 'Elderly users'],
     description: 'Dark, neon-lit interfaces inspired by cyberpunk fiction. Features terminal aesthetics, glitch effects, and dystopian vibes.',
     cssKeywords: 'background: #0D0D0D, color: #00FF00, text-shadow: 0 0 10px neon, font-family: monospace',
-    era: '2020s Cyberpunk'
+    era: '2020s Cyberpunk',
+    industries: ['gaming', 'fintech', 'startup']
   },
   {
     id: 24,
@@ -386,7 +434,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Tech-focused products', 'Gaming', 'Industrial', 'Urban brands'],
     description: 'Brings nature indoors through organic shapes, natural colors, and flowing elements. Creates a calming, sustainable aesthetic.',
     cssKeywords: 'border-radius: 16-24px (varied), background: earth tones, SVG organic shapes',
-    era: '2020s Sustainable'
+    era: '2020s Sustainable',
+    industries: ['healthcare', 'fitness', 'food', 'nonprofit']
   },
   {
     id: 25,
@@ -401,7 +450,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Traditional forms', 'Data-heavy dashboards', 'Print-first content'],
     description: 'Designed specifically for AI interactions. Features conversational layouts, streaming text, and minimal interface chrome.',
     cssKeywords: 'chat bubble layout, typing animation (3 dots pulse), streaming text, context cards',
-    era: '2020s AI-Era'
+    era: '2020s AI-Era',
+    industries: ['saas', 'startup']
   },
   {
     id: 26,
@@ -416,7 +466,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Corporate finance', 'Healthcare', 'Legal', 'Elderly users'],
     description: 'Inspired by the 1980s Memphis Group, featuring bold geometric shapes, clashing colors, and playful patterns.',
     cssKeywords: 'clip-path: polygon(), background: repeating patterns, transform: rotate()',
-    era: '1980s Postmodern'
+    era: '1980s Postmodern',
+    industries: ['creative', 'entertainment', 'kids']
   },
   {
     id: 27,
@@ -431,7 +482,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Business apps', 'E-commerce', 'Education', 'Healthcare', 'Enterprise'],
     description: 'A visual celebration of 80s-90s computer aesthetics with sunset gradients, glitch effects, and dreamy atmospheres.',
     cssKeywords: 'background: linear-gradient(180deg, #FF71CE, #01CDFE, #B967FF), text-shadow: neon glow',
-    era: '1980s-90s Retro'
+    era: '1980s-90s Retro',
+    industries: ['gaming', 'entertainment', 'creative']
   },
   {
     id: 28,
@@ -446,7 +498,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Print-style layouts', 'Simple blogs', 'Low-end devices', 'Flat design requirements'],
     description: 'Creates visual hierarchy through overlapping elements and elevation shadows. Gives interfaces a 3D paper-stack feel.',
     cssKeywords: 'z-index: 1-4 levels, box-shadow: elevation scale, transform: translateZ()',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['saas', 'corporate', 'fintech', 'ecommerce']
   },
   {
     id: 29,
@@ -461,7 +514,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['E-commerce catalogs', 'Dashboards', 'Forms', 'Data-heavy', 'Elderly users'],
     description: 'Takes minimalism to the extreme with oversized typography, dramatic white space, and bold statements.',
     cssKeywords: 'font-size: clamp(3rem, 10vw, 12rem), font-weight: 900, padding: 8rem+',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['luxury', 'creative', 'realestate']
   },
   {
     id: 30,
@@ -476,7 +530,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Long-form content', 'Accessibility-critical', 'Data interfaces', 'Forms', 'Elderly'],
     description: 'Uses animated typography as the primary visual element. Text moves, morphs, and transforms to tell stories.',
     cssKeywords: '@keyframes for text animation, background-clip: text, GSAP SplitText',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['creative', 'entertainment', 'startup']
   },
   {
     id: 31,
@@ -491,7 +546,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['E-commerce', 'Dashboards', 'Mobile-first', 'SEO-critical', 'Accessibility-required'],
     description: 'Uses scroll as a narrative device with parallax layers and progressive content reveal. Creates cinematic web experiences.',
     cssKeywords: 'position: fixed/sticky, transform: translateY(calc()), scroll-snap-type',
-    era: '2020s Modern'
+    era: '2020s Modern',
+    industries: ['creative', 'startup', 'travel', 'nonprofit']
   },
   {
     id: 32,
@@ -506,7 +562,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Playful brands', "Children's sites", 'Entertainment', 'Gaming', 'Emotional storytelling'],
     description: 'A modern interpretation of the Swiss International Style with strict grid systems and mathematical spacing.',
     cssKeywords: 'display: grid, grid-template-columns: repeat(12, 1fr), font-family: Inter/Helvetica',
-    era: '1950s Swiss + 2020s'
+    era: '1950s Swiss + 2020s',
+    industries: ['corporate', 'saas', 'legal', 'realestate']
   },
   {
     id: 33,
@@ -521,7 +578,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Standard corporate', 'Reading heavy content', 'Accessible public services'],
     description: 'Inspired by movie FUI (Fantasy User Interfaces). Features thin lines, neon colors, and technical data visualization.',
     cssKeywords: 'border: 1px solid rgba(0,255,255,0.5), color: #00FFFF, font-family: monospace',
-    era: '2010s Sci-Fi'
+    era: '2010s Sci-Fi',
+    industries: ['gaming', 'fintech']
   },
   {
     id: 34,
@@ -536,7 +594,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Professional corporate', 'Modern SaaS', 'High-res photography sites'],
     description: 'Celebrates the aesthetics of early video games with pixelated graphics, limited palettes, and 8-bit charm.',
     cssKeywords: "font-family: 'Press Start 2P', image-rendering: pixelated, box-shadow: pixel border",
-    era: '1980s Arcade'
+    era: '1980s Arcade',
+    industries: ['gaming', 'creative', 'entertainment']
   },
   {
     id: 35,
@@ -551,7 +610,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Long-form reading', 'Data tables', 'Complex forms'],
     description: 'Similar to Bento Box Grid, featuring Apple-inspired modular cards with soft shadows and clean aesthetics.',
     cssKeywords: 'display: grid, border-radius: 20px, background: #FFF, box-shadow: subtle',
-    era: '2020s Apple/Linear'
+    era: '2020s Apple/Linear',
+    industries: ['saas', 'startup', 'creative', 'ecommerce']
   },
   {
     id: 36,
@@ -566,7 +626,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Text-heavy documents', 'High-contrast requirements', 'Non-3D capable devices'],
     description: 'Designed for spatial computing with floating glass panels, depth effects, and gaze-based interactions.',
     cssKeywords: 'backdrop-filter: blur(40px) saturate(180%), background: rgba(255,255,255,0.2)',
-    era: '2024 Spatial Era'
+    era: '2024 Spatial Era',
+    industries: ['gaming', 'entertainment', 'saas']
   },
   {
     id: 37,
@@ -581,7 +642,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Gaming', 'Video platforms', 'High-energy marketing', 'Dark mode dependent'],
     description: 'Mimics the experience of reading on paper or e-ink displays. High contrast, no animations, and distraction-free.',
     cssKeywords: 'background: #FDFBF7, color: #1A1A1A, transition: none, font-family: serif',
-    era: '2020s Digital Well-being'
+    era: '2020s Digital Well-being',
+    industries: ['education', 'nonprofit', 'healthcare']
   },
   {
     id: 38,
@@ -596,7 +658,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Corporate', 'Government', 'Healthcare', 'Banking', 'Serious tools'],
     description: 'Embraces chaos and maximalism with sticker overlays, collage aesthetics, and internet culture references.',
     cssKeywords: 'mix-blend-mode: multiply/screen, transform: rotate(random), animation: jitter',
-    era: '2023+ Internet Core'
+    era: '2023+ Internet Core',
+    industries: ['creative', 'entertainment', 'ecommerce']
   },
   {
     id: 39,
@@ -611,7 +674,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Standard SaaS', 'Data grids', 'Strict corporate', 'Accounting'],
     description: 'Takes organic design further with generative algorithms, breathing animations, and bio-inspired patterns.',
     cssKeywords: 'SVG morphing, animation: breathing (scale pulse), filter: blur for organic',
-    era: '2024+ Generative'
+    era: '2024+ Generative',
+    industries: ['healthcare', 'fitness', 'creative', 'nonprofit']
   },
   {
     id: 40,
@@ -626,7 +690,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Corporate enterprise', 'Fintech', 'Healthcare', 'Government', 'Polished SaaS'],
     description: 'Celebrates imperfection and human touch with hand-drawn elements, scanned textures, and an unfinished aesthetic.',
     cssKeywords: 'background: url(paper-texture.png), filter: grayscale() contrast(), sketch-style fonts',
-    era: '2025+ Anti-Digital'
+    era: '2025+ Anti-Digital',
+    industries: ['creative', 'food', 'ecommerce']
   },
   {
     id: 41,
@@ -641,7 +706,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Enterprise software', 'Data dashboards', 'Accessibility-critical', 'Professional tools'],
     description: 'Creates tactile, touchable interfaces with squishy buttons, bounce physics, and material-like responses.',
     cssKeywords: 'transform: scale(0.95) on active, animation: bounce (cubic-bezier), spring physics',
-    era: '2025+ Tactile Era'
+    era: '2025+ Tactile Era',
+    industries: ['gaming', 'entertainment', 'kids', 'ecommerce']
   },
   {
     id: 42,
@@ -656,7 +722,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Tech startups', 'Gaming', 'Nightlife', 'Corporate finance', 'High-energy brands'],
     description: 'Distills nature into its essence with earthy colors, organic materials, and handmade warmth.',
     cssKeywords: 'background: warm earth tones, border-radius: organic (varied), texture overlays (grain)',
-    era: '2025+ Handmade Warmth'
+    era: '2025+ Handmade Warmth',
+    industries: ['food', 'fitness', 'healthcare', 'luxury']
   },
   {
     id: 43,
@@ -671,7 +738,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Mobile-first (no cursor)', 'Accessibility-critical', 'Data-heavy dashboards', 'Forms'],
     description: 'Makes the cursor a primary interaction element with morphing, trails, and magnetic effects.',
     cssKeywords: 'cursor: none (custom), position: fixed for cursor element, mix-blend-mode: difference',
-    era: '2025+ Interactive'
+    era: '2025+ Interactive',
+    industries: ['creative', 'luxury', 'startup']
   },
   {
     id: 44,
@@ -686,7 +754,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Visual-heavy content', 'Data entry', 'Complex forms', 'Noisy environments'],
     description: 'Designed for voice-first interactions with visual feedback for speaking, listening, and processing states.',
     cssKeywords: 'Web Speech API, canvas for waveform, animation: pulse for listening',
-    era: '2025+ Voice Era'
+    era: '2025+ Voice Era',
+    industries: ['healthcare', 'nonprofit', 'saas']
   },
   {
     id: 45,
@@ -701,7 +770,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Content-heavy sites', 'Blogs', 'Dashboards', 'Low-bandwidth', 'Accessibility-critical'],
     description: 'Interactive 3D product visualization with rotation, zoom, and AR capabilities.',
     cssKeywords: 'Three.js or model-viewer, OrbitControls, touch events for rotation, WebXR for AR',
-    era: '2025+ E-commerce 3D'
+    era: '2025+ E-commerce 3D',
+    industries: ['ecommerce', 'realestate', 'luxury']
   },
   {
     id: 46,
@@ -716,7 +786,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Data interfaces', 'Text-heavy content', 'Accessibility-critical', 'Conservative brands'],
     description: 'Advanced gradient techniques creating flowing, aurora-like color transitions with holographic effects.',
     cssKeywords: 'background: conic-gradient or mesh (SVG), animation: gradient flow, mix-blend-mode: screen',
-    era: '2025+ Gradient Evolution'
+    era: '2025+ Gradient Evolution',
+    industries: ['creative', 'entertainment', 'luxury', 'startup']
   },
   {
     id: 47,
@@ -731,7 +802,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Dashboards', 'Apps', 'E-commerce catalogs', 'Real-time data', 'Short-form content'],
     description: 'Brings print magazine aesthetics to the web with asymmetric grids, pull quotes, and editorial typography.',
     cssKeywords: 'display: grid with named areas, column-count for text, ::first-letter for drop caps',
-    era: '2020s Editorial Digital'
+    era: '2020s Editorial Digital',
+    industries: ['education', 'nonprofit', 'entertainment']
   },
   {
     id: 48,
@@ -746,7 +818,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Corporate', 'Healthcare', 'Finance', 'Accessibility-critical', 'Elderly users'],
     description: 'Recreates the chromatic aberration effect from cameras and VHS tapes with RGB channel splitting.',
     cssKeywords: 'text-shadow: RGB offset (-2px 0 red, 2px 0 cyan), animation: glitch',
-    era: '2020s Retro-Tech'
+    era: '2020s Retro-Tech',
+    industries: ['gaming', 'entertainment', 'creative']
   },
   {
     id: 49,
@@ -761,7 +834,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Modern tech', 'SaaS', 'Healthcare', "Children's apps", 'Corporate enterprise'],
     description: 'Celebrates the imperfect beauty of analog media with film grain, faded colors, and light leaks.',
     cssKeywords: 'filter: sepia() contrast() saturate(0.8), background: noise texture overlay',
-    era: '1970s-90s Analog Revival'
+    era: '1970s-90s Analog Revival',
+    industries: ['creative', 'entertainment', 'food']
   },
   // ============================================================================
   // LANDING PAGE STYLES (50-57)
@@ -779,7 +853,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Complex products', 'B2B software', 'Information-heavy sites', 'Multi-product catalogs'],
     description: 'Puts the hero section front and center with dramatic visuals and minimal distractions. Perfect for products that sell themselves visually.',
     cssKeywords: 'min-h-screen, object-fit: cover, scroll-snap, position: sticky',
-    era: '2020s Marketing'
+    era: '2020s Marketing',
+    industries: ['luxury', 'ecommerce', 'startup', 'creative']
   },
   {
     id: 51,
@@ -794,7 +869,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Brand awareness', 'Content marketing', 'Portfolio sites', 'Informational pages'],
     description: 'Every element designed to drive conversions. Strategic CTA placement, urgency triggers, and social proof elements work together.',
     cssKeywords: 'position: sticky, animation: pulse, scroll-behavior: smooth, form validation styles',
-    era: '2020s Growth Marketing'
+    era: '2020s Growth Marketing',
+    industries: ['saas', 'ecommerce', 'startup', 'education']
   },
   {
     id: 52,
@@ -809,7 +885,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Simple products', 'Emotional purchases', 'Lifestyle brands', 'Quick conversions'],
     description: 'Comprehensive feature presentation for complex products. Organized sections help users understand capabilities at a glance.',
     cssKeywords: 'display: grid, tabs with aria-selected, comparison table styles, feature-card patterns',
-    era: '2020s SaaS'
+    era: '2020s SaaS',
+    industries: ['saas', 'corporate', 'startup']
   },
   {
     id: 53,
@@ -824,7 +901,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Complex products', 'Multiple offerings', 'E-commerce', 'Information-heavy sites'],
     description: 'Strips away everything unnecessary. One message, one action, maximum clarity. Perfect for products that speak for themselves.',
     cssKeywords: 'max-width: 640px, line-height: 1.75, font-size: clamp(), single-column layout',
-    era: '2020s Minimalist'
+    era: '2020s Minimalist',
+    industries: ['saas', 'startup']
   },
   {
     id: 54,
@@ -839,7 +917,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['New products without users', 'Technical tools', 'B2B enterprise', 'Niche markets'],
     description: 'Lets your customers do the selling. Testimonials, case studies, and trust signals take center stage to build credibility.',
     cssKeywords: 'testimonial-card styles, star-rating SVG, logo-cloud animation, counter animation',
-    era: '2020s Trust Marketing'
+    era: '2020s Trust Marketing',
+    industries: ['saas', 'ecommerce', 'startup', 'corporate']
   },
   {
     id: 55,
@@ -854,7 +933,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Physical products', 'Services', 'Simple apps', 'Privacy-sensitive tools'],
     description: 'Show, don\'t tell. Embeds working demos directly in the landing page so visitors can experience the product firsthand.',
     cssKeywords: 'iframe sandbox, interactive tooltip positioning, code editor styling, live preview containers',
-    era: '2020s Product-Led Growth'
+    era: '2020s Product-Led Growth',
+    industries: ['saas', 'startup']
   },
   {
     id: 56,
@@ -869,7 +949,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Casual products', 'Youth brands', 'Entertainment', 'Startup MVPs'],
     description: 'Establishes credibility through professional design and trust signals. Perfect for industries where reputation matters.',
     cssKeywords: 'professional color palette, badge/seal styling, timeline layouts, credential cards',
-    era: '2020s Enterprise'
+    era: '2020s Enterprise',
+    industries: ['corporate', 'fintech', 'legal', 'healthcare']
   },
   {
     id: 57,
@@ -884,7 +965,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Quick conversions', 'E-commerce', 'Technical products', 'Impatient audiences'],
     description: 'Takes visitors on a journey. Uses narrative structure and emotional design to connect with audiences on a deeper level.',
     cssKeywords: 'scroll-snap-type, position: sticky for chapters, video-background, narrative-section styling',
-    era: '2020s Brand Marketing'
+    era: '2020s Brand Marketing',
+    industries: ['nonprofit', 'creative', 'travel']
   },
   // ============================================================================
   // BI & ANALYTICS DASHBOARD STYLES (58-67)
@@ -902,7 +984,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Executive summaries', 'Public dashboards', 'Mobile-first', 'Casual users'],
     description: 'Maximizes information density for power users who need to see everything at once. Every pixel serves a purpose.',
     cssKeywords: 'display: grid with dense packing, compact table styles, sparkline charts, mini-visualization',
-    era: '2020s Data Tools'
+    era: '2020s Data Tools',
+    industries: ['fintech', 'corporate', 'saas']
   },
   {
     id: 59,
@@ -917,7 +1000,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Precise values needed', 'Small datasets', 'Colorblind-critical', 'Print-first'],
     description: 'Uses color intensity to reveal patterns in large datasets. Perfect for geographic, behavioral, or time-series data.',
     cssKeywords: 'gradient color scales, SVG/Canvas heatmaps, legend styling, tooltip positioning',
-    era: '2020s Data Viz'
+    era: '2020s Data Viz',
+    industries: ['saas', 'ecommerce', 'realestate']
   },
   {
     id: 60,
@@ -932,7 +1016,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Detailed analysis', 'Technical users', 'Real-time monitoring', 'Complex workflows'],
     description: 'Distills complex data into key metrics. Large numbers, clear trends, and minimal noise for busy executives.',
     cssKeywords: 'KPI card styling, trend arrow icons, donut/gauge charts, large typography',
-    era: '2020s Executive Tools'
+    era: '2020s Executive Tools',
+    industries: ['corporate', 'fintech', 'saas']
   },
   {
     id: 61,
@@ -947,7 +1032,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Historical analysis', 'Report generation', 'Offline use', 'Mobile viewing'],
     description: 'Built for operations centers with live-updating metrics, streaming charts, and instant alert visibility.',
     cssKeywords: 'WebSocket updates, streaming chart libraries, alert-badge animations, status-indicator pulses',
-    era: '2020s DevOps'
+    era: '2020s DevOps',
+    industries: ['fintech', 'saas', 'corporate']
   },
   {
     id: 62,
@@ -962,7 +1048,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Quick overviews', 'Simple metrics', 'Executive dashboards', 'Mobile-first'],
     description: 'Start with the big picture, drill into details. Perfect for analysts who need to explore data at multiple levels.',
     cssKeywords: 'expandable-row animations, breadcrumb navigation, linked chart interactions, zoom transitions',
-    era: '2020s Analytics'
+    era: '2020s Analytics',
+    industries: ['fintech', 'corporate', 'saas', 'healthcare']
   },
   {
     id: 63,
@@ -977,7 +1064,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Single metric focus', 'Time-series only', 'Real-time data', 'Simple dashboards'],
     description: 'Designed for comparing two or more datasets side by side. Highlights differences and makes patterns obvious.',
     cssKeywords: 'split-panel layouts, synchronized scroll, difference-highlighting colors, comparison-table styles',
-    era: '2020s Business Intelligence'
+    era: '2020s Business Intelligence',
+    industries: ['saas', 'corporate', 'fintech', 'ecommerce']
   },
   {
     id: 64,
@@ -992,7 +1080,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Historical reporting', 'Exact measurements', 'Regulatory compliance', 'Simple tracking'],
     description: 'Visualizes predictions and forecasts with confidence intervals. Shows what the data says about the future.',
     cssKeywords: 'forecast-line styling, confidence-band gradients, scenario-toggle UI, prediction-badge styling',
-    era: '2020s ML/AI'
+    era: '2020s ML/AI',
+    industries: ['fintech', 'corporate', 'saas', 'ecommerce']
   },
   {
     id: 65,
@@ -1007,7 +1096,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Financial data', 'Operations monitoring', 'Technical metrics', 'B2B enterprise'],
     description: 'Visualizes how users interact with products. Funnels, flows, and click maps reveal the user journey.',
     cssKeywords: 'funnel-chart styling, sankey-diagram layouts, click-heatmap overlays, journey-map connectors',
-    era: '2020s Product Analytics'
+    era: '2020s Product Analytics',
+    industries: ['saas', 'ecommerce', 'startup']
   },
   {
     id: 66,
@@ -1022,7 +1112,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Non-financial metrics', 'Marketing analytics', 'Technical dashboards', 'Consumer products'],
     description: 'Purpose-built for financial data with proper number formatting, accounting conventions, and financial visualizations.',
     cssKeywords: 'accounting-number-format, waterfall-chart styling, variance-indicator colors, financial-table layouts',
-    era: '2020s Finance'
+    era: '2020s Finance',
+    industries: ['fintech', 'corporate']
   },
   {
     id: 67,
@@ -1037,7 +1128,8 @@ export const styles: UIStyle[] = [
     doNotUse: ['Product analytics', 'Technical dashboards', 'Finance reporting', 'Operations'],
     description: 'Tracks the sales pipeline with quota progress, deal stages, activity metrics, and team leaderboards.',
     cssKeywords: 'pipeline-stage styling, quota-gauge components, leaderboard-row animations, deal-card layouts',
-    era: '2020s Sales Tech'
+    era: '2020s Sales Tech',
+    industries: ['saas', 'corporate', 'startup']
   },
 ];
 

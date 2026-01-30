@@ -1,5 +1,6 @@
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { categories, getStylesByCategory, type UIStyle } from '../data/styles';
+import { categories, industries, styles, type UIStyle, type IndustryId } from '../data/styles';
 
 // Brand Logo Component
 const Logo = ({ className = '', size = 'default' }: { className?: string; size?: 'default' | 'large' }) => (
@@ -62,8 +63,8 @@ const StyleCard = ({ style }: { style: UIStyle }) => {
   );
 };
 
-const CategorySection = ({ categoryId, categoryName, description }: { categoryId: string; categoryName: string; description: string }) => {
-  const categoryStyles = getStylesByCategory(categoryId);
+const CategorySection = ({ categoryId, categoryName, description, filteredStyles }: { categoryId: string; categoryName: string; description: string; filteredStyles: UIStyle[] }) => {
+  const categoryStyles = filteredStyles.filter(s => s.category === categoryId);
   
   if (categoryStyles.length === 0) return null;
   
@@ -82,7 +83,49 @@ const CategorySection = ({ categoryId, categoryName, description }: { categoryId
   );
 };
 
+// Industry Filter Bar Component
+const IndustryFilter = ({ selectedIndustry, onSelect }: { selectedIndustry: IndustryId | null; onSelect: (id: IndustryId | null) => void }) => {
+  return (
+    <div className="bg-white border-3 border-black rounded-2xl p-4 shadow-[4px_4px_0_#000] mb-8">
+      <div className="flex items-center gap-3 mb-3">
+        <span className="text-lg font-black text-black">🏢 Filter by Industry:</span>
+        {selectedIndustry && (
+          <button
+            onClick={() => onSelect(null)}
+            className="text-sm font-bold text-black bg-[#F472B6] hover:bg-[#FACC15] px-3 py-1 rounded-lg border-2 border-black transition-colors"
+          >
+            Clear ✕
+          </button>
+        )}
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {industries.map((industry) => (
+          <button
+            key={industry.id}
+            onClick={() => onSelect(selectedIndustry === industry.id ? null : industry.id)}
+            className={`px-3 py-1.5 rounded-lg border-2 border-black font-bold text-sm transition-all ${
+              selectedIndustry === industry.id
+                ? 'bg-[#22D3EE] shadow-[2px_2px_0_#000] -translate-x-0.5 -translate-y-0.5'
+                : 'bg-white hover:bg-[#FACC15] hover:shadow-[2px_2px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5'
+            }`}
+          >
+            {industry.icon} {industry.name}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export const HomePage = () => {
+  const [selectedIndustry, setSelectedIndustry] = useState<IndustryId | null>(null);
+  
+  // Filter styles based on selected industry
+  const filteredStyles = useMemo(() => {
+    if (!selectedIndustry) return styles;
+    return styles.filter(style => style.industries?.includes(selectedIndustry));
+  }, [selectedIndustry]);
+
   return (
     <div className="min-h-screen bg-[#FEF9C3]">
       {/* Navigation */}
@@ -215,14 +258,40 @@ export const HomePage = () => {
 
       {/* Main Content */}
       <main id="styles" className="max-w-7xl mx-auto px-4 py-16">
-        {categories.map((category) => (
-          <CategorySection
-            key={category.id}
-            categoryId={category.id}
-            categoryName={category.name}
-            description={category.description}
-          />
-        ))}
+        {/* Industry Filter */}
+        <IndustryFilter 
+          selectedIndustry={selectedIndustry} 
+          onSelect={setSelectedIndustry} 
+        />
+        
+        {/* Show filter results count when filtering */}
+        {selectedIndustry && (
+          <div className="mb-8 p-4 bg-[#84CC16] border-3 border-black rounded-xl shadow-[3px_3px_0_#000]">
+            <p className="font-black text-black">
+              🎯 Showing {filteredStyles.length} style{filteredStyles.length !== 1 ? 's' : ''} for{' '}
+              <span className="bg-white px-2 py-0.5 rounded border-2 border-black">
+                {industries.find(i => i.id === selectedIndustry)?.icon} {industries.find(i => i.id === selectedIndustry)?.name}
+              </span>
+            </p>
+          </div>
+        )}
+
+        {filteredStyles.length === 0 ? (
+          <div className="text-center py-16">
+            <p className="text-2xl font-black text-black mb-4">No styles found 😅</p>
+            <p className="text-black/70 font-medium">Try selecting a different industry filter.</p>
+          </div>
+        ) : (
+          categories.map((category) => (
+            <CategorySection
+              key={category.id}
+              categoryId={category.id}
+              categoryName={category.name}
+              description={category.description}
+              filteredStyles={filteredStyles}
+            />
+          ))
+        )}
       </main>
 
       {/* About Section */}
