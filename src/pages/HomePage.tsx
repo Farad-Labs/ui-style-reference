@@ -1,37 +1,54 @@
 import { Link } from 'react-router-dom';
 import { categories, getStylesByCategory, type UIStyle } from '../data/styles';
 
+// Brand Logo Component
+const Logo = ({ className = '', size = 'default' }: { className?: string; size?: 'default' | 'large' }) => (
+  <div className={`flex items-center gap-2 ${className}`}>
+    <div className={`relative ${size === 'large' ? 'w-12 h-12' : 'w-8 h-8'}`}>
+      <div className="absolute inset-0 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-orange-400 rounded-xl rotate-6" />
+      <div className="absolute inset-0 bg-gradient-to-br from-violet-600 via-fuchsia-500 to-orange-500 rounded-xl flex items-center justify-center">
+        <span className={`font-black text-white ${size === 'large' ? 'text-2xl' : 'text-lg'}`}>UI</span>
+      </div>
+    </div>
+    <span className={`font-bold tracking-tight ${size === 'large' ? 'text-3xl' : 'text-xl'}`}>
+      <span className="text-gray-900">Style</span>
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">Guide</span>
+    </span>
+  </div>
+);
+
 const StyleCard = ({ style }: { style: UIStyle }) => {
   return (
     <Link
       to={`/style/${style.slug}`}
-      className="group block bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+      className="group block bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-2xl hover:shadow-fuchsia-500/10 transition-all duration-300 hover:-translate-y-1"
     >
       <div className="aspect-[16/10] relative overflow-hidden bg-gray-100">
         <img 
           src={`/previews/${style.slug}.png`}
           alt={`${style.name} preview`}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
         <div className="absolute bottom-2 left-2 flex gap-1">
           {style.primaryColors.slice(0, 4).map((color, i) => (
             <div
               key={i}
-              className="w-4 h-4 rounded-full border border-white/50 shadow-sm"
+              className="w-4 h-4 rounded-full border-2 border-white shadow-md"
               style={{ backgroundColor: color.includes('rgba') ? color : color }}
             />
           ))}
         </div>
       </div>
       <div className="p-4">
-        <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+        <h3 className="font-semibold text-gray-900 group-hover:text-fuchsia-600 transition-colors">
           {style.name}
         </h3>
         <p className="text-sm text-gray-500 mt-1 line-clamp-2">
           {style.description.slice(0, 100)}...
         </p>
-        <div className="flex flex-wrap gap-1 mt-2">
+        <div className="flex flex-wrap gap-1 mt-3">
           {style.keywords.slice(0, 3).map((keyword, i) => (
             <span
               key={i}
@@ -53,9 +70,9 @@ const CategorySection = ({ categoryId, categoryName, description }: { categoryId
   
   return (
     <section className="mb-16">
-      <div className="mb-6">
+      <div className="mb-8">
         <h2 className="text-2xl font-bold text-gray-900">{categoryName}</h2>
-        <p className="text-gray-600 mt-1">{description}</p>
+        <p className="text-gray-500 mt-1">{description}</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {categoryStyles.map((style) => (
@@ -68,59 +85,106 @@ const CategorySection = ({ categoryId, categoryName, description }: { categoryId
 
 export const HomePage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-[#FAFAFA]">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/50">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+          <Logo />
+          <div className="flex items-center gap-4">
+            <a href="#styles" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">
+              Browse Styles
+            </a>
+            <a
+              href="https://github.com/LukeL99/ui-style-reference"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-1"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span className="hidden sm:inline">GitHub</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <header className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-90" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yIDItNCAyLTRzLTItMi00LTJsLTIgMnYyaDJ2MmgyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
-        <div className="relative max-w-7xl mx-auto px-4 py-24 sm:py-32">
+      <header className="relative pt-16 overflow-hidden">
+        {/* Gradient Orbs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet-400 rounded-full blur-3xl opacity-20 -translate-y-1/2" />
+        <div className="absolute top-20 right-1/4 w-80 h-80 bg-fuchsia-400 rounded-full blur-3xl opacity-20" />
+        <div className="absolute top-40 left-1/2 w-72 h-72 bg-orange-400 rounded-full blur-3xl opacity-15" />
+        
+        <div className="relative max-w-7xl mx-auto px-4 py-20 sm:py-32">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6">
-              UI/UX Design Styles
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-100 to-fuchsia-100 rounded-full mb-8">
+              <span className="w-2 h-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full animate-pulse" />
+              <span className="text-sm font-medium text-gray-700">49 Interactive Design Styles</span>
+            </div>
+            
+            {/* Main Heading */}
+            <h1 className="text-5xl sm:text-7xl font-black text-gray-900 mb-6 tracking-tight">
+              The Ultimate
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-600 to-orange-500">
+                UI Style Guide
+              </span>
             </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-              A visual reference guide to 49 distinctive UI/UX design styles. 
-              Explore each style with live demonstrations, use cases, and implementation details.
+            
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+              Explore, learn, and get inspired by 49 distinctive UI design styles. 
+              Each with live demos, use cases, color palettes, and implementation tips.
             </p>
+            
+            {/* CTA Buttons */}
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="#styles"
-                className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                className="group px-8 py-4 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-fuchsia-600 text-white rounded-2xl font-semibold hover:shadow-xl hover:shadow-fuchsia-500/25 transition-all duration-300 hover:-translate-y-0.5"
               >
-                Explore Styles
+                Explore All Styles
+                <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </a>
               <a
-                href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-white/10 text-white border border-white/30 rounded-lg font-semibold hover:bg-white/20 transition-colors"
+                href="#about"
+                className="px-8 py-4 bg-white text-gray-700 border border-gray-200 rounded-2xl font-semibold hover:border-gray-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
               >
-                View on GitHub
+                Learn More
               </a>
             </div>
+          </div>
+        </div>
+        
+        {/* Preview Strip */}
+        <div className="relative max-w-6xl mx-auto px-4 pb-8">
+          <div className="flex gap-4 overflow-hidden rounded-2xl p-2 bg-white shadow-2xl shadow-gray-200/50 border border-gray-100">
+            {['glassmorphism', 'neubrutalism', 'cyberpunk-ui', 'minimalism-swiss-style', 'retro-futurism'].map((slug) => (
+              <Link key={slug} to={`/style/${slug}`} className="flex-shrink-0 w-48 aspect-[4/3] rounded-xl overflow-hidden hover:ring-2 hover:ring-fuchsia-500 transition-all">
+                <img src={`/previews/${slug}.png`} alt="" className="w-full h-full object-cover" />
+              </Link>
+            ))}
           </div>
         </div>
       </header>
 
       {/* Stats Bar */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      <div className="bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-blue-600">49</div>
-              <div className="text-sm text-gray-600">UI Styles</div>
+              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-fuchsia-600">49</div>
+              <div className="text-sm text-gray-500 mt-1">Design Styles</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-600">8</div>
-              <div className="text-sm text-gray-600">Categories</div>
+              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-orange-500">8</div>
+              <div className="text-sm text-gray-500 mt-1">Categories</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-pink-600">200+</div>
-              <div className="text-sm text-gray-600">Use Cases</div>
+              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">200+</div>
+              <div className="text-sm text-gray-500 mt-1">Use Cases</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-green-600">100%</div>
-              <div className="text-sm text-gray-600">Interactive</div>
+              <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">100%</div>
+              <div className="text-sm text-gray-500 mt-1">Interactive</div>
             </div>
           </div>
         </div>
@@ -138,17 +202,44 @@ export const HomePage = () => {
         ))}
       </main>
 
+      {/* About Section */}
+      <section id="about" className="bg-gradient-to-b from-white to-gray-50 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">What is UI Style Guide?</h2>
+          <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            UI Style Guide is a comprehensive visual reference for designers and developers. 
+            Each style includes a fully interactive demo, color palettes, typography suggestions, 
+            CSS implementation tips, and real-world use cases. Whether you're exploring glassmorphism, 
+            brutalism, or cyberpunk aesthetics — find inspiration and practical guidance here.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['Designers', 'Developers', 'Students', 'Agencies'].map((tag) => (
+              <span key={tag} className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
+                Built for {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 py-12">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">UI/UX Design Style Reference</h2>
-            <p className="text-gray-400 mb-6">
-              Built with React, Vite, and Tailwind CSS. Data sourced from UI UX Pro Max.
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-orange-400 rounded-xl flex items-center justify-center">
+                <span className="font-black text-white text-sm">UI</span>
+              </div>
+              <span className="font-bold text-lg">
+                Style<span className="text-fuchsia-400">Guide</span>
+              </span>
+            </div>
+            <p className="text-gray-400 text-sm">
+              © 2025 UIStyleGuide.com — Built with React, Vite & Tailwind
             </p>
-            <div className="flex justify-center gap-6">
+            <div className="flex gap-6">
               <a
-                href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+                href="https://github.com/LukeL99/ui-style-reference"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -156,12 +247,12 @@ export const HomePage = () => {
                 GitHub
               </a>
               <a
-                href="https://www.npmjs.com/package/uipro-cli"
+                href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                npm
+                Twitter
               </a>
             </div>
           </div>
