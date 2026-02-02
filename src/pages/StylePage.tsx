@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { getStyleBySlug, getStylesByCategory, categories, styles } from '../data/styles';
 import { StyleDemo } from '../components/StyleDemo';
 
@@ -108,6 +109,14 @@ export const StylePage = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <link rel="canonical" href={`https://www.uistyleguide.com/style/${style.slug}`} />
+        <title>{style.name} — UI Style Guide</title>
+        <meta name="description" content={style.description} />
+        <meta property="og:url" content={`https://www.uistyleguide.com/style/${style.slug}`} />
+        <meta property="og:title" content={`${style.name} — UI Style Guide`} />
+        <meta property="og:description" content={style.description} />
+      </Helmet>
       {/* Navigation Bar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
