@@ -14,8 +14,12 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-  customHeaders:
-    - pattern: /sitemap.xml
-      headers:
-        - key: Content-Type
-          value: application/xml
+customHeaders:
+  - pattern: /sitemap.xml
+    headers:
+      - key: Content-Type
+        value: application/xml
+  - pattern: /robots.txt
+    headers:
+      - key: Content-Type
+        value: text/plain
