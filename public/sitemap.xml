@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.uistyleguide.com/</loc>
-    <lastmod>2025-01-30</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/glassmorphism</loc>
+    <loc>https://www.uistyleguide.com/style/minimalism-swiss-style</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -17,32 +17,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.uistyleguide.com/style/glassmorphism</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.uistyleguide.com/style/brutalism</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/neubrutalism</loc>
+    <loc>https://www.uistyleguide.com/style/3d-hyperrealism</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/minimalism-swiss-style</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/cyberpunk-ui</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/retro-futurism</loc>
+    <loc>https://www.uistyleguide.com/style/vibrant-block-based</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.uistyleguide.com/style/dark-mode-oled</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/accessible-ethical</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -53,6 +53,11 @@
   </url>
   <url>
     <loc>https://www.uistyleguide.com/style/aurora-ui</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/retro-futurism</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -82,72 +87,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/accessible-ethical</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.uistyleguide.com/style/inclusive-design</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/3d-hyperrealism</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/vibrant-block-based</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/bento-box-grid</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/bento-grids</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/y2k-aesthetic</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/vaporwave</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/memphis-design</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/pixel-art</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/vintage-analog-retro-film</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/organic-biophilic</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/biomimetic-organic-2</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/nature-distilled</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -157,32 +97,47 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.uistyleguide.com/style/soft-ui-evolution</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/neubrutalism</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/bento-box-grid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/y2k-aesthetic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/cyberpunk-ui</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/organic-biophilic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.uistyleguide.com/style/ai-native-ui</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/voice-first-multimodal</loc>
+    <loc>https://www.uistyleguide.com/style/memphis-design</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/spatial-ui-visionos</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/hud-scifi-fui</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/3d-product-preview</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/chromatic-aberration-rgb-split</loc>
+    <loc>https://www.uistyleguide.com/style/vaporwave</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -192,12 +147,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/swiss-modernism-2</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.uistyleguide.com/style/editorial-grid-magazine</loc>
+    <loc>https://www.uistyleguide.com/style/exaggerated-minimalism</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -212,27 +162,42 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/interactive-cursor-design</loc>
+    <loc>https://www.uistyleguide.com/style/swiss-modernism-2</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/soft-ui-evolution</loc>
+    <loc>https://www.uistyleguide.com/style/hud-scifi-fui</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/gradient-mesh-aurora-evolved</loc>
+    <loc>https://www.uistyleguide.com/style/pixel-art</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/exaggerated-minimalism</loc>
+    <loc>https://www.uistyleguide.com/style/bento-grids</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/spatial-ui-visionos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/e-ink-paper</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.uistyleguide.com/style/gen-z-chaos-maximalism</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/biomimetic-organic-2</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -247,7 +212,134 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.uistyleguide.com/style/e-ink-paper</loc>
+    <loc>https://www.uistyleguide.com/style/nature-distilled</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/interactive-cursor-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/voice-first-multimodal</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/3d-product-preview</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/gradient-mesh-aurora-evolved</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/editorial-grid-magazine</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/chromatic-aberration-rgb-split</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/vintage-analog-retro-film</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Landing Page Styles -->
+  <url>
+    <loc>https://www.uistyleguide.com/style/hero-centric-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/conversion-optimized</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/feature-rich-showcase</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/minimal-direct</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/social-proof-focused</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/interactive-product-demo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/trust-authority</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/storytelling-driven</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- BI & Analytics Dashboard Styles -->
+  <url>
+    <loc>https://www.uistyleguide.com/style/data-dense-dashboard</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/heatmap-dashboard</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/executive-dashboard</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/realtime-monitoring</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/drill-down-analytics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/comparative-analysis-dashboard</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/predictive-analytics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/user-behavior-analytics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/financial-dashboard</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.uistyleguide.com/style/sales-intelligence-dashboard</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
