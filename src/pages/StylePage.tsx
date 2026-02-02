@@ -104,8 +104,9 @@ export const StylePage = () => {
   }
 
   const currentIndex = styles.findIndex(s => s.slug === slug);
-  const prevStyle = currentIndex > 0 ? styles[currentIndex - 1] : null;
-  const nextStyle = currentIndex < styles.length - 1 ? styles[currentIndex + 1] : null;
+  // Loop navigation: first style goes to last, last style goes to first
+  const prevStyle = currentIndex > 0 ? styles[currentIndex - 1] : styles[styles.length - 1];
+  const nextStyle = currentIndex < styles.length - 1 ? styles[currentIndex + 1] : styles[0];
 
   return (
     <div className="min-h-screen">
@@ -125,6 +126,7 @@ export const StylePage = () => {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
+              <span className="hidden sm:inline text-sm font-medium">Back to All Styles</span>
             </Link>
             
             {/* Style Dropdown */}
@@ -179,16 +181,12 @@ export const StylePage = () => {
 
             {/* Prev/Next navigation */}
             <div className="flex items-center gap-3 text-sm shrink-0">
-              {prevStyle ? (
-                <Link to={`/style/${prevStyle.slug}`} className="text-gray-600 hover:text-blue-600">
-                  ← <span className="hidden sm:inline">Prev</span>
-                </Link>
-              ) : <span className="w-8" />}
-              {nextStyle ? (
-                <Link to={`/style/${nextStyle.slug}`} className="text-gray-600 hover:text-blue-600">
-                  <span className="hidden sm:inline">Next</span> →
-                </Link>
-              ) : <span className="w-8" />}
+              <Link to={`/style/${prevStyle.slug}`} className="text-gray-600 hover:text-blue-600">
+                ← <span className="hidden sm:inline">Prev</span>
+              </Link>
+              <Link to={`/style/${nextStyle.slug}`} className="text-gray-600 hover:text-blue-600">
+                <span className="hidden sm:inline">Next</span> →
+              </Link>
             </div>
           </div>
         </div>
@@ -313,20 +311,18 @@ export const StylePage = () => {
       <section className="bg-gray-100 py-12">
         <div className="max-w-5xl mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
-            {prevStyle ? (
-              <Link
-                to={`/style/${prevStyle.slug}`}
-                className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                <div className="text-left">
-                  <div className="text-sm text-gray-500">Previous</div>
-                  <div className="font-semibold">{prevStyle.name}</div>
-                </div>
-              </Link>
-            ) : <div />}
+            <Link
+              to={`/style/${prevStyle.slug}`}
+              className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              <div className="text-left">
+                <div className="text-sm text-gray-500">Previous</div>
+                <div className="font-semibold">{prevStyle.name}</div>
+              </div>
+            </Link>
             
             <Link
               to="/"
@@ -335,20 +331,18 @@ export const StylePage = () => {
               View All Styles
             </Link>
             
-            {nextStyle ? (
-              <Link
-                to={`/style/${nextStyle.slug}`}
-                className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
-              >
-                <div className="text-right">
-                  <div className="text-sm text-gray-500">Next</div>
-                  <div className="font-semibold">{nextStyle.name}</div>
-                </div>
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            ) : <div />}
+            <Link
+              to={`/style/${nextStyle.slug}`}
+              className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              <div className="text-right">
+                <div className="text-sm text-gray-500">Next</div>
+                <div className="font-semibold">{nextStyle.name}</div>
+              </div>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
