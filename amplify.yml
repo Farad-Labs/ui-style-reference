@@ -14,3 +14,8 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+  customHeaders:
+    - pattern: /sitemap.xml
+      headers:
+        - key: Content-Type
+          value: application/xml
